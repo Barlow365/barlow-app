@@ -1245,10 +1245,34 @@ button:hover ~ .cursor-dot {
     flex-shrink: 0;
 }
 
+.venture-logo {
+    width: 48px;
+    height: 48px;
+    background: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    padding: 4px;
+}
+
+.venture-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .venture-card:hover .venture-icon,
 .venture-card.featured .venture-icon {
     background: rgba(255, 255, 255, 0.2);
     color: var(--white) !important;
+}
+
+.venture-card:hover .venture-logo,
+.venture-card.featured .venture-logo {
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .venture-info h4 {
