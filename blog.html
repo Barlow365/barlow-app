@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | Jonathan Barlow</title>
+    <meta name="description" content="Thoughts on leadership, systems, and building what lasts. Articles by Jonathan Barlow.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="icon" href="images/2025/09/cropped-jb-1.png" type="image/png">
+</head>
+<body>
+    <!-- Noise Texture Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Floating Geometric Elements -->
+    <div class="geo-elements">
+        <div class="geo geo-1"></div>
+        <div class="geo geo-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav scrolled" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">JB</span>
+                <span class="logo-line"></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#ventures">Ventures</a></li>
+                <li><a href="blog.html" class="active">Insights</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <div class="blog-header-content">
+            <div class="section-header">
+                <span class="section-number">Insights</span>
+                <h1 class="section-title">Articles & Essays</h1>
+                <div class="section-line"></div>
+            </div>
+            <p class="blog-header-description">
+                Thoughts on leadership, systems, Detroit, and building what lasts.
+            </p>
+        </div>
+    </header>
+
+    <!-- Blog Content -->
+    <main class="blog-main">
+        <div class="blog-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="leadership">Leadership</button>
+            <button class="filter-btn" data-filter="detroit">Detroit</button>
+            <button class="filter-btn" data-filter="business">Business</button>
+            <button class="filter-btn" data-filter="technology">Technology</button>
+        </div>
+
+        <div class="blog-list">
+            <!-- Featured Article -->
+            <article class="blog-card blog-featured" data-category="leadership">
+                <div class="blog-image">
+                    <img src="images/2023/02/sean-pollock-PhYq704ffdA-unsplash.jpg" alt="Detroit skyline">
+                    <div class="blog-category">Leadership</div>
+                </div>
+                <div class="blog-content">
+                    <time class="blog-date">March 10, 2026</time>
+                    <h2>Programs vs. Systems: Why Detroit Keeps Starting Over</h2>
+                    <p>Detroit doesn't need more programs. It needs systems that actually work. There's a difference—and understanding it changes everything.</p>
+                    <a href="article.html" class="blog-link">
+                        <span>Read Article</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Regular Articles -->
+            <article class="blog-card" data-category="business">
+                <div class="blog-image">
+                    <img src="images/2023/02/chris-brignola-X2CxUXFqKcM-unsplash.jpg" alt="Business meeting">
+                    <div class="blog-category">Business</div>
+                </div>
+                <div class="blog-content">
+                    <time class="blog-date">March 5, 2026</time>
+                    <h2>The Off-Ramp Principle: Building Partnerships That Age Well</h2>
+                    <p>The best deals aren't the ones you win. They're the ones designed to evolve.</p>
+                    <a href="#" class="blog-link">
+                        <span>Read Article</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="detroit">
+                <div class="blog-image">
+                    <img src="images/2023/02/luke-michael-DUV8TJtD2QY-unsplash.jpg" alt="City planning">
+                    <div class="blog-category">Detroit</div>
+                </div>
+                <div class="blog-content">
+                    <time class="blog-date">February 28, 2026</time>
+                    <h2>Regional Ecosystems: Where the Real Value Lives</h2>
+                    <p>Most of the value in regional development isn't where you'd expect. Here's what I've learned.</p>
+                    <a href="#" class="blog-link">
+                        <span>Read Article</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="leadership">
+                <div class="blog-image">
+                    <img src="images/2023/02/cytonn-photography-GJao3ZTX9gU-unsplash.jpg" alt="Team meeting">
+                    <div class="blog-category">Leadership</div>
+                </div>
+                <div class="blog-content">
+                    <time class="blog-date">February 20, 2026</time>
+                    <h2>Accountability Without Heroism</h2>
+                    <p>The strongest organizations don't depend on heroes. They build systems that make success automatic.</p>
+                    <a href="#" class="blog-link">
+                        <span>Read Article</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="technology">
+                <div class="blog-image">
+                    <img src="images/2023/12/photo-1542033474370-d28774f3338d.jpeg" alt="Technology">
+                    <div class="blog-category">Technology</div>
+                </div>
+                <div class="blog-content">
+                    <time class="blog-date">February 15, 2026</time>
+                    <h2>Platforms Over Products: The Infrastructure Mindset</h2>
+                    <p>I'm partial to platforms over point solutions. Here's why, and how to think about what you're building.</p>
+                    <a href="#" class="blog-link">
+                        <span>Read Article</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="detroit">
+                <div class="blog-image">
+                    <img src="images/2023/12/photo-1501147830916-ce44a6359892.jpeg" alt="Community">
+                    <div class="blog-category">Detroit</div>
+                </div>
+                <div class="blog-content">
+                    <time class="blog-date">February 8, 2026</time>
+                    <h2>When a Mayor Asked About Our Exit Strategy</h2>
+                    <p>A mayor once asked me why our plan avoided exit strategies. My answer changed how they approached every project after.</p>
+                    <a href="#" class="blog-link">
+                        <span>Read Article</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <div class="blog-pagination">
+            <span class="pagination-info">Showing 6 of 24 articles</span>
+            <button class="btn btn-outline">Load More</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <span class="logo-text">Jonathan Barlow</span>
+                    <p>Life Engineer, Guiding Communities</p>
+                </div>
+                <nav class="footer-nav">
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#ventures">Ventures</a>
+                    <a href="blog.html">Insights</a>
+                    <a href="index.html#contact">Connect</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jonathan Barlow. All rights reserved.</p>
+                <p class="footer-detroit">Made in Detroit</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.blog-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
