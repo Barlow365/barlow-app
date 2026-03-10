@@ -5,29 +5,29 @@
 
 /* CSS Variables */
 :root {
-    /* Primary Colors */
-    --pink: #ff4b89;
-    --pink-light: #ff6b9d;
-    --pink-dark: #e5356f;
-    --coral: #fd573b;
-    --coral-light: #ff7b5f;
-    --purple-bg: #f6f5ff;
-    --purple-light: #ebe9fc;
-    --purple-accent: #8b7cf6;
+    /* Primary Colors - Gold & Charcoal Executive Palette */
+    --pink: #c9a227;
+    --pink-light: #ddb94d;
+    --pink-dark: #a68518;
+    --coral: #e8b923;
+    --coral-light: #f0c94d;
+    --purple-bg: #f8f7f4;
+    --purple-light: #f0efe8;
+    --purple-accent: #4a5568;
 
-    /* Neutrals */
-    --dark: #1a1225;
-    --dark-soft: #2d2438;
-    --text: #3d3347;
-    --text-muted: #6b5f78;
+    /* Neutrals - Deep Charcoal */
+    --dark: #1a1a2e;
+    --dark-soft: #2d2d44;
+    --text: #2d3748;
+    --text-muted: #5a6478;
     --white: #ffffff;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--pink) 0%, var(--coral) 100%);
     --gradient-subtle: linear-gradient(135deg, var(--purple-bg) 0%, #fff 50%, var(--purple-light) 100%);
-    --gradient-mesh: radial-gradient(ellipse at 20% 30%, rgba(255, 75, 137, 0.15) 0%, transparent 50%),
-                     radial-gradient(ellipse at 80% 70%, rgba(253, 87, 59, 0.1) 0%, transparent 50%),
-                     radial-gradient(ellipse at 50% 50%, rgba(139, 124, 246, 0.08) 0%, transparent 60%);
+    --gradient-mesh: radial-gradient(ellipse at 20% 30%, rgba(201, 162, 39, 0.12) 0%, transparent 50%),
+                     radial-gradient(ellipse at 80% 70%, rgba(232, 185, 35, 0.08) 0%, transparent 50%),
+                     radial-gradient(ellipse at 50% 50%, rgba(74, 85, 104, 0.06) 0%, transparent 60%);
 
     /* Typography */
     --font-display: 'Syne', sans-serif;
@@ -46,7 +46,7 @@
     --shadow-sm: 0 2px 8px rgba(26, 18, 37, 0.06);
     --shadow-md: 0 8px 24px rgba(26, 18, 37, 0.08);
     --shadow-lg: 0 16px 48px rgba(26, 18, 37, 0.12);
-    --shadow-glow: 0 0 40px rgba(255, 75, 137, 0.3);
+    --shadow-glow: 0 0 40px rgba(201, 162, 39, 0.35);
 }
 
 /* Reset & Base */
