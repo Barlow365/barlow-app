@@ -3,532 +3,706 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathan Barlow | Life Engineer, Guiding Communities</title>
-    <meta name="description" content="Jonathan Barlow - Advisor, Investor, Author, Speaker. Building systems that transform Detroit and beyond.">
-
-    <!-- Fonts -->
+    <title>Jonathan Barlow | Innovator Inspiring Impact</title>
+    <meta name="description" content="Life Engineer, Serial Innovator, and Passionate Advocate. Always Fixing the Future.">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff4b89">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/2025/09/cropped-jb-1.png" type="image/png">
 </head>
 <body>
-    <!-- Noise Texture Overlay -->
-    <div class="noise-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
 
-    <!-- Floating Geometric Elements -->
-    <div class="geo-elements">
-        <div class="geo geo-1"></div>
-        <div class="geo geo-2"></div>
-        <div class="geo geo-3"></div>
-        <div class="geo geo-4"></div>
+    <!-- Floating Orbs Background -->
+    <div class="orbs-container" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="orb orb-5"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
+    <header class="nav-header">
+        <nav class="navbar">
             <a href="#" class="nav-logo">
                 <span class="logo-text">JB</span>
-                <span class="logo-line"></span>
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#advisor" class="nav-link">Advisor & Investor</a></li>
+                <li><a href="#speaker" class="nav-link">Author & Speaker</a></li>
+                <li><a href="#mayor" class="nav-link highlight">Barlow for Mayor</a></li>
+                <li><a href="#ventures" class="nav-link">Founder & Companies</a></li>
+            </ul>
+            <a href="https://calendar.app.google/ZxWuc1hhmCivsG269" target="_blank" class="nav-cta">
+                Request to Book
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#ventures">Ventures</a></li>
-                <li><a href="#blog">Insights</a></li>
-                <li><a href="#contact" class="nav-cta">Connect</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero" id="hero">
-        <div class="hero-bg">
-            <div class="hero-gradient"></div>
-            <div class="hero-lines">
-                <div class="h-line"></div>
-                <div class="h-line"></div>
-                <div class="h-line"></div>
-            </div>
-        </div>
-
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-tag" data-animate="fade-up">
-                    <span class="tag-line"></span>
-                    <span>Detroit, Michigan</span>
-                </div>
-                <h1 class="hero-title" data-animate="fade-up" data-delay="100">
-                    <span class="title-line">Life</span>
-                    <span class="title-line title-accent">Engineer</span>
-                </h1>
-                <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
-                    Guiding Communities
-                </p>
-                <p class="hero-description" data-animate="fade-up" data-delay="300">
-                    Advisor. Investor. Author. Speaker.<br>
-                    Building systems that create lasting change.
-                </p>
-                <div class="hero-actions" data-animate="fade-up" data-delay="400">
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Start a Conversation</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#about" class="btn btn-ghost">Learn More</a>
-                </div>
-            </div>
-
-            <div class="hero-image" data-animate="fade-left" data-delay="200">
-                <div class="image-frame">
-                    <div class="frame-accent frame-top"></div>
-                    <div class="frame-accent frame-bottom"></div>
-                    <img src="images/2023/02/bluesuitbro_transparent.png" alt="Jonathan Barlow" loading="eager">
-                </div>
-                <div class="image-badge">
-                    <span class="badge-number">15+</span>
-                    <span class="badge-text">Years Building<br>Communities</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="hero-scroll">
-            <span>Scroll</span>
-            <div class="scroll-line">
-                <div class="scroll-dot"></div>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="section-header">
-            <span class="section-number">01</span>
-            <h2 class="section-title">About</h2>
-            <div class="section-line"></div>
-        </div>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#advisor">Advisor & Investor</a></li>
+            <li><a href="#speaker">Author & Speaker</a></li>
+            <li><a href="#mayor">Barlow for Mayor</a></li>
+            <li><a href="#ventures">Founder & Companies</a></li>
+            <li><a href="https://calendar.app.google/ZxWuc1hhmCivsG269" target="_blank" class="mobile-cta">Request to Book</a></li>
+        </ul>
+    </div>
 
-        <div class="about-content">
-            <div class="about-intro" data-animate="fade-up">
-                <p class="intro-large">
-                    I don't believe in programs.<br>
-                    <span class="text-accent">I believe in systems.</span>
-                </p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-text" data-animate="fade-up" data-delay="100">
-                    <p>
-                        For over fifteen years, I've worked at the intersection of technology,
-                        community development, and civic leadership. From founding tech companies
-                        to advising municipalities, my focus has always been the same: building
-                        infrastructure that creates predictable, lasting outcomes.
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-mesh"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge" data-reveal>Life Engineer</span>
+                    <h1 class="hero-title" data-reveal data-delay="100">
+                        <span class="title-line">Innovator</span>
+                        <span class="title-line accent">Inspiring</span>
+                        <span class="title-line">Impact</span>
+                    </h1>
+                    <p class="hero-subtitle" data-reveal data-delay="200">
+                        Passionate advocate fostering positive relationships and personal development.
+                        I've dedicated my life to engineering a better world.
                     </p>
-                    <p>
-                        Detroit taught me that programs come and go with political winds, but
-                        systems endure. That's why I engineer solutions designed for longevity,
-                        not headlines.
-                    </p>
-                </div>
-
-                <div class="about-stats" data-animate="fade-up" data-delay="200">
-                    <div class="stat">
-                        <span class="stat-number">$50M+</span>
-                        <span class="stat-label">Capital Deployed</span>
+                    <div class="hero-actions" data-reveal data-delay="300">
+                        <a href="https://calendar.app.google/ZxWuc1hhmCivsG269" target="_blank" class="btn btn-primary">
+                            <span>Book a Consultation</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#ventures" class="btn btn-secondary">Explore Ventures</a>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">12</span>
-                        <span class="stat-label">Ventures Founded</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label">Speaking Engagements</span>
+                    <div class="hero-motto" data-reveal data-delay="400">
+                        <span class="motto-line"></span>
+                        <span class="motto-text">Always Fixing the Future</span>
+                        <span class="motto-line"></span>
                     </div>
                 </div>
-            </div>
-
-            <div class="about-roles" data-animate="fade-up" data-delay="300">
-                <div class="role">
-                    <div class="role-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
+                <div class="hero-image" data-reveal data-delay="150">
+                    <div class="image-frame">
+                        <div class="frame-accent"></div>
+                        <img src="public/images/2023/02/bluesuitbro_transparent.png" alt="Jonathan Barlow" class="profile-img">
+                        <div class="image-glow"></div>
                     </div>
-                    <h3>Advisor</h3>
-                    <p>Strategic guidance for municipalities, startups, and enterprises navigating complex transitions.</p>
-                </div>
-                <div class="role">
-                    <div class="role-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
-                        </svg>
-                    </div>
-                    <h3>Investor</h3>
-                    <p>Backing founders who build infrastructure, not just products. Systems over features.</p>
-                </div>
-                <div class="role">
-                    <div class="role-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 014 14.5V5a2 2 0 012-2h10a2 2 0 012 2v10.5a2.5 2.5 0 01-2.5 2.5H6.5A2.5 2.5 0 014 19.5z"/>
-                        </svg>
-                    </div>
-                    <h3>Author</h3>
-                    <p>Writing on leadership, economic development, and the systems that transform cities.</p>
-                </div>
-                <div class="role">
-                    <div class="role-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3zM19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/>
-                        </svg>
-                    </div>
-                    <h3>Speaker</h3>
-                    <p>Keynotes and workshops on execution, accountability, and building what lasts.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-header">
-            <span class="section-number">02</span>
-            <h2 class="section-title">Services</h2>
-            <div class="section-line"></div>
-        </div>
-
-        <div class="services-grid">
-            <article class="service-card" data-animate="fade-up">
-                <div class="service-number">01</div>
-                <div class="service-content">
-                    <h3>Advisory & Consulting</h3>
-                    <p>
-                        Strategic counsel for organizations ready to build systems, not just
-                        solve problems. I work with municipal governments, enterprise teams,
-                        and growth-stage companies on transformation initiatives.
-                    </p>
-                    <ul class="service-list">
-                        <li>Strategic Planning & Execution</li>
-                        <li>Organizational Systems Design</li>
-                        <li>Public-Private Partnership Navigation</li>
-                        <li>Change Management & Implementation</li>
-                    </ul>
-                    <a href="#contact" class="service-link">
-                        <span>Discuss Your Challenge</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
-
-            <article class="service-card" data-animate="fade-up" data-delay="100">
-                <div class="service-number">02</div>
-                <div class="service-content">
-                    <h3>Speaking & Workshops</h3>
-                    <p>
-                        Keynotes that challenge conventional wisdom and workshops that
-                        leave teams with actionable frameworks. Topics range from Detroit's
-                        renaissance to scaling systems in any organization.
-                    </p>
-                    <ul class="service-list">
-                        <li>Keynote Presentations</li>
-                        <li>Executive Leadership Workshops</li>
-                        <li>Panel Moderation</li>
-                        <li>Private Team Sessions</li>
-                    </ul>
-                    <a href="#contact" class="service-link">
-                        <span>Book for Your Event</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
-
-            <article class="service-card" data-animate="fade-up" data-delay="200">
-                <div class="service-number">03</div>
-                <div class="service-content">
-                    <h3>Investment & Partnerships</h3>
-                    <p>
-                        I invest in founders building infrastructure—technology that becomes
-                        the rails others build on. If you're creating systems, not just apps,
-                        let's talk.
-                    </p>
-                    <ul class="service-list">
-                        <li>Seed & Early Stage Investment</li>
-                        <li>Strategic Advisory Roles</li>
-                        <li>Detroit-Focused Ventures</li>
-                        <li>Community Infrastructure Projects</li>
-                    </ul>
-                    <a href="#contact" class="service-link">
-                        <span>Share Your Vision</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Ventures Section -->
-    <section class="ventures" id="ventures">
-        <div class="section-header">
-            <span class="section-number">03</span>
-            <h2 class="section-title">Ventures</h2>
-            <div class="section-line"></div>
-        </div>
-
-        <div class="ventures-intro" data-animate="fade-up">
-            <p>A selection of companies and initiatives I've founded, invested in, or advised.</p>
-        </div>
-
-        <div class="ventures-grid">
-            <div class="venture-card" data-animate="fade-up">
-                <div class="venture-logo">
-                    <img src="images/2023/12/POWERLOGO-scaled.jpg" alt="POWER">
-                </div>
-                <div class="venture-info">
-                    <h3>POWER</h3>
-                    <span class="venture-role">Founder</span>
-                </div>
-            </div>
-
-            <div class="venture-card" data-animate="fade-up" data-delay="50">
-                <div class="venture-logo">
-                    <img src="images/2023/12/mvptechlab_transparent.png" alt="MVP Tech Lab">
-                </div>
-                <div class="venture-info">
-                    <h3>MVP Tech Lab</h3>
-                    <span class="venture-role">Founder</span>
-                </div>
-            </div>
-
-            <div class="venture-card" data-animate="fade-up" data-delay="100">
-                <div class="venture-logo">
-                    <img src="images/2024/10/X-Big-Tech-Logo.webp" alt="xBigTech">
-                </div>
-                <div class="venture-info">
-                    <h3>xBigTech</h3>
-                    <span class="venture-role">Co-Founder</span>
-                </div>
-            </div>
-
-            <div class="venture-card" data-animate="fade-up" data-delay="150">
-                <div class="venture-logo">
-                    <img src="images/2023/02/ccg-logo.png" alt="CCG">
-                </div>
-                <div class="venture-info">
-                    <h3>Capital Consulting</h3>
-                    <span class="venture-role">Advisor</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog/Insights Section -->
-    <section class="blog" id="blog">
-        <div class="section-header">
-            <span class="section-number">04</span>
-            <h2 class="section-title">Insights</h2>
-            <div class="section-line"></div>
-        </div>
-
-        <div class="blog-intro" data-animate="fade-up">
-            <p>Thoughts on leadership, systems, and building what lasts.</p>
-        </div>
-
-        <div class="blog-grid">
-            <article class="blog-card blog-featured" data-animate="fade-up">
-                <div class="blog-image">
-                    <img src="images/2023/02/sean-pollock-PhYq704ffdA-unsplash.jpg" alt="Detroit skyline">
-                    <div class="blog-category">Leadership</div>
-                </div>
-                <div class="blog-content">
-                    <time class="blog-date">March 10, 2026</time>
-                    <h3>Programs vs. Systems: Why Detroit Keeps Starting Over</h3>
-                    <p>Detroit doesn't need more programs. It needs systems that actually work. There's a difference—and understanding it changes everything.</p>
-                    <a href="#" class="blog-link">
-                        <span>Read Article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
-
-            <article class="blog-card" data-animate="fade-up" data-delay="100">
-                <div class="blog-image">
-                    <img src="images/2023/02/chris-brignola-X2CxUXFqKcM-unsplash.jpg" alt="Business meeting">
-                    <div class="blog-category">Business</div>
-                </div>
-                <div class="blog-content">
-                    <time class="blog-date">March 5, 2026</time>
-                    <h3>The Off-Ramp Principle: Building Partnerships That Age Well</h3>
-                    <p>The best deals aren't the ones you win. They're the ones designed to evolve.</p>
-                    <a href="#" class="blog-link">
-                        <span>Read Article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
-
-            <article class="blog-card" data-animate="fade-up" data-delay="200">
-                <div class="blog-image">
-                    <img src="images/2023/02/luke-michael-DUV8TJtD2QY-unsplash.jpg" alt="City planning">
-                    <div class="blog-category">Detroit</div>
-                </div>
-                <div class="blog-content">
-                    <time class="blog-date">February 28, 2026</time>
-                    <h3>Regional Ecosystems: Where the Real Value Lives</h3>
-                    <p>Most of the value in regional development isn't where you'd expect. Here's what I've learned.</p>
-                    <a href="#" class="blog-link">
-                        <span>Read Article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
-        </div>
-
-        <div class="blog-cta" data-animate="fade-up">
-            <a href="blog.html" class="btn btn-outline">View All Articles</a>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery">
-        <div class="gallery-track">
-            <div class="gallery-item"><img src="images/2023/12/22552308_10155743167954354_1730097866085668604_n.jpg" alt="Speaking engagement"></div>
-            <div class="gallery-item"><img src="images/2023/12/28701377_2047298808620404_7977459859212302613_o-1.jpg" alt="Community event"></div>
-            <div class="gallery-item"><img src="images/2023/12/301090675_10106983798528818_755208980859838008_n-1.jpg" alt="Leadership"></div>
-            <div class="gallery-item"><img src="images/2023/12/30741251_10155472368410509_5180748122627768320_n-1.jpg" alt="Panel discussion"></div>
-            <div class="gallery-item"><img src="images/2023/12/45621540_2309991102362668_7888374039503175680_n-1.jpg" alt="Conference"></div>
-            <div class="gallery-item"><img src="images/2023/12/49612721_10104338391695318_1283644344703647744_n-1.jpg" alt="Speaking"></div>
-            <div class="gallery-item"><img src="images/2023/12/64975516_2759331394083805_2146325419874320384_n-1.jpg" alt="Event"></div>
-            <div class="gallery-item"><img src="images/2023/12/22552308_10155743167954354_1730097866085668604_n.jpg" alt="Speaking engagement"></div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-bg">
-            <div class="contact-gradient"></div>
-        </div>
-
-        <div class="section-header">
-            <span class="section-number">05</span>
-            <h2 class="section-title">Connect</h2>
-            <div class="section-line"></div>
-        </div>
-
-        <div class="contact-content">
-            <div class="contact-intro" data-animate="fade-up">
-                <p class="intro-large">Let's build something that lasts.</p>
-                <p>Whether you're exploring advisory work, booking a speaking engagement, or discussing investment opportunities—I'm interested in conversations that lead to action.</p>
-            </div>
-
-            <div class="contact-grid">
-                <form class="contact-form" data-animate="fade-up" data-delay="100">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                    <div class="floating-stats">
+                        <div class="stat-card" data-reveal data-delay="400">
+                            <span class="stat-number">40+</span>
+                            <span class="stat-label">Ventures</span>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                        <div class="stat-card" data-reveal data-delay="500">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Years</span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="subject">What brings you here?</label>
-                        <select id="subject" name="subject">
-                            <option value="">Select an option</option>
-                            <option value="advisory">Advisory & Consulting</option>
-                            <option value="speaking">Speaking Engagement</option>
-                            <option value="investment">Investment Discussion</option>
-                            <option value="partnership">Partnership Opportunity</option>
-                            <option value="other">Something Else</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">
-                        <span>Send Message</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                        </svg>
-                    </button>
-                </form>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>Scroll to explore</span>
+                <div class="scroll-indicator">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div>
+        </section>
 
-                <div class="contact-info" data-animate="fade-up" data-delay="200">
-                    <div class="info-block">
-                        <h4>Direct</h4>
-                        <a href="mailto:jonathan@barlow.app">jonathan@barlow.app</a>
+        <!-- About / Strengths Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <div class="section-header" data-reveal>
+                    <span class="section-label">What I Do</span>
+                    <h2 class="section-title">Creating Futuristic Solutions</h2>
+                </div>
+                <div class="strengths-grid">
+                    <div class="strength-card" data-reveal data-delay="100">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2"/>
+                                <path d="M32 16v32M16 32h32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="32" cy="32" r="8" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Serial Innovator</h3>
+                        <p>Transforming ideas into thriving ventures across technology, media, community development, and beyond.</p>
                     </div>
-                    <div class="info-block">
-                        <h4>Location</h4>
-                        <p>Detroit, Michigan</p>
+                    <div class="strength-card" data-reveal data-delay="200">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 64 64" fill="none">
+                                <rect x="8" y="16" width="48" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 32l8 8 16-16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Brand & Marketing Leadership</h3>
+                        <p>Building powerful brands that resonate with communities and drive measurable impact.</p>
                     </div>
-                    <div class="info-block">
-                        <h4>Social</h4>
+                    <div class="strength-card" data-reveal data-delay="300">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 64 64" fill="none">
+                                <path d="M32 8l6 18h18l-14 10 6 18-16-12-16 12 6-18L8 26h18z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>Technology Pioneer</h3>
+                        <p>Leveraging cutting-edge technology to solve complex problems and create scalable solutions.</p>
+                    </div>
+                    <div class="strength-card" data-reveal data-delay="400">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="20" r="12" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 52c0-11 9-20 20-20s20 9 20 20" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Community Champion</h3>
+                        <p>Empowering Detroit and communities nationwide through advocacy, investment, and direct action.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advisor & Investor Section -->
+        <section id="advisor" class="advisor-section">
+            <div class="section-mesh"></div>
+            <div class="section-container">
+                <div class="advisor-content">
+                    <div class="advisor-text" data-reveal>
+                        <span class="section-label">All Sectors & Industries</span>
+                        <h2 class="section-title">Advisor & Investor</h2>
+                        <p class="section-desc">At the core of thriving tech innovations, family-centric venture capital, and expansive advisory networks, I stand committed to guiding visionary entrepreneurs and investors towards unprecedented growth and success.</p>
+                        <div class="advisor-features">
+                            <div class="feature">
+                                <span class="feature-icon">→</span>
+                                <span>Strategic Planning</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">→</span>
+                                <span>Investment Strategy</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">→</span>
+                                <span>Board Advisory</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">→</span>
+                                <span>Startup Mentorship</span>
+                            </div>
+                        </div>
+                        <a href="http://advisorunion.com" target="_blank" class="btn btn-primary">
+                            Visit Advisor Union
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="advisor-cards">
+                        <div class="investment-card" data-reveal data-delay="100">
+                            <div class="card-header">
+                                <img src="public/images/2023/12/mvptechlab_transparent.png" alt="MVP Tech Lab" class="card-logo" onerror="this.style.display='none'">
+                            </div>
+                            <h4>MVP Tech Lab</h4>
+                            <span class="card-tag">Collaboration Hub</span>
+                            <p>Spearheading cutting-edge projects and fostering an ecosystem of technological advancement.</p>
+                            <a href="http://mvptechlab.org" target="_blank" class="card-link">Learn more →</a>
+                        </div>
+                        <div class="investment-card" data-reveal data-delay="200">
+                            <div class="card-header">
+                                <div class="card-icon-placeholder">FPF</div>
+                            </div>
+                            <h4>Family Power Fund</h4>
+                            <span class="card-tag">Venture Fund</span>
+                            <p>Blending traditional values with modern investment strategies for family offices.</p>
+                            <a href="http://familypowerfund.com" target="_blank" class="card-link">Learn more →</a>
+                        </div>
+                        <div class="investment-card" data-reveal data-delay="300">
+                            <div class="card-header">
+                                <img src="public/images/2024/11/X-Big-Tech-Logo.webp" alt="X Big Tech" class="card-logo" onerror="this.style.display='none'">
+                            </div>
+                            <h4>X Big Tech</h4>
+                            <span class="card-tag">Tech Consulting</span>
+                            <p>Top-tier expertise from tech giants in AI, digital transformation, and data strategy.</p>
+                            <a href="http://xbigtech.com" target="_blank" class="card-link">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Author & Speaker Section -->
+        <section id="speaker" class="speaker-section">
+            <div class="section-container">
+                <div class="section-header centered" data-reveal>
+                    <span class="section-label">Advocating for Global Unity</span>
+                    <h2 class="section-title">Author & Speaker</h2>
+                    <p class="section-subtitle">Bringing a rich tapestry of skills and experiences as a dynamic professional known for strategic insights in technology, investment, and advisory roles.</p>
+                </div>
+                <div class="speaker-grid">
+                    <div class="speaker-card main" data-reveal data-delay="100">
+                        <div class="speaker-image">
+                            <img src="public/images/2023/12/1566261B-1AC8-4261-9485-AF1C4C2EB69F.png" alt="Radical Sunday" onerror="this.parentElement.classList.add('no-image')">
+                        </div>
+                        <div class="speaker-content">
+                            <span class="speaker-tag">Faith & Leadership</span>
+                            <h3>Radical Sunday</h3>
+                            <p>As a minister from Mt Pleasant Missionary Baptist Church, bringing a unique blend of spiritual insight and practical wisdom to speaking engagements.</p>
+                            <a href="http://radicalsunday.com" target="_blank" class="btn btn-outline">Visit Radical Sunday</a>
+                        </div>
+                    </div>
+                    <div class="speaker-card" data-reveal data-delay="200">
+                        <div class="speaker-icon">
+                            <svg viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="32" cy="32" r="12" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="32" cy="32" r="4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Let's Talk Roundtable</h3>
+                        <p>Leading a series of roundtables across the nation on Health & Safety, Equity, and Freedom.</p>
+                        <a href="http://letstalkroundtable.com" target="_blank" class="card-link">Join the conversation →</a>
+                    </div>
+                    <div class="speaker-card" data-reveal data-delay="300">
+                        <div class="speaker-icon">
+                            <svg viewBox="0 0 64 64" fill="none">
+                                <rect x="12" y="8" width="40" height="48" rx="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 20h24M20 28h24M20 36h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Trainer & CEO Coach</h3>
+                        <p>High-level training and coaching specializing in small retreats and intimate conferences.</p>
+                        <a href="https://calendar.app.google/ZxWuc1hhmCivsG269" target="_blank" class="card-link">Book a session →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barlow for Mayor Section -->
+        <section id="mayor" class="mayor-section">
+            <div class="mayor-bg"></div>
+            <div class="section-container">
+                <div class="mayor-content" data-reveal>
+                    <div class="mayor-badge">
+                        <span>2025 Campaign</span>
+                    </div>
+                    <h2 class="mayor-title">Barlow for Mayor of Detroit</h2>
+                    <p class="mayor-subtitle">Building a stronger, more equitable Detroit through visionary leadership, community investment, and systemic change.</p>
+                    <div class="mayor-stats">
+                        <div class="mayor-stat">
+                            <span class="stat-value">Detroit</span>
+                            <span class="stat-desc">Born & Raised</span>
+                        </div>
+                        <div class="mayor-stat">
+                            <span class="stat-value">20+</span>
+                            <span class="stat-desc">Years of Service</span>
+                        </div>
+                        <div class="mayor-stat">
+                            <span class="stat-value">Community</span>
+                            <span class="stat-desc">First Approach</span>
+                        </div>
+                    </div>
+                    <a href="https://www.votebarlow.com" target="_blank" class="btn btn-mayor">
+                        <span>Let's Win Detroit</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ventures Ecosystem Section -->
+        <section id="ventures" class="ventures-section">
+            <div class="section-container">
+                <div class="section-header centered" data-reveal>
+                    <span class="section-label">Founder & Companies</span>
+                    <h2 class="section-title">The Venture Ecosystem</h2>
+                    <p class="section-subtitle">A portfolio of interconnected ventures spanning technology, media, events, community development, and social impact.</p>
+                </div>
+
+                <!-- Interactive Venture Constellation -->
+                <div class="ventures-constellation" data-reveal>
+                    <div class="constellation-center">
+                        <span>JB</span>
+                    </div>
+                    <div class="constellation-orbit orbit-1">
+                        <div class="orbit-node" data-venture="power" style="--angle: 0deg;">
+                            <span class="node-label">Power Universe</span>
+                        </div>
+                        <div class="orbit-node" data-venture="wknd" style="--angle: 90deg;">
+                            <span class="node-label">WKND Co</span>
+                        </div>
+                        <div class="orbit-node" data-venture="innovation" style="--angle: 180deg;">
+                            <span class="node-label">Innovation Labs</span>
+                        </div>
+                        <div class="orbit-node" data-venture="media" style="--angle: 270deg;">
+                            <span class="node-label">Press Media Haus</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venture Cards Grid -->
+                <div class="ventures-grid">
+                    <!-- Category: Community & Impact -->
+                    <div class="venture-category" data-reveal>
+                        <h3 class="category-title">Community & Impact</h3>
+                        <div class="venture-cards">
+                            <a href="http://1vibe.org" target="_blank" class="venture-card">
+                                <div class="venture-icon">1V</div>
+                                <div class="venture-info">
+                                    <h4>One Vibe</h4>
+                                    <p>Community unity movement</p>
+                                </div>
+                            </a>
+                            <a href="http://powertour.org" target="_blank" class="venture-card">
+                                <div class="venture-icon">PT</div>
+                                <div class="venture-info">
+                                    <h4>Power Tour</h4>
+                                    <p>Empowerment events nationwide</p>
+                                </div>
+                            </a>
+                            <a href="http://projectletsbuild.org" target="_blank" class="venture-card">
+                                <div class="venture-icon">PLB</div>
+                                <div class="venture-info">
+                                    <h4>Project Let's Build</h4>
+                                    <p>Community development initiative</p>
+                                </div>
+                            </a>
+                            <a href="http://perspectivecollective.org" target="_blank" class="venture-card">
+                                <div class="venture-icon">PC</div>
+                                <div class="venture-info">
+                                    <h4>Perspective Collective</h4>
+                                    <p>Civic engagement 501(c)(4)</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category: Technology & Innovation -->
+                    <div class="venture-category" data-reveal data-delay="100">
+                        <h3 class="category-title">Technology & Innovation</h3>
+                        <div class="venture-cards">
+                            <a href="http://xbigtech.com" target="_blank" class="venture-card">
+                                <div class="venture-icon">XBT</div>
+                                <div class="venture-info">
+                                    <h4>X Big Tech</h4>
+                                    <p>Enterprise tech consulting</p>
+                                </div>
+                            </a>
+                            <a href="http://mvptechlab.org" target="_blank" class="venture-card">
+                                <div class="venture-icon">MVP</div>
+                                <div class="venture-info">
+                                    <h4>MVP Tech Lab</h4>
+                                    <p>Innovation collaboration hub</p>
+                                </div>
+                            </a>
+                            <a href="http://innovationlabs.ventures" target="_blank" class="venture-card">
+                                <div class="venture-icon">ILV</div>
+                                <div class="venture-info">
+                                    <h4>Innovation Labs & Ventures</h4>
+                                    <p>Startup accelerator & fund</p>
+                                </div>
+                            </a>
+                            <a href="http://urpower.org" target="_blank" class="venture-card">
+                                <div class="venture-icon">UR</div>
+                                <div class="venture-info">
+                                    <h4>UR Power</h4>
+                                    <p>Digital empowerment platform</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category: Events & Entertainment -->
+                    <div class="venture-category" data-reveal data-delay="200">
+                        <h3 class="category-title">Events & Entertainment</h3>
+                        <div class="venture-cards">
+                            <a href="http://miamiwknd.com" target="_blank" class="venture-card featured">
+                                <div class="venture-icon">WKND</div>
+                                <div class="venture-info">
+                                    <h4>WKND Company</h4>
+                                    <p>Multi-city experience platform</p>
+                                </div>
+                            </a>
+                            <a href="http://pressmedia.haus" target="_blank" class="venture-card">
+                                <div class="venture-icon">PMH</div>
+                                <div class="venture-info">
+                                    <h4>Press Media Haus</h4>
+                                    <p>Full-service media agency</p>
+                                </div>
+                            </a>
+                            <a href="http://brunchonthegreen.com" target="_blank" class="venture-card">
+                                <div class="venture-icon">BTG</div>
+                                <div class="venture-info">
+                                    <h4>Brunch on the Green</h4>
+                                    <p>Golf & lifestyle events</p>
+                                </div>
+                            </a>
+                            <a href="http://mlkweekend.org" target="_blank" class="venture-card">
+                                <div class="venture-icon">MLK</div>
+                                <div class="venture-info">
+                                    <h4>MLK Weekend</h4>
+                                    <p>Service & celebration</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category: Advisory & Investment -->
+                    <div class="venture-category" data-reveal data-delay="300">
+                        <h3 class="category-title">Advisory & Investment</h3>
+                        <div class="venture-cards">
+                            <a href="http://advisorunion.com" target="_blank" class="venture-card">
+                                <div class="venture-icon">AU</div>
+                                <div class="venture-info">
+                                    <h4>Advisor Union</h4>
+                                    <p>Expert advisory network</p>
+                                </div>
+                            </a>
+                            <a href="http://familypowerfund.com" target="_blank" class="venture-card">
+                                <div class="venture-icon">FPF</div>
+                                <div class="venture-info">
+                                    <h4>Family Power Fund</h4>
+                                    <p>Family office VC</p>
+                                </div>
+                            </a>
+                            <a href="http://bankscompany.us" target="_blank" class="venture-card">
+                                <div class="venture-icon">B&C</div>
+                                <div class="venture-info">
+                                    <h4>Banks & Company</h4>
+                                    <p>Energy sector consulting</p>
+                                </div>
+                            </a>
+                            <a href="#" class="venture-card">
+                                <div class="venture-icon">BSF</div>
+                                <div class="venture-info">
+                                    <h4>Build Skill Foundation</h4>
+                                    <p>501(c)(3) workforce dev</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media / Forbes Section -->
+        <section class="media-section">
+            <div class="section-container">
+                <div class="media-content" data-reveal>
+                    <span class="section-label">In The Media</span>
+                    <div class="media-featured">
+                        <div class="forbes-badge">
+                            <svg viewBox="0 0 100 32" class="forbes-logo">
+                                <text x="0" y="26" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="currentColor">Forbes</text>
+                            </svg>
+                        </div>
+                        <p class="media-quote">"A visionary leader reshaping Detroit's future through technology and community investment."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <div class="section-container">
+                <div class="section-header" data-reveal>
+                    <span class="section-label">Moments</span>
+                    <h2 class="section-title">In Action</h2>
+                </div>
+                <div class="gallery-grid" data-reveal>
+                    <div class="gallery-item large">
+                        <img src="public/images/2023/12/22499024_10155941205211564_4498878268806122833_o.jpg" alt="Community event" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="public/images/2023/12/28871112_10103774144391438_937848871097306027_n.jpg" alt="Speaking engagement" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="public/images/2023/12/22552308_10155743167954354_1730097866085668604_n.jpg" alt="Conference" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="public/images/2023/12/45621540_2309991102362668_7888374039503175680_n.jpg" alt="Community gathering" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="public/images/2023/12/27993412_10103726115376968_3719748521707119004_o.jpg" alt="Event" loading="lazy">
+                    </div>
+                    <div class="gallery-item tall">
+                        <img src="public/images/2023/12/64975516_2759331394083805_2146325419874320384_n.jpg" alt="Speaking" loading="lazy" onerror="this.parentElement.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-mesh"></div>
+            <div class="section-container">
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-reveal>
+                        <span class="section-label">Get In Touch</span>
+                        <h2 class="section-title">Let's Connect</h2>
+                        <p class="contact-desc">Ready to collaborate, invest, or explore opportunities? Reach out directly or book a consultation.</p>
+
+                        <div class="contact-details">
+                            <a href="tel:+13137282398" class="contact-item">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Phone</span>
+                                    <span class="contact-value">313-728-2398</span>
+                                </div>
+                            </a>
+                            <a href="mailto:j@barlow.app" class="contact-item">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">j@barlow.app</span>
+                                </div>
+                            </a>
+                        </div>
+
                         <div class="social-links">
-                            <a href="https://linkedin.com/in/jonathanbarlow" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/barlowdetroit/" target="_blank" class="social-link" aria-label="LinkedIn">
                                 <svg viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                                 </svg>
                             </a>
-                            <a href="https://twitter.com/jonathanbarlow" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                            <a href="https://www.instagram.com/miamibarlow/" target="_blank" class="social-link" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/JONATHAN.EDWARD.BARLOW/" target="_blank" class="social-link" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="https://twitter.com/Barlow365" target="_blank" class="social-link" aria-label="X (Twitter)">
                                 <svg viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                                 </svg>
                             </a>
                         </div>
+
+                        <div class="downloads">
+                            <h4>Downloads</h4>
+                            <div class="download-links">
+                                <a href="public/downloads/Barlow-Speaker-Profile.pdf" class="download-link" download>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                                    </svg>
+                                    Speaker Profile
+                                </a>
+                                <a href="public/downloads/Jonathan-Barlow.vcf" class="download-link" download>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+                                    </svg>
+                                    Contact Card
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="info-quote">
-                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                        </svg>
-                        <p>Systems create compound returns. Build infrastructure, not just features.</p>
+                    <div class="contact-form-wrapper" data-reveal data-delay="200">
+                        <form id="contact-form" class="contact-form">
+                            <h3>Send a Message</h3>
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="consultation">Book a Consultation</option>
+                                    <option value="speaking">Speaking Engagement</option>
+                                    <option value="investment">Investment Opportunity</option>
+                                    <option value="partnership">Partnership Inquiry</option>
+                                    <option value="media">Media Request</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="Your message..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <span>Send Message</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
+                        </form>
+                        <div id="form-success" class="form-success hidden">
+                            <div class="success-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for reaching out. I'll get back to you soon.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-main">
+        <div class="section-container">
+            <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="logo-text">Jonathan Barlow</span>
-                    <p>Life Engineer, Guiding Communities</p>
+                    <span class="footer-logo">JB</span>
+                    <p class="footer-tagline">Always Fixing the Future</p>
                 </div>
-                <nav class="footer-nav">
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#ventures">Ventures</a>
-                    <a href="#blog">Insights</a>
-                    <a href="#contact">Connect</a>
-                </nav>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigate</h4>
+                        <a href="#home">Home</a>
+                        <a href="#advisor">Advisor & Investor</a>
+                        <a href="#speaker">Author & Speaker</a>
+                        <a href="#ventures">Ventures</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="https://www.linkedin.com/in/barlowdetroit/" target="_blank">LinkedIn</a>
+                        <a href="https://www.instagram.com/miamibarlow/" target="_blank">Instagram</a>
+                        <a href="https://twitter.com/Barlow365" target="_blank">X / Twitter</a>
+                        <a href="mailto:j@barlow.app">Email</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Action</h4>
+                        <a href="https://www.votebarlow.com" target="_blank">Vote Barlow</a>
+                        <a href="https://calendar.app.google/ZxWuc1hhmCivsG269" target="_blank">Book a Call</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Jonathan Barlow. All rights reserved.</p>
-                <p class="footer-detroit">Made in Detroit</p>
+                <p>&copy; 2024 Jonathan Barlow. All Rights Reserved.</p>
+                <p class="footer-credit">Engineered with purpose.</p>
             </div>
         </div>
     </footer>
