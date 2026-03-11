@@ -19,7 +19,7 @@
     --dark: #0f172a;
     --dark-soft: #1e293b;
     --text: #334155;
-    --text-muted: #64748b;
+    --text-muted: #475569;
     --white: #ffffff;
 
     /* Gradients */
@@ -67,11 +67,6 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
-    cursor: none !important;
-}
-
-body * {
-    cursor: none !important;
 }
 
 img {
@@ -87,16 +82,13 @@ a {
 
 button {
     font-family: inherit;
-    cursor: none;
+    cursor: pointer;
 }
 
-/* Custom Cursor */
+/* Custom Cursor - Hidden, using normal cursor */
 .cursor-dot,
 .cursor-ring {
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
+    display: none;
 }
 
 .cursor-dot {
