@@ -4,8 +4,8 @@
     "description": "Life Engineer, Serial Innovator, and Passionate Advocate. Always Fixing the Future.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#f8f7f4",
-    "theme_color": "#c9a227",
+    "background_color": "#f8fafc",
+    "theme_color": "#1e40af",
     "orientation": "portrait-primary",
     "icons": [
         {

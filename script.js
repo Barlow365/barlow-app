@@ -44,7 +44,7 @@
         hoverElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursorRing.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursorRing.style.borderColor = 'rgba(201, 162, 39, 0.8)';
+                cursorRing.style.borderColor = 'rgba(30, 64, 175, 0.8)';
             });
             el.addEventListener('mouseleave', () => {
                 cursorRing.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -460,7 +460,7 @@
         top: 0;
         left: 0;
         height: 3px;
-        background: linear-gradient(135deg, #c9a227 0%, #e8b923 100%);
+        background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
         z-index: 9999;
         transition: width 0.1s ease;
     `;
