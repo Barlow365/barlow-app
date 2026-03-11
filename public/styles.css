@@ -1843,3 +1843,221 @@ button:hover ~ .cursor-dot {
         font-size: 2rem;
     }
 }
+
+/* ==================== DISTRIBUTED IMAGES LAYOUT ==================== */
+
+/* About Section Split Layout */
+.about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.about-image {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(30, 64, 175, 0.15);
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-text-content .section-header {
+    text-align: left;
+}
+
+.about-description {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-top: 1.5rem;
+}
+
+.about-feature-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.about-feature-images img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.about-feature-images img:hover {
+    transform: translateY(-8px);
+}
+
+/* Advisor Inline Image */
+.advisor-image-inline {
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.advisor-image-inline img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Speaker Section Intro */
+.speaker-intro {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.speaker-intro-image {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(30, 64, 175, 0.15);
+}
+
+.speaker-intro-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.speaker-intro-text .section-header {
+    text-align: left;
+}
+
+/* Highlight Banner (replaces Gallery) */
+.highlight-banner {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(30, 64, 175, 0.05) 100%);
+}
+
+.highlight-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.highlight-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.highlight-images img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s ease;
+}
+
+.highlight-images img:hover {
+    transform: scale(1.03);
+}
+
+.highlight-text h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.highlight-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Responsive for distributed images */
+@media (max-width: 992px) {
+    .about-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .about-text-content .section-header {
+        text-align: center;
+    }
+
+    .about-description {
+        text-align: center;
+    }
+
+    .about-feature-images {
+        grid-template-columns: 1fr;
+    }
+
+    .speaker-intro {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .speaker-intro-text .section-header {
+        text-align: center;
+    }
+
+    .highlight-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .highlight-images {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .highlight-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-feature-images img {
+        height: 220px;
+    }
+
+    .highlight-images {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .highlight-images img:last-child {
+        display: none;
+    }
+
+    .highlight-images img {
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlight-images {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-images img:nth-child(2) {
+        display: none;
+    }
+
+    .highlight-images img {
+        height: 200px;
+    }
+}
