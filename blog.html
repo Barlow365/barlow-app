@@ -3,228 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights | Jonathan Barlow</title>
-    <meta name="description" content="Thoughts on leadership, systems, and building what lasts. Articles by Jonathan Barlow.">
+    <title>Blog | Jonathan Barlow</title>
+    <meta name="description" content="Insights on leadership, technology, Detroit, and building systems that work.">
 
-    <!-- Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://barlow.app/blog">
+    <meta property="og:title" content="Blog | Jonathan Barlow">
+    <meta property="og:description" content="Insights on leadership, technology, Detroit, and building systems that work.">
+    <meta property="og:image" content="https://barlow.app/og-image.webp">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e40af">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog.css">
-    <link rel="icon" href="images/2025/09/cropped-jb-1.png" type="image/png">
 </head>
 <body>
-    <!-- Noise Texture Overlay -->
-    <div class="noise-overlay"></div>
-
-    <!-- Floating Geometric Elements -->
-    <div class="geo-elements">
-        <div class="geo geo-1"></div>
-        <div class="geo geo-2"></div>
-    </div>
-
     <!-- Navigation -->
-    <nav class="nav scrolled" id="nav">
-        <div class="nav-inner">
+    <header class="nav-header">
+        <nav class="navbar">
             <a href="index.html" class="nav-logo">
                 <span class="logo-text">JB</span>
-                <span class="logo-line"></span>
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="advisor.html" class="nav-link">Advisor & Investor</a></li>
+                <li><a href="speaker.html" class="nav-link">Author & Speaker</a></li>
+                <li><a href="ventures.html" class="nav-link">Founder & Companies</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+            </ul>
+            <a href="https://calendar.app.google/ZxWuc1hhmCivsG269" target="_blank" class="nav-cta">
+                Request to Book
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#ventures">Ventures</a></li>
-                <li><a href="blog.html" class="active">Insights</a></li>
-                <li><a href="index.html#contact" class="nav-cta">Connect</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Blog Header -->
-    <header class="blog-header">
-        <div class="blog-header-content">
-            <div class="section-header">
-                <span class="section-number">Insights</span>
-                <h1 class="section-title">Articles & Essays</h1>
-                <div class="section-line"></div>
-            </div>
-            <p class="blog-header-description">
-                Thoughts on leadership, systems, Detroit, and building what lasts.
-            </p>
-        </div>
+        </nav>
     </header>
 
-    <!-- Blog Content -->
-    <main class="blog-main">
-        <div class="blog-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="leadership">Leadership</button>
-            <button class="filter-btn" data-filter="detroit">Detroit</button>
-            <button class="filter-btn" data-filter="business">Business</button>
-            <button class="filter-btn" data-filter="technology">Technology</button>
-        </div>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="advisor.html">Advisor & Investor</a></li>
+            <li><a href="speaker.html">Author & Speaker</a></li>
+            <li><a href="ventures.html">Founder & Companies</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="https://calendar.app.google/ZxWuc1hhmCivsG269" target="_blank" class="mobile-cta">Request to Book</a></li>
+        </ul>
+    </div>
 
-        <div class="blog-list">
-            <!-- Featured Article -->
-            <article class="blog-card blog-featured" data-category="leadership">
-                <div class="blog-image">
-                    <img src="images/2023/02/sean-pollock-PhYq704ffdA-unsplash.jpg" alt="Detroit skyline">
-                    <div class="blog-category">Leadership</div>
+    <main>
+        <!-- Blog Header -->
+        <section class="blog-header">
+            <div class="section-container">
+                <div class="blog-header-content">
+                    <span class="section-label">Insights & Ideas</span>
+                    <h1 class="page-title">The Blog</h1>
+                    <p class="page-subtitle">Thoughts on leadership, technology, Detroit, and building systems that actually work.</p>
                 </div>
-                <div class="blog-content">
-                    <time class="blog-date">March 10, 2026</time>
-                    <h2>Programs vs. Systems: Why Detroit Keeps Starting Over</h2>
-                    <p>Detroit doesn't need more programs. It needs systems that actually work. There's a difference—and understanding it changes everything.</p>
-                    <a href="article.html" class="blog-link">
-                        <span>Read Article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
+                <div class="blog-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="detroit">Detroit</button>
+                    <button class="category-btn" data-category="leadership">Leadership</button>
+                    <button class="category-btn" data-category="technology">Technology</button>
+                    <button class="category-btn" data-category="business">Business</button>
                 </div>
-            </article>
+            </div>
+        </section>
 
-            <!-- Regular Articles -->
-            <article class="blog-card" data-category="business">
-                <div class="blog-image">
-                    <img src="images/2023/02/chris-brignola-X2CxUXFqKcM-unsplash.jpg" alt="Business meeting">
-                    <div class="blog-category">Business</div>
-                </div>
-                <div class="blog-content">
-                    <time class="blog-date">March 5, 2026</time>
-                    <h2>The Off-Ramp Principle: Building Partnerships That Age Well</h2>
-                    <p>The best deals aren't the ones you win. They're the ones designed to evolve.</p>
-                    <a href="#" class="blog-link">
-                        <span>Read Article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
+        <!-- Featured Post -->
+        <section class="featured-post-section">
+            <div class="section-container">
+                <article class="featured-post">
+                    <div class="featured-image">
+                        <img src="public/images/2023/12/22499024_10155941205211564_4498878268806122833_o.jpg" alt="Featured post">
+                        <span class="post-category">Detroit</span>
+                    </div>
+                    <div class="featured-content">
+                        <div class="post-meta">
+                            <span class="post-date">March 10, 2026</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h2 class="featured-title">Programs vs. Systems: Why Detroit Keeps Starting Over</h2>
+                        <p class="featured-excerpt">I've watched Detroit launch another workforce development program. Another small business initiative. Another neighborhood revitalization effort. The press releases sound the same as they did five years ago. Meanwhile, the same problems persist because we keep building programs instead of systems.</p>
+                        <a href="posts/programs-vs-systems.html" class="btn btn-primary">
+                            Read Article
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-            <article class="blog-card" data-category="detroit">
-                <div class="blog-image">
-                    <img src="images/2023/02/luke-michael-DUV8TJtD2QY-unsplash.jpg" alt="City planning">
-                    <div class="blog-category">Detroit</div>
-                </div>
-                <div class="blog-content">
-                    <time class="blog-date">February 28, 2026</time>
-                    <h2>Regional Ecosystems: Where the Real Value Lives</h2>
-                    <p>Most of the value in regional development isn't where you'd expect. Here's what I've learned.</p>
-                    <a href="#" class="blog-link">
-                        <span>Read Article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
+        <!-- Blog Grid -->
+        <section class="blog-grid-section">
+            <div class="section-container">
+                <div class="blog-grid">
+                    <article class="blog-card" data-category="leadership">
+                        <div class="card-image">
+                            <img src="public/images/2023/12/28871112_10103774144391438_937848871097306027_n.jpg" alt="Leadership">
+                            <span class="post-category">Leadership</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span class="post-date">March 8, 2026</span>
+                                <span class="read-time">4 min read</span>
+                            </div>
+                            <h3>Most Leadership Advice Is Backwards</h3>
+                            <p>They tell you to think big and start small. I say think in systems and start with structure.</p>
+                            <a href="#" class="card-link">Read more →</a>
+                        </div>
+                    </article>
 
-            <article class="blog-card" data-category="leadership">
-                <div class="blog-image">
-                    <img src="images/2023/02/cytonn-photography-GJao3ZTX9gU-unsplash.jpg" alt="Team meeting">
-                    <div class="blog-category">Leadership</div>
-                </div>
-                <div class="blog-content">
-                    <time class="blog-date">February 20, 2026</time>
-                    <h2>Accountability Without Heroism</h2>
-                    <p>The strongest organizations don't depend on heroes. They build systems that make success automatic.</p>
-                    <a href="#" class="blog-link">
-                        <span>Read Article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
+                    <article class="blog-card" data-category="technology">
+                        <div class="card-image">
+                            <img src="public/images/2023/12/22552308_10155743167954354_1730097866085668604_n.jpg" alt="Technology">
+                            <span class="post-category">Technology</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span class="post-date">March 5, 2026</span>
+                                <span class="read-time">6 min read</span>
+                            </div>
+                            <h3>Why I Judge Vendors by Change Management</h3>
+                            <p>If they ignore frontline workers in their implementation plan, they don't understand how real transformation happens.</p>
+                            <a href="#" class="card-link">Read more →</a>
+                        </div>
+                    </article>
 
-            <article class="blog-card" data-category="technology">
-                <div class="blog-image">
-                    <img src="images/2023/12/photo-1542033474370-d28774f3338d.jpeg" alt="Technology">
-                    <div class="blog-category">Technology</div>
-                </div>
-                <div class="blog-content">
-                    <time class="blog-date">February 15, 2026</time>
-                    <h2>Platforms Over Products: The Infrastructure Mindset</h2>
-                    <p>I'm partial to platforms over point solutions. Here's why, and how to think about what you're building.</p>
-                    <a href="#" class="blog-link">
-                        <span>Read Article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
+                    <article class="blog-card" data-category="business">
+                        <div class="card-image">
+                            <img src="public/images/2023/12/45621540_2309991102362668_7888374039503175680_n.jpg" alt="Business">
+                            <span class="post-category">Business</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span class="post-date">March 3, 2026</span>
+                                <span class="read-time">5 min read</span>
+                            </div>
+                            <h3>The Projects That Age Well</h3>
+                            <p>They're the ones with clear off-ramps. Public-private partnerships fail when exit strategies aren't built in from day one.</p>
+                            <a href="#" class="card-link">Read more →</a>
+                        </div>
+                    </article>
 
-            <article class="blog-card" data-category="detroit">
-                <div class="blog-image">
-                    <img src="images/2023/12/photo-1501147830916-ce44a6359892.jpeg" alt="Community">
-                    <div class="blog-category">Detroit</div>
-                </div>
-                <div class="blog-content">
-                    <time class="blog-date">February 8, 2026</time>
-                    <h2>When a Mayor Asked About Our Exit Strategy</h2>
-                    <p>A mayor once asked me why our plan avoided exit strategies. My answer changed how they approached every project after.</p>
-                    <a href="#" class="blog-link">
-                        <span>Read Article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </article>
-        </div>
+                    <article class="blog-card" data-category="detroit">
+                        <div class="card-image">
+                            <img src="public/images/2023/12/27993412_10103726115376968_3719748521707119004_o.jpg" alt="Detroit">
+                            <span class="post-category">Detroit</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span class="post-date">February 28, 2026</span>
+                                <span class="read-time">7 min read</span>
+                            </div>
+                            <h3>Regional Ecosystems and the Value They Create</h3>
+                            <p>Most of the value in regional ecosystems comes from connection density, not individual company strength.</p>
+                            <a href="#" class="card-link">Read more →</a>
+                        </div>
+                    </article>
 
-        <div class="blog-pagination">
-            <span class="pagination-info">Showing 6 of 24 articles</span>
-            <button class="btn btn-outline">Load More</button>
-        </div>
+                    <article class="blog-card" data-category="leadership">
+                        <div class="card-image">
+                            <img src="public/images/2023/12/1566261B-1AC8-4261-9485-AF1C4C2EB69F.png" alt="Radical Sunday">
+                            <span class="post-category">Leadership</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span class="post-date">February 25, 2026</span>
+                                <span class="read-time">8 min read</span>
+                            </div>
+                            <h3>Radical Sunday: Faith Meets Execution</h3>
+                            <p>The first book in the series explores how spiritual principles translate into practical leadership frameworks.</p>
+                            <a href="#" class="card-link">Read more →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="business">
+                        <div class="card-image">
+                            <img src="public/images/2024/06/homepage2-hero.jpg" alt="Enterprise">
+                            <span class="post-category">Business</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span class="post-date">February 20, 2026</span>
+                                <span class="read-time">5 min read</span>
+                            </div>
+                            <h3>Enterprise Deals and Staged Commitments</h3>
+                            <p>The strongest partners are the ones who accept staged commitments. If they want everything upfront, they don't understand risk.</p>
+                            <a href="#" class="card-link">Read more →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more-wrapper">
+                    <button class="btn btn-secondary" id="load-more">Load More Articles</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter CTA -->
+        <section class="newsletter-section">
+            <div class="section-container">
+                <div class="newsletter-content">
+                    <h2>Stay Connected</h2>
+                    <p>Get insights on leadership, technology, and Detroit delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <div class="social-follow">
+                        <span>Or follow on:</span>
+                        <a href="https://www.linkedin.com/in/barlowdetroit/" target="_blank">LinkedIn</a>
+                        <a href="https://twitter.com/Barlow365" target="_blank">X</a>
+                        <a href="https://www.instagram.com/miamibarlow/" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-main">
+        <div class="section-container">
+            <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="logo-text">Jonathan Barlow</span>
-                    <p>Life Engineer, Guiding Communities</p>
+                    <span class="footer-logo">JB</span>
+                    <p class="footer-tagline">Always Fixing the Future</p>
                 </div>
-                <nav class="footer-nav">
-                    <a href="index.html#about">About</a>
-                    <a href="index.html#services">Services</a>
-                    <a href="index.html#ventures">Ventures</a>
-                    <a href="blog.html">Insights</a>
-                    <a href="index.html#contact">Connect</a>
-                </nav>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigate</h4>
+                        <a href="index.html">Home</a>
+                        <a href="advisor.html">Advisor & Investor</a>
+                        <a href="speaker.html">Author & Speaker</a>
+                        <a href="ventures.html">Ventures</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="https://www.linkedin.com/in/barlowdetroit/" target="_blank">LinkedIn</a>
+                        <a href="https://www.instagram.com/miamibarlow/" target="_blank">Instagram</a>
+                        <a href="https://twitter.com/Barlow365" target="_blank">X / Twitter</a>
+                        <a href="mailto:j@barlow.app">Email</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Action</h4>
+                        <a href="https://calendar.app.google/ZxWuc1hhmCivsG269" target="_blank">Book a Call</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Jonathan Barlow. All rights reserved.</p>
-                <p class="footer-detroit">Made in Detroit</p>
+                <p>&copy; 2026 Jonathan Barlow. All Rights Reserved.</p>
+                <p class="footer-credit">Engineered with purpose.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
     <script>
-        // Simple filter functionality
-        document.querySelectorAll('.filter-btn').forEach(btn => {
+        // Blog category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        categoryBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active state
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
-                const filter = btn.dataset.filter;
-                document.querySelectorAll('.blog-card').forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = '';
+                const category = btn.dataset.category;
+
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease';
                     } else {
                         card.style.display = 'none';
                     }
