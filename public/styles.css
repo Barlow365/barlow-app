@@ -981,6 +981,18 @@ button:hover ~ .cursor-dot {
     margin-bottom: 1.5rem;
 }
 
+.speaker-card:not(.main) .speaker-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+.speaker-card:not(.main) .speaker-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .speaker-card:not(.main) h3 {
     font-family: var(--font-display);
     font-size: 1.25rem;
@@ -1733,6 +1745,43 @@ button:hover ~ .cursor-dot {
         text-align: center;
     }
 
+    .hero-content > .hero-image {
+        order: -1;
+    }
+
+    .hero-content > .hero-text {
+        order: 1;
+    }
+
+    .hero-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-frame {
+        max-width: 320px;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .frame-accent {
+        top: -12px;
+        right: -12px;
+    }
+
+    .floating-stats {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .stat-card {
+        padding: 1rem 1.5rem;
+    }
+
     .hero-text {
         max-width: 100%;
     }
@@ -1743,13 +1792,6 @@ button:hover ~ .cursor-dot {
 
     .hero-motto {
         justify-content: center;
-    }
-
-    .floating-stats {
-        position: static;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 2rem;
     }
 
     .speaker-grid {
@@ -1786,6 +1828,24 @@ button:hover ~ .cursor-dot {
 
     .cursor-dot, .cursor-ring {
         display: none;
+    }
+
+    /* Mobile hero - larger centered image */
+    .image-frame {
+        max-width: 280px;
+        width: 90%;
+    }
+
+    .floating-stats {
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 0.875rem 1.25rem;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
     }
 
     .strengths-grid {
@@ -1848,28 +1908,17 @@ button:hover ~ .cursor-dot {
 
 /* About Section Split Layout */
 .about-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
     margin-bottom: 4rem;
 }
 
-.about-image {
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(30, 64, 175, 0.15);
-}
-
-.about-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
+.about-text-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .about-text-content .section-header {
-    text-align: left;
+    text-align: center;
 }
 
 .about-description {
@@ -1986,22 +2035,6 @@ button:hover ~ .cursor-dot {
 
 /* Responsive for distributed images */
 @media (max-width: 992px) {
-    .about-split {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .about-image img {
-        height: 300px;
-    }
-
-    .about-text-content .section-header {
-        text-align: center;
-    }
-
-    .about-description {
-        text-align: center;
-    }
 
     .about-feature-images {
         grid-template-columns: 1fr;
