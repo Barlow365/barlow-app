@@ -1,0 +1,9 @@
+# robots.txt for barlow.app
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://barlow.app/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1
