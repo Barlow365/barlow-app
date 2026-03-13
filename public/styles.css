@@ -846,7 +846,7 @@ button:hover ~ .cursor-dot {
 }
 
 .investment-card .card-logo {
-    max-height: 80px;
+    max-height: 100px;
     max-width: 100%;
     object-fit: contain;
 }
@@ -1248,8 +1248,8 @@ button:hover ~ .cursor-dot {
 }
 
 .venture-icon {
-    width: 72px;
-    height: 72px;
+    width: 88px;
+    height: 88px;
     background: var(--white);
     border-radius: 10px;
     display: flex;
@@ -1263,8 +1263,8 @@ button:hover ~ .cursor-dot {
 }
 
 .venture-logo {
-    width: 72px;
-    height: 72px;
+    width: 88px;
+    height: 88px;
     background: var(--white);
     border-radius: 12px;
     display: flex;
