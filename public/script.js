@@ -249,24 +249,27 @@
             };
 
             try {
-                // Option 1: Direct HubSpot API (requires CORS-enabled endpoint)
-                // This would typically go through a backend service or HubSpot Forms API
+                // Send to Vercel serverless function → HubSpot
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: formData.email,
+                        firstname: formData.name.split(' ')[0],
+                        lastname: formData.name.split(' ').slice(1).join(' ') || '',
+                        message: formData.message,
+                        source: 'barlow.app contact form'
+                    })
+                });
 
-                // For now, we'll simulate success and log the data
-                // In production, you'd send to:
-                // 1. HubSpot Forms API: https://api.hsforms.com/submissions/v3/integration/submit/{portalId}/{formGuid}
-                // 2. Your backend API that connects to HubSpot
-                // 3. A serverless function (Vercel, Netlify, etc.)
+                if (!response.ok) {
+                    throw new Error('API request failed');
+                }
 
-                console.log('Form submission data:', formData);
-
-                // Simulate API call
-                await new Promise(resolve => setTimeout(resolve, 1500));
-
-                // Store in localStorage for demo (System Brain integration point)
-                const submissions = JSON.parse(localStorage.getItem('contact_submissions') || '[]');
-                submissions.push(formData);
-                localStorage.setItem('contact_submissions', JSON.stringify(submissions));
+                const result = await response.json();
+                console.log('Contact submitted to HubSpot:', result);
 
                 // Success
                 contactForm.style.display = 'none';
@@ -285,6 +288,67 @@
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
                 alert('There was an error sending your message. Please try again or email j@barlow.app directly.');
+            }
+        });
+    }
+
+    // ============================================
+    // NEWSLETTER FORM WITH HUBSPOT INTEGRATION
+    // ============================================
+    const newsletterForm = document.querySelector('.newsletter-form');
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            if (!emailInput.value) return;
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Subscribing...';
+
+            try {
+                const response = await fetch('/api/newsletter', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: emailInput.value,
+                        source: 'barlow.app newsletter'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Subscription failed');
+                }
+
+                // Success
+                emailInput.value = '';
+                submitBtn.innerHTML = 'Subscribed!';
+                submitBtn.style.background = '#059669';
+
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+
+            } catch (error) {
+                console.error('Newsletter error:', error);
+                submitBtn.innerHTML = 'Try Again';
+                submitBtn.style.background = '#dc2626';
+                submitBtn.disabled = false;
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                }, 2000);
             }
         });
     }
