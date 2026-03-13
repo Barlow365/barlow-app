@@ -15,6 +15,18 @@
     --purple-light: #f1f5f9;
     --purple-accent: #64748b;
 
+    /* Page Accent Colors - Life Operating System */
+    --accent-home: #1e40af;
+    --accent-advisor: #059669;
+    --accent-speaker: #d97706;
+    --accent-ventures: #7c3aed;
+    --accent-press: #475569;
+
+    /* Active Page Accent (default to home) */
+    --page-accent: var(--accent-home);
+    --page-accent-light: rgba(30, 64, 175, 0.1);
+    --page-accent-glow: rgba(30, 64, 175, 0.25);
+
     /* Neutrals - Slate Gray */
     --dark: #0f172a;
     --dark-soft: #1e293b;
@@ -24,6 +36,7 @@
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--pink) 0%, var(--coral) 100%);
+    --gradient-page: linear-gradient(135deg, var(--page-accent) 0%, var(--pink) 100%);
     --gradient-subtle: linear-gradient(135deg, var(--purple-bg) 0%, #fff 50%, var(--purple-light) 100%);
     --gradient-mesh: radial-gradient(ellipse at 20% 30%, rgba(30, 64, 175, 0.08) 0%, transparent 50%),
                      radial-gradient(ellipse at 80% 70%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
@@ -46,7 +59,32 @@
     --shadow-sm: 0 2px 8px rgba(26, 18, 37, 0.06);
     --shadow-md: 0 8px 24px rgba(26, 18, 37, 0.08);
     --shadow-lg: 0 16px 48px rgba(26, 18, 37, 0.12);
-    --shadow-glow: 0 0 40px rgba(30, 64, 175, 0.25);
+    --shadow-glow: 0 0 40px var(--page-accent-glow);
+}
+
+/* Page-Specific Accent Overrides */
+body.page-advisor {
+    --page-accent: var(--accent-advisor);
+    --page-accent-light: rgba(5, 150, 105, 0.1);
+    --page-accent-glow: rgba(5, 150, 105, 0.25);
+}
+
+body.page-speaker {
+    --page-accent: var(--accent-speaker);
+    --page-accent-light: rgba(217, 119, 6, 0.1);
+    --page-accent-glow: rgba(217, 119, 6, 0.25);
+}
+
+body.page-ventures {
+    --page-accent: var(--accent-ventures);
+    --page-accent-light: rgba(124, 58, 237, 0.1);
+    --page-accent-glow: rgba(124, 58, 237, 0.25);
+}
+
+body.page-press {
+    --page-accent: var(--accent-press);
+    --page-accent-light: rgba(71, 85, 105, 0.1);
+    --page-accent-glow: rgba(71, 85, 105, 0.25);
 }
 
 /* Reset & Base */

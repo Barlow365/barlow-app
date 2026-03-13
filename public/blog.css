@@ -3,6 +3,17 @@
 .blog-header {
     padding: 8rem 0 3rem;
     background: var(--gradient-mesh);
+    position: relative;
+}
+
+.blog-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--page-accent, var(--blue)), transparent);
 }
 
 .blog-header-content {
@@ -46,8 +57,8 @@
 }
 
 .category-btn:hover {
-    border-color: var(--pink);
-    color: var(--pink);
+    border-color: var(--page-accent, var(--pink));
+    color: var(--page-accent, var(--pink));
 }
 
 .category-btn.active {
@@ -200,12 +211,12 @@
 .card-content .card-link {
     font-family: var(--font-display);
     font-weight: 600;
-    color: var(--pink);
+    color: var(--page-accent, var(--pink));
     font-size: 0.875rem;
 }
 
 .card-content .card-link:hover {
-    color: var(--pink-dark);
+    color: var(--page-accent-dark, var(--pink-dark));
 }
 
 .load-more-wrapper {
