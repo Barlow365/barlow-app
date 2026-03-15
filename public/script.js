@@ -615,6 +615,69 @@
         }
     };
 
+    // ========== DARK MODE TOGGLE ==========
+    const themeToggle = document.querySelector('.theme-toggle');
+    const root = document.documentElement;
+
+    // Check for saved theme preference or system preference
+    function getPreferredTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            return savedTheme;
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    // Apply theme
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            root.setAttribute('data-theme', 'dark');
+        } else {
+            root.removeAttribute('data-theme');
+        }
+        localStorage.setItem('theme', theme);
+    }
+
+    // Initialize theme
+    applyTheme(getPreferredTheme());
+
+    // Toggle theme on button click
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(currentTheme);
+        });
+    }
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+
+    // ========== SCROLL TO TOP BUTTON ==========
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+    if (scrollToTopBtn) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        // Smooth scroll to top on click
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
     console.log('barlow.app initialized');
 
 })();
