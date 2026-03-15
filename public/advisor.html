@@ -43,7 +43,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="pages.css">
 </head>
-<body class="page-advisor">
+<body class="page-advisor page-transition">
+    <!-- Skip to Content - Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <header class="nav-header">
         <nav class="navbar">
@@ -71,7 +74,7 @@
         </ul>
     </div>
 
-    <main>
+    <main id="main-content">
         <!-- Page Header -->
         <section class="page-header">
             <div class="section-container">
@@ -232,6 +235,17 @@
     <button class="scroll-to-top" aria-label="Scroll to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
     </button>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookie-consent">
+        <div class="cookie-consent-content">
+            <p>We use cookies to enhance your experience and analyze site traffic. By continuing, you agree to our use of cookies.</p>
+            <div class="cookie-consent-buttons">
+                <button class="btn btn-secondary" id="cookie-decline">Decline</button>
+                <button class="btn btn-primary" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

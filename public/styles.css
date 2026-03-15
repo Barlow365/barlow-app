@@ -470,6 +470,202 @@ body {
     overflow-x: hidden;
 }
 
+/* Skip to Content Link - Accessibility */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 0 0 12px 12px;
+    font-weight: 600;
+    z-index: 10000;
+    transition: top 0.3s ease;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: none;
+}
+
+/* Focus States - Accessibility */
+:focus-visible {
+    outline: 3px solid var(--pink-light);
+    outline-offset: 3px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--pink-light);
+    outline-offset: 3px;
+}
+
+/* Remove default focus for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Page Transitions */
+.page-transition {
+    animation: pageIn 0.5s var(--ease-out-expo);
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading Skeleton */
+.skeleton {
+    background: linear-gradient(90deg,
+        var(--purple-light) 25%,
+        var(--purple-bg) 50%,
+        var(--purple-light) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-text {
+    height: 1em;
+    margin-bottom: 0.5em;
+}
+
+.skeleton-title {
+    height: 2em;
+    width: 60%;
+    margin-bottom: 1em;
+}
+
+.skeleton-image {
+    aspect-ratio: 16/9;
+    width: 100%;
+}
+
+/* Cookie Consent Banner */
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    color: var(--white);
+    padding: 1rem 2rem;
+    z-index: 9998;
+    transform: translateY(100%);
+    transition: transform 0.4s var(--ease-out-expo);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-consent.visible {
+    transform: translateY(0);
+}
+
+.cookie-consent-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cookie-consent p {
+    margin: 0;
+    font-size: 0.9375rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.cookie-consent a {
+    color: var(--pink-light);
+    text-decoration: underline;
+}
+
+.cookie-consent-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cookie-consent .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+}
+
+.cookie-consent .btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+}
+
+.cookie-consent .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Hover Micro-interactions */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::after {
+    width: 300%;
+    height: 300%;
+}
+
+/* Card lift effect enhancement */
+.investment-card,
+.speaker-card,
+.venture-card,
+.entity-card,
+.testimonial-card {
+    will-change: transform;
+}
+
+/* Image hover zoom */
+.gallery-item img,
+.speaker-image img,
+.hero-image img {
+    transition: transform 0.6s var(--ease-out-expo);
+}
+
+.gallery-item:hover img,
+.speaker-card:hover .speaker-image img {
+    transform: scale(1.05);
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -2802,6 +2998,62 @@ button:hover ~ .cursor-dot {
         width: 20px;
         height: 20px;
     }
+}
+
+/* ========== FORM VALIDATION STATES ========== */
+.form-group input.valid,
+.form-group textarea.valid,
+.contact-form input.valid,
+.contact-form textarea.valid {
+    border-color: #059669;
+    background-color: rgba(5, 150, 105, 0.05);
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid,
+.contact-form input.invalid,
+.contact-form textarea.invalid {
+    border-color: #dc2626;
+    background-color: rgba(220, 38, 38, 0.05);
+}
+
+.form-group input:focus.valid,
+.form-group textarea:focus.valid,
+.contact-form input:focus.valid,
+.contact-form textarea:focus.valid {
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.form-group input:focus.invalid,
+.form-group textarea:focus.invalid,
+.contact-form input:focus.invalid,
+.contact-form textarea:focus.invalid {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.form-error {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.form-error.visible {
+    display: block;
+}
+
+:root[data-theme="dark"] .form-group input.valid,
+:root[data-theme="dark"] .form-group textarea.valid,
+:root[data-theme="dark"] .contact-form input.valid,
+:root[data-theme="dark"] .contact-form textarea.valid {
+    background-color: rgba(5, 150, 105, 0.1);
+}
+
+:root[data-theme="dark"] .form-group input.invalid,
+:root[data-theme="dark"] .form-group textarea.invalid,
+:root[data-theme="dark"] .contact-form input.invalid,
+:root[data-theme="dark"] .contact-form textarea.invalid {
+    background-color: rgba(220, 38, 38, 0.1);
 }
 
 /* ========== REDUCED MOTION SUPPORT ========== */

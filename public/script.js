@@ -684,6 +684,60 @@
         });
     }
 
+    // ========== COOKIE CONSENT ==========
+    const cookieConsent = document.getElementById('cookie-consent');
+    const cookieAccept = document.getElementById('cookie-accept');
+    const cookieDecline = document.getElementById('cookie-decline');
+
+    if (cookieConsent && !localStorage.getItem('cookieConsent')) {
+        // Show banner after 2 seconds
+        setTimeout(() => {
+            cookieConsent.classList.add('visible');
+        }, 2000);
+    }
+
+    if (cookieAccept) {
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.classList.remove('visible');
+            // Enable analytics if needed
+        });
+    }
+
+    if (cookieDecline) {
+        cookieDecline.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieConsent.classList.remove('visible');
+            // Disable analytics if needed
+        });
+    }
+
+    // ========== FORM VALIDATION ENHANCEMENT ==========
+    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
+
+    formInputs.forEach(input => {
+        // Add validation styling on blur
+        input.addEventListener('blur', function() {
+            if (this.value.trim() !== '') {
+                this.classList.add('has-value');
+                if (this.checkValidity()) {
+                    this.classList.add('valid');
+                    this.classList.remove('invalid');
+                } else {
+                    this.classList.add('invalid');
+                    this.classList.remove('valid');
+                }
+            } else {
+                this.classList.remove('has-value', 'valid', 'invalid');
+            }
+        });
+
+        // Remove validation styling on focus
+        input.addEventListener('focus', function() {
+            this.classList.remove('invalid');
+        });
+    });
+
     console.log('barlow.app initialized');
 
 })();
