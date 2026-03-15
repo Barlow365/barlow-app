@@ -682,3 +682,102 @@
         font-size: 2rem;
     }
 }
+
+/* ========== DARK MODE OVERRIDES FOR PAGES ========== */
+:root[data-theme="dark"] .page-header {
+    background: var(--purple-bg);
+}
+
+:root[data-theme="dark"] .entity-card {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="dark"] .entity-card.featured {
+    background: linear-gradient(135deg, var(--page-accent), #1e40af);
+}
+
+:root[data-theme="dark"] .entity-card.featured .entity-tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .entity-card.featured .entity-logo {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .entity-card h3 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .entity-card p {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .service-card {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .service-card h3 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .topic-card {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .topic-card h3 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .program-card {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .program-card h3 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .book-section {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .book-content h2 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .cta-section {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+:root[data-theme="dark"] .cta-content h2 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .venture-item {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .venture-item:hover {
+    background: #334155;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+:root[data-theme="dark"] .venture-details h3 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .venture-details p {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .venture-logo-text {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .category-title {
+    color: #f8fafc;
+}

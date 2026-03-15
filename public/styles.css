@@ -64,12 +64,11 @@
 
 /* ========== DARK MODE ========== */
 :root[data-theme="dark"] {
-    /* Dark Mode Colors */
+    /* Dark Mode Colors - semantic naming */
     --dark: #f8fafc;
     --dark-soft: #e2e8f0;
-    --text: #cbd5e1;
+    --text: #e2e8f0;
     --text-muted: #94a3b8;
-    --white: #0f172a;
     --purple-bg: #0f172a;
     --purple-light: #1e293b;
 
@@ -87,7 +86,45 @@
 
 /* Dark mode specific overrides */
 :root[data-theme="dark"] .nav-header {
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(15, 23, 42, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .nav-link {
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .nav-link:hover {
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .nav-logo .logo-text {
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .nav-cta {
+    background: var(--gradient-primary);
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .btn-primary {
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .btn-secondary {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+:root[data-theme="dark"] .btn-outline {
+    color: #e2e8f0;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="dark"] .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
 }
 
 :root[data-theme="dark"] .stat-card,
@@ -100,10 +137,23 @@
 
 :root[data-theme="dark"] .footer {
     background: #0f172a;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .footer a {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .footer a:hover {
+    color: #ffffff;
 }
 
 :root[data-theme="dark"] .mobile-nav {
     background: #0f172a;
+}
+
+:root[data-theme="dark"] .mobile-nav-links a {
+    color: #e2e8f0;
 }
 
 :root[data-theme="dark"] .contact-form input,
@@ -113,29 +163,39 @@
     color: #e2e8f0;
 }
 
-/* Dark mode logo switching system */
-/* Light mode: show .logo-light, hide .logo-dark */
+/* Dark mode logo switching - using visibility to preserve layout */
 .logo-dark {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .logo-light {
-    display: block;
+    opacity: 1;
 }
 
-/* Dark mode: show .logo-dark, hide .logo-light */
 :root[data-theme="dark"] .logo-light {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 :root[data-theme="dark"] .logo-dark {
-    display: block;
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
 }
 
-/* Fallback for logos without light/dark versions */
+/* Logo container needs relative positioning for the absolute dark logo */
+.venture-logo,
+.entity-card {
+    position: relative;
+}
+
+/* Fallback filter for logos without light/dark versions */
 :root[data-theme="dark"] .venture-logo img:not(.logo-light):not(.logo-dark),
-:root[data-theme="dark"] .entity-img:not(.logo-light):not(.logo-dark) {
-    filter: brightness(0.9) contrast(1.1);
+:root[data-theme="dark"] .entity-img:not(.logo-light):not(.logo-dark),
+:root[data-theme="dark"] .venture-logo-img:not(.logo-light):not(.logo-dark) {
+    filter: brightness(1.1) contrast(1.05);
 }
 
 :root[data-theme="dark"] .venture-logo,
@@ -145,6 +205,7 @@
 
 :root[data-theme="dark"] .media-logo {
     background: #1e293b;
+    color: #e2e8f0;
 }
 
 :root[data-theme="dark"] .press-card {
@@ -153,6 +214,19 @@
 
 :root[data-theme="dark"] .press-outlet {
     color: var(--coral-light);
+}
+
+:root[data-theme="dark"] .section-title,
+:root[data-theme="dark"] .page-title {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .hero-title {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .hero-name-mobile {
+    color: #f8fafc;
 }
 
 /* Dark mode toggle button */
@@ -194,6 +268,14 @@
 
 :root[data-theme="dark"] .theme-toggle .moon-icon {
     display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle svg {
+    fill: #e2e8f0;
+}
+
+:root[data-theme="dark"] .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Page-Specific Accent Overrides */

@@ -417,3 +417,95 @@
         transform: translateY(0);
     }
 }
+
+/* ========== DARK MODE OVERRIDES FOR BLOG ========== */
+:root[data-theme="dark"] .blog-header {
+    background: var(--purple-bg);
+}
+
+:root[data-theme="dark"] .category-btn {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .category-btn:hover {
+    border-color: var(--coral-light);
+    color: var(--coral-light);
+}
+
+:root[data-theme="dark"] .category-btn.active {
+    background: var(--gradient-primary);
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .press-coverage-section {
+    background: #0f172a;
+}
+
+:root[data-theme="dark"] .press-card {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .press-card:hover {
+    background: #334155;
+}
+
+:root[data-theme="dark"] .press-card h3 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .press-card p {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .blog-grid-section {
+    background: var(--purple-bg);
+}
+
+:root[data-theme="dark"] .post-card {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .post-card:hover {
+    background: #334155;
+}
+
+:root[data-theme="dark"] .post-title {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .post-excerpt {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .featured-post {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .featured-title {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .featured-excerpt {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .newsletter-section {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+:root[data-theme="dark"] .newsletter-title {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .newsletter-input {
+    background: #0f172a;
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .newsletter-input::placeholder {
+    color: #64748b;
+}
