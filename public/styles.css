@@ -293,6 +293,68 @@
     color: #f8fafc;
 }
 
+/* Dark mode speaker section */
+:root[data-theme="dark"] .speaker-section {
+    background: #0f172a;
+}
+
+:root[data-theme="dark"] .speaker-card {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .speaker-card h3,
+:root[data-theme="dark"] .speaker-content h3 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .speaker-card p,
+:root[data-theme="dark"] .speaker-content p {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .speaker-image {
+    background: #334155;
+}
+
+:root[data-theme="dark"] .speaker-icon {
+    color: var(--coral-light);
+}
+
+:root[data-theme="dark"] .speaker-intro-text .section-label {
+    color: var(--coral-light);
+}
+
+:root[data-theme="dark"] .speaker-intro-text .section-subtitle {
+    color: #94a3b8;
+}
+
+/* Dark mode ventures section */
+:root[data-theme="dark"] .ventures-section {
+    background: #0f172a;
+}
+
+:root[data-theme="dark"] .venture-category-title,
+:root[data-theme="dark"] .category-title {
+    color: #f8fafc;
+}
+
+/* Dark mode advisor section */
+:root[data-theme="dark"] .advisor-section {
+    background: #0f172a;
+}
+
+:root[data-theme="dark"] .investment-card {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .investment-card h4 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .investment-card p {
+    color: #94a3b8;
+}
+
 /* Dark mode toggle button */
 .theme-toggle {
     background: transparent;
@@ -1176,7 +1238,7 @@ button:hover ~ .cursor-dot {
 }
 
 .investment-card .card-logo {
-    max-height: 120px;
+    max-height: 140px;
     max-width: 100%;
     object-fit: contain;
 }
@@ -1598,8 +1660,8 @@ button:hover ~ .cursor-dot {
 }
 
 .venture-logo {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background: var(--white);
     border-radius: 12px;
     display: flex;
@@ -1911,6 +1973,7 @@ button:hover ~ .cursor-dot {
     border-radius: 12px;
     font-family: var(--font-body);
     font-size: 1rem;
+    color: #334155;
     transition: all 0.3s ease;
     cursor: none;
 }
@@ -1920,7 +1983,8 @@ button:hover ~ .cursor-dot {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--pink);
-    background: var(--white);
+    background: #ffffff;
+    color: #0f172a;
 }
 
 .form-group select {

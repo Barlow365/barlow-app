@@ -173,8 +173,8 @@
 }
 
 .entity-img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     margin-bottom: 1.5rem;
     border-radius: 12px;
@@ -542,16 +542,16 @@
 }
 
 .venture-logo-img {
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     object-fit: contain;
     border-radius: 12px;
     flex-shrink: 0;
 }
 
 .venture-logo-text {
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     background: var(--page-accent-light);
     border-radius: 12px;
     display: flex;
