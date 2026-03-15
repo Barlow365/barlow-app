@@ -1644,119 +1644,6 @@ button:hover ~ .cursor-dot {
     line-height: 1.5;
 }
 
-/* Mayor Section */
-.mayor-section {
-    padding: calc(var(--section-padding) * 1.5) 0;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-
-.mayor-bg {
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-primary);
-    z-index: 0;
-}
-
-.mayor-bg::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.05;
-}
-
-.mayor-content {
-    position: relative;
-    z-index: 1;
-    color: var(--white);
-}
-
-.mayor-badge {
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 100px;
-    margin-bottom: 2rem;
-}
-
-.mayor-badge span {
-    font-family: var(--font-display);
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.mayor-title {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-}
-
-.mayor-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    line-height: 1.6;
-}
-
-.mayor-stats {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    margin-bottom: 3rem;
-}
-
-.mayor-stat {
-    text-align: center;
-}
-
-.stat-value {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 800;
-}
-
-.stat-desc {
-    font-size: 0.875rem;
-    opacity: 0.8;
-}
-
-.btn-mayor {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1.25rem 2.5rem;
-    background: var(--white);
-    color: var(--pink);
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
-    border-radius: 100px;
-    border: none;
-    transition: all 0.3s var(--ease-out-expo);
-}
-
-.btn-mayor:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.btn-mayor svg {
-    transition: transform 0.3s var(--ease-out-expo);
-}
-
-.btn-mayor:hover svg {
-    transform: translateX(4px);
-}
-
 /* Ventures Section */
 .ventures-section {
     padding: var(--section-padding) 0;
@@ -2765,7 +2652,7 @@ button:hover ~ .cursor-dot {
 /* Highlight Banner (replaces Gallery) */
 .highlight-banner {
     padding: 6rem 0;
-    background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(30, 64, 175, 0.05) 100%);
+    background: linear-gradient(135deg, var(--purple-light) 0%, rgba(30, 64, 175, 0.05) 100%);
 }
 
 .highlight-content {
@@ -2798,7 +2685,7 @@ button:hover ~ .cursor-dot {
 .highlight-text h3 {
     font-family: var(--font-display);
     font-size: 2rem;
-    color: var(--text-primary);
+    color: var(--dark);
     margin-bottom: 1rem;
 }
 
