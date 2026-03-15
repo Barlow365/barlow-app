@@ -75,6 +75,17 @@
     </div>
 
     <main id="main-content">
+        <!-- Breadcrumb -->
+        <section class="page-breadcrumb">
+            <div class="section-container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Founder & Companies</span>
+                </nav>
+            </div>
+        </section>
+
         <!-- Page Header -->
         <section class="page-header">
             <div class="section-container">
@@ -84,11 +95,25 @@
             </div>
         </section>
 
+        <!-- Venture Filters -->
+        <section class="filter-section">
+            <div class="section-container">
+                <div class="venture-filters">
+                    <button class="filter-btn active" data-filter="all">All Ventures</button>
+                    <button class="filter-btn" data-filter="technology">Technology</button>
+                    <button class="filter-btn" data-filter="events">Events</button>
+                    <button class="filter-btn" data-filter="community">Community</button>
+                    <button class="filter-btn" data-filter="advisory">Advisory</button>
+                    <button class="filter-btn" data-filter="content">Content</button>
+                </div>
+            </div>
+        </section>
+
         <!-- The Ecosystem -->
         <section class="ecosystem-section">
             <div class="section-container">
                 <!-- Technology & Innovation -->
-                <div class="venture-category-full">
+                <div class="venture-category-full" data-category="technology">
                     <h2 class="category-header">Technology & Innovation</h2>
                     <div class="ventures-list">
                         <a href="http://xbigtech.com" target="_blank" class="venture-item">
@@ -127,7 +152,7 @@
                 </div>
 
                 <!-- Events & Entertainment -->
-                <div class="venture-category-full">
+                <div class="venture-category-full" data-category="events">
                     <h2 class="category-header">Events & Entertainment</h2>
                     <div class="ventures-list">
                         <a href="http://miamiwknd.com" target="_blank" class="venture-item featured">
@@ -176,7 +201,7 @@
                 </div>
 
                 <!-- Community & Impact -->
-                <div class="venture-category-full">
+                <div class="venture-category-full" data-category="community">
                     <h2 class="category-header">Community & Impact</h2>
                     <div class="ventures-list">
                         <a href="http://perspectivecollective.org" target="_blank" class="venture-item">
@@ -216,7 +241,7 @@
                 </div>
 
                 <!-- Advisory & Investment -->
-                <div class="venture-category-full">
+                <div class="venture-category-full" data-category="advisory">
                     <h2 class="category-header">Advisory & Investment</h2>
                     <div class="ventures-list">
                         <a href="http://advisorunion.com" target="_blank" class="venture-item">
@@ -250,7 +275,7 @@
                 </div>
 
                 <!-- Content & Publishing -->
-                <div class="venture-category-full">
+                <div class="venture-category-full" data-category="content">
                     <h2 class="category-header">Content & Publishing</h2>
                     <div class="ventures-list">
                         <a href="http://radicalsunday.com" target="_blank" class="venture-item featured">
@@ -341,5 +366,29 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Venture Category Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const categories = document.querySelectorAll('.venture-category-full');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                categories.forEach(category => {
+                    if (filter === 'all' || category.dataset.category === filter) {
+                        category.style.display = 'block';
+                        category.style.animation = 'fadeIn 0.4s ease';
+                    } else {
+                        category.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

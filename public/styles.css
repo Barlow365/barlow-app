@@ -3232,3 +3232,89 @@ img[loading="lazy"].loaded,
 img[loading="lazy"]:not([src=""]) {
     opacity: 1;
 }
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    .nav-header,
+    .mobile-nav,
+    .scroll-to-top,
+    .cookie-consent,
+    .orbs-container,
+    .cursor-dot,
+    .cursor-ring,
+    .hero-actions,
+    .newsletter-section,
+    .scroll-progress,
+    .reading-progress,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    .section-container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* ========== LINK HOVER UNDERLINE EFFECT ========== */
+.nav-link,
+.footer-col a,
+.breadcrumb a {
+    position: relative;
+}
+
+.nav-link::after,
+.footer-col a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--pink);
+    transition: width 0.3s var(--ease-out-expo);
+}
+
+.nav-link:hover::after,
+.footer-col a:hover::after {
+    width: 100%;
+}
+
+/* ========== CARD LIFT EFFECT ========== */
+.venture-card,
+.strength-card,
+.investment-card,
+.entity-card,
+.testimonial-card {
+    will-change: transform;
+}
+
+/* ========== NUMBER COUNTER SUFFIX ========== */
+.stat-suffix {
+    font-size: 0.7em;
+    opacity: 0.8;
+}
