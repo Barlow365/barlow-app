@@ -156,11 +156,71 @@
     color: #e2e8f0;
 }
 
+/* Dark mode form styling */
 :root[data-theme="dark"] .contact-form input,
-:root[data-theme="dark"] .contact-form textarea {
+:root[data-theme="dark"] .contact-form textarea,
+:root[data-theme="dark"] .contact-form select,
+:root[data-theme="dark"] .form-group input,
+:root[data-theme="dark"] .form-group textarea,
+:root[data-theme="dark"] .form-group select {
     background: #1e293b;
     border-color: rgba(255, 255, 255, 0.1);
     color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .contact-form input:focus,
+:root[data-theme="dark"] .contact-form textarea:focus,
+:root[data-theme="dark"] .contact-form select:focus,
+:root[data-theme="dark"] .form-group input:focus,
+:root[data-theme="dark"] .form-group textarea:focus,
+:root[data-theme="dark"] .form-group select:focus {
+    background: #334155;
+    border-color: var(--pink-light);
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .contact-form input::placeholder,
+:root[data-theme="dark"] .contact-form textarea::placeholder,
+:root[data-theme="dark"] .form-group input::placeholder,
+:root[data-theme="dark"] .form-group textarea::placeholder {
+    color: #64748b;
+}
+
+:root[data-theme="dark"] .form-group label {
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .contact-form h3,
+:root[data-theme="dark"] .contact-form-wrapper h3 {
+    color: #f8fafc;
+}
+
+/* Dark mode newsletter */
+:root[data-theme="dark"] .newsletter-section {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+:root[data-theme="dark"] .newsletter-content h2 {
+    color: #f8fafc;
+}
+
+:root[data-theme="dark"] .newsletter-content p {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .newsletter-form input {
+    background: #0f172a;
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .newsletter-form input::placeholder {
+    color: #64748b;
+}
+
+:root[data-theme="dark"] .newsletter-form input:focus {
+    background: #1e293b;
+    border-color: var(--pink-light);
 }
 
 /* Dark mode logo switching */
@@ -189,10 +249,17 @@
 }
 
 /* Fallback filter for logos without light/dark versions */
-:root[data-theme="dark"] .venture-logo img:not(.logo-light):not(.logo-dark),
-:root[data-theme="dark"] .entity-img:not(.logo-light):not(.logo-dark),
-:root[data-theme="dark"] .venture-logo-img:not(.logo-light):not(.logo-dark) {
+:root[data-theme="dark"] .venture-logo img:not(.logo-light):not(.logo-dark):not(.logo-invert),
+:root[data-theme="dark"] .entity-img:not(.logo-light):not(.logo-dark):not(.logo-invert),
+:root[data-theme="dark"] .venture-logo-img:not(.logo-light):not(.logo-dark):not(.logo-invert),
+:root[data-theme="dark"] .card-logo:not(.logo-invert) {
     filter: brightness(1.1) contrast(1.05);
+}
+
+/* Invert dark logos to white in dark mode */
+:root[data-theme="dark"] .logo-invert,
+:root[data-theme="dark"] img.logo-invert {
+    filter: brightness(0) invert(1);
 }
 
 :root[data-theme="dark"] .venture-logo,
@@ -1101,7 +1168,7 @@ button:hover ~ .cursor-dot {
 }
 
 .investment-card .card-header {
-    height: 100px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1109,9 +1176,14 @@ button:hover ~ .cursor-dot {
 }
 
 .investment-card .card-logo {
-    max-height: 100px;
+    max-height: 120px;
     max-width: 100%;
     object-fit: contain;
+}
+
+/* Larger logo variant for cards */
+.investment-card .card-logo.logo-large {
+    max-height: 140px;
 }
 
 .card-icon-placeholder {
@@ -1526,8 +1598,8 @@ button:hover ~ .cursor-dot {
 }
 
 .venture-logo {
-    width: 88px;
-    height: 88px;
+    width: 100px;
+    height: 100px;
     background: var(--white);
     border-radius: 12px;
     display: flex;
