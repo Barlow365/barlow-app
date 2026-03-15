@@ -113,6 +113,29 @@
     color: #e2e8f0;
 }
 
+/* Dark mode logo adjustments */
+:root[data-theme="dark"] .venture-logo img,
+:root[data-theme="dark"] .entity-img {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+:root[data-theme="dark"] .venture-logo,
+:root[data-theme="dark"] .entity-logo {
+    background: #334155;
+}
+
+:root[data-theme="dark"] .media-logo {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .press-card {
+    background: #1e293b;
+}
+
+:root[data-theme="dark"] .press-outlet {
+    color: var(--coral-light);
+}
+
 /* Dark mode toggle button */
 .theme-toggle {
     background: transparent;
@@ -1944,11 +1967,23 @@ button:hover ~ .cursor-dot {
     .hero-name-mobile {
         display: block;
         font-family: var(--font-display);
-        font-size: 1.25rem;
-        font-weight: 700;
+        font-size: 1.75rem;
+        font-weight: 800;
         color: var(--dark);
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+        position: relative;
+    }
+
+    .hero-name-mobile::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--gradient-primary);
+        margin: 0.75rem auto 0;
+        border-radius: 2px;
     }
 
     .speaker-grid {
