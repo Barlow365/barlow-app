@@ -113,9 +113,28 @@
     color: #e2e8f0;
 }
 
-/* Dark mode logo adjustments */
-:root[data-theme="dark"] .venture-logo img,
-:root[data-theme="dark"] .entity-img {
+/* Dark mode logo switching system */
+/* Light mode: show .logo-light, hide .logo-dark */
+.logo-dark {
+    display: none;
+}
+
+.logo-light {
+    display: block;
+}
+
+/* Dark mode: show .logo-dark, hide .logo-light */
+:root[data-theme="dark"] .logo-light {
+    display: none;
+}
+
+:root[data-theme="dark"] .logo-dark {
+    display: block;
+}
+
+/* Fallback for logos without light/dark versions */
+:root[data-theme="dark"] .venture-logo img:not(.logo-light):not(.logo-dark),
+:root[data-theme="dark"] .entity-img:not(.logo-light):not(.logo-dark) {
     filter: brightness(0.9) contrast(1.1);
 }
 
