@@ -163,32 +163,29 @@
     color: #e2e8f0;
 }
 
-/* Dark mode logo switching - using visibility to preserve layout */
+/* Dark mode logo switching */
 .logo-dark {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }
 
 .logo-light {
-    opacity: 1;
+    display: block;
 }
 
 :root[data-theme="dark"] .logo-light {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }
 
 :root[data-theme="dark"] .logo-dark {
-    position: relative;
-    opacity: 1;
-    pointer-events: auto;
+    display: block;
 }
 
-/* Logo container needs relative positioning for the absolute dark logo */
-.venture-logo,
-.entity-card {
-    position: relative;
+/* Ensure logos inside flex/grid containers work correctly */
+.venture-logo .logo-light,
+.venture-logo .logo-dark {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* Fallback filter for logos without light/dark versions */
