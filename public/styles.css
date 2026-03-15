@@ -779,6 +779,11 @@ button:hover ~ .cursor-dot {
     color: var(--text-muted);
 }
 
+/* Hero Name for Mobile */
+.hero-name-mobile {
+    display: none;
+}
+
 /* Hero Scroll Indicator */
 .hero-scroll {
     position: absolute;
@@ -1929,6 +1934,21 @@ button:hover ~ .cursor-dot {
 
     .hero-motto {
         justify-content: center;
+        margin-bottom: 4rem;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .hero-name-mobile {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--dark);
+        text-align: center;
+        margin-bottom: 1rem;
     }
 
     .speaker-grid {
