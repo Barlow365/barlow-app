@@ -466,30 +466,36 @@
     // ============================================
     // STATS COUNTER ANIMATION
     // ============================================
-    const statNumbers = document.querySelectorAll('.stat-number');
+    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
 
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;
-                const text = el.textContent;
-                const number = parseInt(text);
+                const target = parseInt(el.dataset.count);
+                const duration = 2000; // 2 seconds
+                const start = performance.now();
 
-                if (!isNaN(number)) {
-                    let current = 0;
-                    const increment = number / 30;
-                    const suffix = text.replace(/[0-9]/g, '');
-
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= number) {
-                            current = number;
-                            clearInterval(timer);
-                        }
-                        el.textContent = Math.floor(current) + suffix;
-                    }, 30);
+                function easeOutExpo(t) {
+                    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
                 }
 
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutExpo(progress);
+                    const current = Math.floor(easedProgress * target);
+
+                    el.textContent = current;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        el.textContent = target;
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
                 counterObserver.unobserve(el);
             }
         });
