@@ -738,6 +738,142 @@
         });
     });
 
+    // ========== SMOOTH ANCHOR SCROLLING ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ========== PARALLAX EFFECTS ==========
+    const parallaxElements = document.querySelectorAll('.hero-image, .orb');
+
+    if (parallaxElements.length > 0 && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrollY = window.pageYOffset;
+
+                    parallaxElements.forEach(el => {
+                        const speed = el.classList.contains('orb') ? 0.05 : 0.15;
+                        const yPos = -(scrollY * speed);
+                        el.style.transform = `translate3d(0, ${yPos}px, 0)`;
+                    });
+
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
+
+    // ========== ANIMATED TYPING EFFECT ==========
+    const typewriterElement = document.querySelector('.hero-tagline .typing-text');
+
+    if (typewriterElement) {
+        const phrases = ['Life Engineer', 'Serial Innovator', 'Community Builder', 'Thought Leader'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+
+            if (isDeleting) {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typingSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 500; // Pause before new word
+            }
+
+            setTimeout(typeEffect, typingSpeed);
+        }
+
+        // Start typing after page load
+        setTimeout(typeEffect, 1000);
+    }
+
+    // ========== ICON HOVER MICRO-ANIMATIONS ==========
+    const iconContainers = document.querySelectorAll('.service-icon, .contact-icon, .strength-icon');
+
+    iconContainers.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+            const svg = icon.querySelector('svg');
+            if (svg) {
+                svg.style.transform = 'scale(1.1) rotate(5deg)';
+                svg.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            }
+        });
+
+        icon.addEventListener('mouseleave', () => {
+            const svg = icon.querySelector('svg');
+            if (svg) {
+                svg.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+
+    // ========== READING PROGRESS BAR (Blog Pages) ==========
+    const articleContent = document.querySelector('.article-content, .blog-article');
+
+    if (articleContent) {
+        const readingProgress = document.createElement('div');
+        readingProgress.className = 'reading-progress';
+        readingProgress.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #1e40af 0%, #059669 100%);
+            z-index: 10000;
+            transition: width 0.1s ease;
+            width: 0%;
+        `;
+        document.body.appendChild(readingProgress);
+
+        window.addEventListener('scroll', () => {
+            const articleTop = articleContent.offsetTop;
+            const articleHeight = articleContent.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollPosition = window.scrollY;
+
+            const progress = Math.max(0, Math.min(100,
+                ((scrollPosition - articleTop + windowHeight * 0.5) / articleHeight) * 100
+            ));
+
+            readingProgress.style.width = `${progress}%`;
+        }, { passive: true });
+    }
+
     console.log('barlow.app initialized');
 
 })();

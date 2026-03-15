@@ -3082,3 +3082,153 @@ button:hover ~ .cursor-dot {
         transform: none;
     }
 }
+
+/* ========== HERO TAGLINE WITH TYPING EFFECT ========== */
+.hero-tagline {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--pink);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.typing-cursor {
+    font-weight: 400;
+    animation: blink 1s step-end infinite;
+    color: var(--pink);
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* ========== CLIENT LOGOS MARQUEE ========== */
+.client-marquee {
+    padding: 3rem 0;
+    background: var(--purple-light);
+    overflow: hidden;
+}
+
+.marquee-label {
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+}
+
+.marquee-track {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.marquee-logos {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 0 2rem;
+}
+
+.marquee-logo {
+    height: 40px;
+    width: auto;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.marquee-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ========== BREADCRUMB NAVIGATION ========== */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--pink);
+}
+
+.breadcrumb-separator {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.breadcrumb-current {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+/* ========== VENTURE CATEGORY FILTERS ========== */
+.venture-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--purple-light);
+    border-radius: 100px;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--pink-light);
+    color: var(--pink);
+}
+
+.filter-btn.active {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    color: var(--white);
+}
+
+/* ========== ENHANCED IMAGE LOADING ========== */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+img[loading="lazy"].loaded,
+img[loading="lazy"]:not([src=""]) {
+    opacity: 1;
+}

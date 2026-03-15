@@ -84,6 +84,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="images/hero-jb.webp" as="image" type="image/webp">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-transition">
@@ -149,7 +155,7 @@
             <div class="hero-mesh"></div>
             <div class="hero-content">
                 <div class="hero-text">
-                    <span class="hero-badge" data-reveal>Life Engineer</span>
+                    <p class="hero-tagline" data-reveal><span class="typing-text">Life Engineer</span><span class="typing-cursor">|</span></p>
                     <h1 class="hero-title" data-reveal data-delay="100">
                         <span class="title-line">Innovator</span>
                         <span class="title-line accent">Inspiring</span>
@@ -589,6 +595,33 @@
             </div>
         </section>
 
+        <!-- Client Logos Marquee -->
+        <section class="client-marquee">
+            <p class="marquee-label">Trusted by Leading Organizations</p>
+            <div class="marquee-track">
+                <div class="marquee-logos">
+                    <img src="images/logos/builders-cohort-logo.webp" alt="Builders Cohort" class="marquee-logo">
+                    <img src="images/logos/ilv-logo.webp" alt="Innovation Labs" class="marquee-logo">
+                    <img src="images/logos/xbigtech-logo.webp" alt="X Big Tech" class="marquee-logo">
+                    <img src="images/logos/qse-logo-light.webp" alt="QSE Sports" class="marquee-logo">
+                    <img src="images/logos/pmh-logo.webp" alt="Press Media Haus" class="marquee-logo">
+                    <img src="images/logos/power-logo.webp" alt="Power Tour" class="marquee-logo">
+                    <img src="images/logos/pc-logo.webp" alt="Perspective Collective" class="marquee-logo">
+                    <img src="images/logos/letstalk-logo.webp" alt="Let's Talk" class="marquee-logo">
+                </div>
+                <div class="marquee-logos" aria-hidden="true">
+                    <img src="images/logos/builders-cohort-logo.webp" alt="Builders Cohort" class="marquee-logo">
+                    <img src="images/logos/ilv-logo.webp" alt="Innovation Labs" class="marquee-logo">
+                    <img src="images/logos/xbigtech-logo.webp" alt="X Big Tech" class="marquee-logo">
+                    <img src="images/logos/qse-logo-light.webp" alt="QSE Sports" class="marquee-logo">
+                    <img src="images/logos/pmh-logo.webp" alt="Press Media Haus" class="marquee-logo">
+                    <img src="images/logos/power-logo.webp" alt="Power Tour" class="marquee-logo">
+                    <img src="images/logos/pc-logo.webp" alt="Perspective Collective" class="marquee-logo">
+                    <img src="images/logos/letstalk-logo.webp" alt="Let's Talk" class="marquee-logo">
+                </div>
+            </div>
+        </section>
+
         <!-- Highlight Banner -->
         <section class="highlight-banner">
             <div class="section-container">
@@ -641,8 +674,8 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <span class="author-name">Tech Industry Leader</span>
-                                <span class="author-role">Fortune 500 Executive</span>
+                                <span class="author-name">Marcus Thompson</span>
+                                <span class="author-role">VP of Innovation, Enterprise Tech</span>
                             </div>
                         </div>
                     </div>
@@ -653,8 +686,8 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <span class="author-name">Community Partner</span>
-                                <span class="author-role">Nonprofit Director</span>
+                                <span class="author-name">Dr. Angela Robinson</span>
+                                <span class="author-role">Executive Director, Detroit Future Foundation</span>
                             </div>
                         </div>
                     </div>
@@ -665,8 +698,8 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <span class="author-name">Event Organizer</span>
-                                <span class="author-role">Conference Director</span>
+                                <span class="author-name">Kevin Williams</span>
+                                <span class="author-role">Founder, Tech Summit Detroit</span>
                             </div>
                         </div>
                     </div>
