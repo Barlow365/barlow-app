@@ -246,7 +246,7 @@
 
 /* Dark mode logo switching */
 .logo-dark {
-    display: none;
+    display: none !important;
 }
 
 .logo-light {
@@ -254,19 +254,45 @@
 }
 
 :root[data-theme="dark"] .logo-light {
-    display: none;
+    display: none !important;
 }
 
 :root[data-theme="dark"] .logo-dark {
-    display: block;
+    display: block !important;
 }
 
 /* Ensure logos inside flex/grid containers work correctly */
 .venture-logo .logo-light,
-.venture-logo .logo-dark {
+.venture-logo .logo-dark,
+.entity-img.logo-light,
+.entity-img.logo-dark {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+/* Entity card logo positioning - stack logos and hide inactive */
+.entity-card {
+    position: relative;
+}
+
+.entity-img.logo-light,
+.entity-img.logo-dark {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+}
+
+.entity-card:has(.logo-light):has(.logo-dark) {
+    padding-top: calc(2rem + 120px + 1.5rem);
+}
+
+/* Fallback for browsers without :has() support */
+.entity-card .entity-img.logo-light + .entity-img.logo-dark + h3 {
+    margin-top: 120px;
 }
 
 /* Fallback filter for logos without light/dark versions */
@@ -619,6 +645,31 @@ select:focus-visible {
 
 .cookie-consent .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
+}
+
+/* Cookie consent dark mode - use explicit colors to avoid variable inversion */
+:root[data-theme="dark"] .cookie-consent {
+    background: #1e293b;
+    color: #f1f5f9;
+}
+
+:root[data-theme="dark"] .cookie-consent p {
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .cookie-consent .btn-secondary {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .cookie-consent .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .cookie-consent .btn-primary {
+    color: #ffffff;
 }
 
 /* Enhanced Hover Micro-interactions */
@@ -3044,6 +3095,17 @@ button:hover ~ .cursor-dot {
 @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+}
+
+/* Dark mode marquee logos - invert for visibility */
+:root[data-theme="dark"] .marquee-logo {
+    filter: grayscale(100%) brightness(0) invert(1);
+    opacity: 0.7;
+}
+
+:root[data-theme="dark"] .marquee-logo:hover {
+    filter: grayscale(0%) brightness(0) invert(1);
+    opacity: 1;
 }
 
 /* ========== BREADCRUMB NAVIGATION ========== */
