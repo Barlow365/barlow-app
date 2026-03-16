@@ -1287,6 +1287,51 @@
         }
     });
 
+    // ========== VENTURE SEARCH/FILTER ==========
+    const ventureSearch = document.querySelector('.venture-search input');
+    const ventureCards = document.querySelectorAll('.venture-card');
+
+    if (ventureSearch && ventureCards.length > 0) {
+        ventureSearch.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+
+            ventureCards.forEach(card => {
+                const name = card.querySelector('h4')?.textContent.toLowerCase() || '';
+                const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+                const matches = name.includes(searchTerm) || desc.includes(searchTerm);
+
+                card.classList.toggle('hidden', !matches && searchTerm !== '');
+            });
+        });
+    }
+
+    // ========== SCROLL-TRIGGERED STAT COUNTERS ==========
+    const statCards = document.querySelectorAll('.stat-card');
+
+    if (statCards.length > 0) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statCards.forEach(card => counterObserver.observe(card));
+    }
+
+    // ========== READING TIME CALCULATOR ==========
+    const articleBody = document.querySelector('.article-body, .article-content');
+    const readingTimeEl = document.querySelector('.reading-time span, .reading-time');
+
+    if (articleBody && readingTimeEl) {
+        const text = articleBody.textContent || '';
+        const words = text.trim().split(/\s+/).length;
+        const minutes = Math.ceil(words / 200); // Average reading speed
+        readingTimeEl.textContent = `${minutes} min read`;
+    }
+
     // ========== UPDATE CONTACT FORM TO USE TOAST ==========
     const originalContactForm = document.getElementById('contact-form');
     if (originalContactForm) {

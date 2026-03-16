@@ -64,11 +64,7 @@
 
 /* ========== DARK MODE ========== */
 :root[data-theme="dark"] {
-    /* Dark Mode Colors - semantic naming */
-    --dark: #f8fafc;
-    --dark-soft: #e2e8f0;
-    --text: #e2e8f0;
-    --text-muted: #94a3b8;
+    /* Dark Mode Background Colors */
     --purple-bg: #0f172a;
     --purple-light: #1e293b;
 
@@ -82,6 +78,57 @@
     --gradient-mesh: radial-gradient(ellipse at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
                      radial-gradient(ellipse at 80% 70%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
                      radial-gradient(ellipse at 50% 50%, rgba(100, 116, 139, 0.08) 0%, transparent 60%);
+}
+
+/* Dark mode - body and main text */
+:root[data-theme="dark"] body {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* Dark mode - headings and titles */
+:root[data-theme="dark"] h1,
+:root[data-theme="dark"] h2,
+:root[data-theme="dark"] h3,
+:root[data-theme="dark"] h4,
+:root[data-theme="dark"] h5,
+:root[data-theme="dark"] h6,
+:root[data-theme="dark"] .section-title,
+:root[data-theme="dark"] .hero-title,
+:root[data-theme="dark"] .stat-number,
+:root[data-theme="dark"] .strength-card h3,
+:root[data-theme="dark"] .investment-card h4,
+:root[data-theme="dark"] .venture-card h4 {
+    color: #ffffff;
+}
+
+/* Dark mode - body text */
+:root[data-theme="dark"] p,
+:root[data-theme="dark"] .hero-subtitle,
+:root[data-theme="dark"] .section-subtitle,
+:root[data-theme="dark"] .strength-card p,
+:root[data-theme="dark"] .investment-card p,
+:root[data-theme="dark"] .venture-card p,
+:root[data-theme="dark"] .stat-label,
+:root[data-theme="dark"] .contact-desc {
+    color: #cbd5e1;
+}
+
+/* Dark mode - muted text */
+:root[data-theme="dark"] .section-label,
+:root[data-theme="dark"] .card-tag,
+:root[data-theme="dark"] .testimonial-info p,
+:root[data-theme="dark"] .author-role {
+    color: #94a3b8;
+}
+
+/* Dark mode - links */
+:root[data-theme="dark"] a:not(.btn):not(.nav-link):not(.nav-cta) {
+    color: #60a5fa;
+}
+
+:root[data-theme="dark"] a:not(.btn):not(.nav-link):not(.nav-cta):hover {
+    color: #93c5fd;
 }
 
 /* Dark mode specific overrides */
@@ -4782,47 +4829,336 @@ img[loading="lazy"].loaded {
 }
 
 /* ========== LOGO SIZING FIXES ========== */
-.card-logo,
-.venture-logo img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-@media (max-width: 768px) {
-    .card-logo {
-        max-width: 120px;
-        max-height: 50px;
-    }
-
-    .venture-logo img {
-        max-width: 80px;
-        max-height: 40px;
-    }
-
-    .investment-card .card-header {
-        min-height: auto;
-    }
-
-    .investment-card .card-logo {
-        max-width: 100px;
-        max-height: 45px;
-    }
-}
-
+/* Only constrain logos that overflow on mobile */
 @media (max-width: 480px) {
-    .card-logo {
-        max-width: 100px;
-        max-height: 40px;
+    .investment-card .card-logo[alt="X Big Tech"],
+    .venture-card .venture-logo img[alt="X Big Tech"] {
+        max-width: 90px;
+        height: auto;
     }
+}
 
-    .venture-logo img {
-        max-width: 60px;
-        max-height: 35px;
-    }
+/* ========== CHAT WIDGET ========== */
+.chat-widget {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    z-index: 9998;
+}
 
-    .investment-card .card-logo {
-        max-width: 80px;
-        max-height: 35px;
+.chat-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.chat-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(30, 64, 175, 0.5);
+}
+
+.chat-btn svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+.chat-btn .chat-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--pink);
+    animation: chatPulse 2s ease-out infinite;
+    z-index: -1;
+}
+
+@keyframes chatPulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.chat-tooltip {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--white);
+    color: var(--dark);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.chat-btn:hover + .chat-tooltip,
+.chat-tooltip:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.chat-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 8px solid transparent;
+    border-left-color: var(--white);
+    border-right: none;
+}
+
+:root[data-theme="dark"] .chat-tooltip {
+    background: #1e293b;
+    color: #fff;
+}
+
+:root[data-theme="dark"] .chat-tooltip::after {
+    border-left-color: #1e293b;
+}
+
+/* ========== STICKY HEADER SHADOW ========== */
+.nav-header.scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="dark"] .nav-header.scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ========== MOBILE MENU ANIMATION ========== */
+.mobile-nav-links li {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.mobile-nav.open .mobile-nav-links li {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.mobile-nav.open .mobile-nav-links li:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav.open .mobile-nav-links li:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav.open .mobile-nav-links li:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav.open .mobile-nav-links li:nth-child(4) { transition-delay: 0.25s; }
+.mobile-nav.open .mobile-nav-links li:nth-child(5) { transition-delay: 0.3s; }
+.mobile-nav.open .mobile-nav-links li:nth-child(6) { transition-delay: 0.35s; }
+
+/* ========== LINK HOVER UNDERLINE ANIMATION ========== */
+.nav-link,
+.footer a,
+.card-link {
+    position: relative;
+}
+
+.nav-link::after,
+.card-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--pink);
+    transition: width 0.3s var(--ease-out-expo);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after,
+.card-link:hover::after {
+    width: 100%;
+}
+
+/* ========== IMAGE HOVER ZOOM ========== */
+.venture-card .venture-logo,
+.gallery-item,
+.testimonial-avatar {
+    overflow: hidden;
+}
+
+.venture-card:hover .venture-logo img {
+    transform: scale(1.1);
+    transition: transform 0.4s var(--ease-out-expo);
+}
+
+.gallery-item img {
+    transition: transform 0.4s var(--ease-out-expo);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* ========== BREADCRUMB NAVIGATION ========== */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 15px 0;
+}
+
+.breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--pink);
+}
+
+.breadcrumb-separator {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.breadcrumb-current {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+:root[data-theme="dark"] .breadcrumb-current {
+    color: #fff;
+}
+
+/* ========== PAGE TRANSITIONS ========== */
+.page-transition {
+    animation: pageIn 0.5s var(--ease-out-expo);
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== SCROLL-TRIGGERED COUNTERS ========== */
+.stat-number {
+    transition: transform 0.15s ease;
+}
+
+.stat-number.counting {
+    color: var(--pink);
+}
+
+.stat-card.in-view .stat-number {
+    animation: countPop 0.3s var(--ease-out-back);
+}
+
+@keyframes countPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* ========== VENTURE SEARCH/FILTER ========== */
+.venture-search {
+    max-width: 400px;
+    margin: 0 auto 40px;
+    position: relative;
+}
+
+.venture-search input {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    border: 2px solid var(--purple-light);
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background: var(--white);
+    transition: all 0.3s ease;
+}
+
+.venture-search input:focus {
+    outline: none;
+    border-color: var(--pink);
+    box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
+}
+
+.venture-search svg {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-muted);
+}
+
+.venture-card.hidden {
+    display: none;
+}
+
+:root[data-theme="dark"] .venture-search input {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+:root[data-theme="dark"] .venture-search input::placeholder {
+    color: #94a3b8;
+}
+
+/* ========== READING TIME ========== */
+.reading-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.reading-time svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ========== ARTICLE SHARE BUTTONS ========== */
+.article-share {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    border-top: 1px solid var(--purple-light);
+    margin-top: 40px;
+}
+
+.article-share-label {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.article-share .share-btn {
+    width: 40px;
+    height: 40px;
+}
+
+:root[data-theme="dark"] .article-share {
+    border-color: rgba(255, 255, 255, 0.1);
 }
