@@ -3384,52 +3384,7 @@ img[loading="lazy"]:not([src=""]) {
     opacity: 1;
 }
 
-/* ========== PRINT STYLES ========== */
-@media print {
-    .nav-header,
-    .mobile-nav,
-    .scroll-to-top,
-    .cookie-consent,
-    .orbs-container,
-    .cursor-dot,
-    .cursor-ring,
-    .hero-actions,
-    .newsletter-section,
-    .scroll-progress,
-    .reading-progress,
-    footer {
-        display: none !important;
-    }
-
-    body {
-        background: white;
-        color: black;
-        font-size: 12pt;
-    }
-
-    a {
-        color: black;
-        text-decoration: underline;
-    }
-
-    .section-container {
-        max-width: 100%;
-        padding: 0;
-    }
-
-    h1, h2, h3 {
-        page-break-after: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-        page-break-inside: avoid;
-    }
-
-    .article-content {
-        padding: 0;
-    }
-}
+/* Print styles consolidated at end of file */
 
 /* ========== LINK HOVER UNDERLINE EFFECT ========== */
 .nav-link,
@@ -3912,18 +3867,26 @@ section:nth-child(5) { animation-delay: 0.4s; }
 
 /* ========== PRINT STYLES ========== */
 @media print {
+    /* Reset backgrounds and colors */
     * {
         background: white !important;
         color: black !important;
         box-shadow: none !important;
         text-shadow: none !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
+    /* Base typography */
     body {
         font-size: 12pt;
-        line-height: 1.5;
+        line-height: 1.6;
+        font-family: Georgia, 'Times New Roman', serif;
+        margin: 0;
+        padding: 20px;
     }
 
+    /* Hide non-essential elements */
     .nav-header,
     .mobile-nav,
     .scroll-to-top,
@@ -3932,44 +3895,120 @@ section:nth-child(5) { animation-delay: 0.4s; }
     .cursor-dot,
     .cursor-ring,
     .newsletter-section,
-    footer,
+    .chat-widget,
     .share-buttons,
-    .btn {
+    .btn,
+    .social-links,
+    .video-container,
+    .lightbox,
+    .toast-container,
+    .scroll-progress,
+    .reading-progress,
+    .venture-filters,
+    .filter-section,
+    .venture-search,
+    .hero-actions,
+    footer {
         display: none !important;
     }
 
+    /* Show URLs after links */
     a {
+        color: #333 !important;
         text-decoration: underline;
     }
 
     a[href]::after {
         content: " (" attr(href) ")";
-        font-size: 0.8em;
-        color: #666;
+        font-size: 0.75em;
+        color: #666 !important;
+        word-break: break-all;
     }
 
+    /* Don't show URL for internal/JS links */
     a[href^="#"]::after,
-    a[href^="javascript"]::after {
-        content: "";
+    a[href^="javascript"]::after,
+    a[href*="calendar.app.google"]::after,
+    .nav-link::after,
+    .footer-col a::after {
+        content: "" !important;
     }
 
-    h1, h2, h3 {
+    /* Page breaks */
+    h1, h2, h3, h4 {
         page-break-after: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
         page-break-inside: avoid;
     }
 
-    .section-container {
-        max-width: 100%;
-        padding: 0;
+    p, li, blockquote {
+        orphans: 3;
+        widows: 3;
     }
 
+    section {
+        page-break-inside: avoid;
+    }
+
+    /* Images */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+        page-break-before: auto;
+    }
+
+    /* Containers */
+    .section-container {
+        max-width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Hero section */
     .hero-section {
-        min-height: auto;
-        padding: 2rem 0;
+        min-height: auto !important;
+        padding: 1rem 0 !important;
+    }
+
+    .hero-title {
+        font-size: 24pt !important;
+    }
+
+    /* Cards - display as simple list */
+    .venture-card,
+    .strength-card,
+    .investment-card,
+    .testimonial-card,
+    .entity-card {
+        border: 1px solid #ccc !important;
+        padding: 10px !important;
+        margin-bottom: 10px !important;
+        page-break-inside: avoid;
+    }
+
+    /* Grids - single column for print */
+    .ventures-grid,
+    .strengths-grid,
+    .stats-grid,
+    .testimonials-grid,
+    .entity-grid {
+        display: block !important;
+    }
+
+    /* Contact info - make visible */
+    .contact-info {
+        font-size: 11pt;
+    }
+
+    /* Add print header */
+    body::before {
+        content: "barlow.app";
+        display: block;
+        font-size: 10pt;
+        color: #999 !important;
+        text-align: right;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
     }
 }
 

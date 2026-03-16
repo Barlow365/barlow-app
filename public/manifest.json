@@ -3,25 +3,67 @@
     "short_name": "JB",
     "description": "Life Engineer, Serial Innovator, and Passionate Advocate. Always Fixing the Future.",
     "start_url": "/",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#f8fafc",
     "theme_color": "#1e40af",
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "public/images/icon-192.png",
+            "src": "favicon.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icon-192.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "public/images/icon-512.png",
+            "src": "images/icon-512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
         }
     ],
-    "categories": ["business", "lifestyle"],
+    "shortcuts": [
+        {
+            "name": "Book a Call",
+            "short_name": "Book",
+            "description": "Schedule a consultation with Jonathan",
+            "url": "https://calendar.app.google/ZxWuc1hhmCivsG269",
+            "icons": [{ "src": "favicon.png", "sizes": "32x32" }]
+        },
+        {
+            "name": "Advisory Services",
+            "short_name": "Advisor",
+            "description": "Learn about advisory and investment services",
+            "url": "/advisor.html",
+            "icons": [{ "src": "favicon.png", "sizes": "32x32" }]
+        },
+        {
+            "name": "Speaking & Author",
+            "short_name": "Speaker",
+            "description": "Book Jonathan for keynotes and events",
+            "url": "/speaker.html",
+            "icons": [{ "src": "favicon.png", "sizes": "32x32" }]
+        },
+        {
+            "name": "Ventures Portfolio",
+            "short_name": "Ventures",
+            "description": "Explore 40+ ventures and companies",
+            "url": "/ventures.html",
+            "icons": [{ "src": "favicon.png", "sizes": "32x32" }]
+        }
+    ],
+    "categories": ["business", "lifestyle", "productivity"],
     "lang": "en-US",
-    "dir": "ltr"
+    "dir": "ltr",
+    "prefer_related_applications": false
 }
