@@ -1342,6 +1342,91 @@
         });
     }
 
+    // ========== SERVICE WORKER REGISTRATION ==========
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker registered:', registration.scope);
+
+                    // Check for updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // New version available
+                                console.log('New version available');
+                            }
+                        });
+                    });
+                })
+                .catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        });
+    }
+
+    // ========== ANALYTICS EVENT TRACKING ==========
+    const trackEvent = (category, action, label) => {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label
+            });
+        }
+    };
+
+    // Track CTA button clicks
+    document.querySelectorAll('.btn-primary, .nav-cta, .chat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const label = btn.textContent?.trim() || btn.getAttribute('aria-label') || 'CTA';
+            trackEvent('engagement', 'cta_click', label);
+        });
+    });
+
+    // Track outbound links
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.addEventListener('click', () => {
+            const url = new URL(link.href);
+            trackEvent('outbound', 'click', url.hostname);
+        });
+    });
+
+    // Track scroll depth
+    let scrollDepthTracked = { 25: false, 50: false, 75: false, 100: false };
+
+    const trackScrollDepth = () => {
+        const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+
+        [25, 50, 75, 100].forEach(threshold => {
+            if (scrollPercent >= threshold && !scrollDepthTracked[threshold]) {
+                scrollDepthTracked[threshold] = true;
+                trackEvent('scroll', 'depth', `${threshold}%`);
+            }
+        });
+    };
+
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(trackScrollDepth, 100);
+    }, { passive: true });
+
+    // Track form submissions
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', () => {
+            const formId = form.id || form.className || 'unknown';
+            trackEvent('form', 'submit', formId);
+        });
+    });
+
+    // Track time on page
+    let startTime = Date.now();
+    window.addEventListener('beforeunload', () => {
+        const timeSpent = Math.round((Date.now() - startTime) / 1000);
+        trackEvent('engagement', 'time_on_page', `${timeSpent}s`);
+    });
+
     console.log('barlow.app initialized');
 
 })();

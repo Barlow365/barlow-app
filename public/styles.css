@@ -2331,6 +2331,30 @@ button:hover ~ .cursor-dot {
     min-height: 120px;
 }
 
+/* Form Row - Side by Side Fields */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Required Field Indicator */
+.required {
+    color: #dc2626;
+    font-weight: 400;
+}
+
+/* Phone Input Formatting */
+.form-group input[type="tel"] {
+    font-variant-numeric: tabular-nums;
+}
+
 .form-success {
     text-align: center;
     padding: 3rem;

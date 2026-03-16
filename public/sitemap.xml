@@ -36,4 +36,16 @@
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://barlow.app/posts/programs-vs-systems</loc>
+        <lastmod>2026-03-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://barlow.app/posts/leadership-advice-is-backwards</loc>
+        <lastmod>2026-03-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
