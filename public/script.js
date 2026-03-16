@@ -467,53 +467,37 @@
     });
 
     // ============================================
-    // STATS COUNTER ANIMATION
+    // STATS COUNTER ANIMATION (Simple version)
     // ============================================
-    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    function animateCounters() {
+        const statNumbers = document.querySelectorAll('.stat-number[data-count]');
 
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.dataset.count);
-                const duration = 2000; // 2 seconds
-                const start = performance.now();
-
-                function easeOutExpo(t) {
-                    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-                }
-
-                function updateCounter(currentTime) {
-                    const elapsed = currentTime - start;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const easedProgress = easeOutExpo(progress);
-                    const current = Math.floor(easedProgress * target);
-
-                    el.textContent = current;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        el.textContent = target;
-                    }
-                }
-
-                requestAnimationFrame(updateCounter);
-                counterObserver.unobserve(el);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    statNumbers.forEach(el => counterObserver.observe(el));
-
-    // Fallback: if counters don't animate within 3 seconds, show final values
-    setTimeout(() => {
         statNumbers.forEach(el => {
-            if (el.textContent === '0') {
-                el.textContent = el.dataset.count;
+            const target = parseInt(el.dataset.count) || 0;
+            const duration = 2000;
+            let start = null;
+
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const elapsed = timestamp - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(progress * target);
+
+                el.textContent = current;
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target;
+                }
             }
+
+            requestAnimationFrame(step);
         });
-    }, 3000);
+    }
+
+    // Start counters after 1 second
+    setTimeout(animateCounters, 1000);
 
     // ============================================
     // TYPEWRITER EFFECT (Hero Title Enhancement)
@@ -845,51 +829,43 @@
     }
 
     // ========== ANIMATED TYPING EFFECT ==========
-    try {
-        const typewriterElement = document.querySelector('.hero-tagline .typing-text');
+    (function initTypewriter() {
+        var el = document.querySelector('.hero-tagline .typing-text');
+        if (!el) return;
 
-        if (typewriterElement) {
-            const phrases = ['Life Engineer', 'Serial Innovator', 'Community Builder', 'Thought Leader'];
-            let phraseIndex = 0;
-            let charIndex = phrases[0].length; // Start with full first phrase
-            let isDeleting = true; // Start by deleting
-            let typingSpeed = 2000; // Initial pause before starting
+        var phrases = ['Life Engineer', 'Serial Innovator', 'Community Builder', 'Thought Leader'];
+        var phraseIdx = 0;
+        var charIdx = phrases[0].length;
+        var deleting = true;
 
-            function typeEffect() {
-                try {
-                    const currentPhrase = phrases[phraseIndex];
+        function tick() {
+            var phrase = phrases[phraseIdx];
 
-                    if (isDeleting) {
-                        charIndex--;
-                        typewriterElement.textContent = currentPhrase.substring(0, charIndex);
-                        typingSpeed = 50;
-                    } else {
-                        charIndex++;
-                        typewriterElement.textContent = currentPhrase.substring(0, charIndex);
-                        typingSpeed = 100;
-                    }
-
-                    if (!isDeleting && charIndex === currentPhrase.length) {
-                        typingSpeed = 2000; // Pause at end
-                        isDeleting = true;
-                    } else if (isDeleting && charIndex === 0) {
-                        isDeleting = false;
-                        phraseIndex = (phraseIndex + 1) % phrases.length;
-                        typingSpeed = 500; // Pause before new word
-                    }
-
-                    setTimeout(typeEffect, typingSpeed);
-                } catch (e) {
-                    console.error('Typewriter error:', e);
-                }
+            if (deleting) {
+                charIdx--;
+                el.textContent = phrase.substring(0, charIdx);
+            } else {
+                charIdx++;
+                el.textContent = phrase.substring(0, charIdx);
             }
 
-            // Start typing after page load
-            setTimeout(typeEffect, 2000);
+            var speed = deleting ? 50 : 100;
+
+            if (!deleting && charIdx === phrase.length) {
+                speed = 2000;
+                deleting = true;
+            } else if (deleting && charIdx === 0) {
+                deleting = false;
+                phraseIdx = (phraseIdx + 1) % phrases.length;
+                speed = 500;
+            }
+
+            setTimeout(tick, speed);
         }
-    } catch (e) {
-        console.error('Typewriter init error:', e);
-    }
+
+        // Start after 2 seconds
+        setTimeout(tick, 2000);
+    })();
 
     // ========== ICON HOVER MICRO-ANIMATIONS ==========
     const iconContainers = document.querySelectorAll('.service-icon, .contact-icon, .strength-icon');
