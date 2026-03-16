@@ -2389,7 +2389,7 @@ button:hover ~ .cursor-dot {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s var(--ease-out-expo);
-    animation: fallback-reveal 0.8s ease-out 1s forwards;
+    animation: fallback-reveal 0.8s ease-out 1.5s forwards;
 }
 
 [data-reveal].revealed {
@@ -2398,12 +2398,27 @@ button:hover ~ .cursor-dot {
     animation: none;
 }
 
-/* Fallback: show content after 1s if JS doesn't load */
+/* Fallback: show content after 1.5s if JS doesn't load */
 @keyframes fallback-reveal {
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Extra mobile fallback - ensure content visible after animation */
+@media (max-width: 768px) {
+    [data-reveal] {
+        animation: fallback-reveal 0.5s ease-out 0.5s forwards;
+    }
+}
+
+/* Nuclear fallback for no-JS environments */
+.no-js [data-reveal],
+html:not(.js-enabled) [data-reveal] {
+    opacity: 1;
+    transform: none;
+    animation: none;
 }
 
 /* Responsive */

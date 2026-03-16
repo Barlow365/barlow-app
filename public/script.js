@@ -6,6 +6,9 @@
 (function() {
     'use strict';
 
+    // Mark JS as enabled (for CSS fallbacks)
+    document.documentElement.classList.add('js-enabled');
+
     // ============================================
     // CUSTOM CURSOR
     // ============================================
