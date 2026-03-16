@@ -42,12 +42,15 @@
         "description": "Serial Innovator, Advisor, Author, and Founder of 40+ ventures across technology, media, events, and community development.",
         "url": "https://barlow.app",
         "image": "https://barlow.app/og-image.png",
+        "email": "j@barlow.app",
+        "telephone": "+1-313-728-2398",
         "sameAs": [
             "https://www.linkedin.com/in/barlowdetroit/",
             "https://twitter.com/Barlow365",
-            "https://www.instagram.com/businessbarlow/"
+            "https://www.instagram.com/businessbarlow/",
+            "https://www.facebook.com/JONATHAN.EDWARD.BARLOW/"
         ],
-        "knowsAbout": ["Technology", "Entrepreneurship", "Community Development", "Leadership", "Innovation", "Detroit"],
+        "knowsAbout": ["Technology", "Entrepreneurship", "Community Development", "Leadership", "Innovation", "Detroit", "Public Speaking", "Investing"],
         "alumniOf": {
             "@type": "Organization",
             "name": "Detroit"
@@ -62,6 +65,64 @@
                 "@type": "Organization",
                 "name": "Innovation Labs & Ventures",
                 "url": "https://innovationlabs.ventures"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Jonathan Barlow",
+        "alternateName": "barlow.app",
+        "url": "https://barlow.app",
+        "description": "Official website of Jonathan Barlow - Life Engineer, Serial Innovator, and Passionate Advocate.",
+        "publisher": {
+            "@type": "Person",
+            "name": "Jonathan Barlow"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What types of ventures do you advise?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "I work with startups and established companies across technology, media, events, and community development. My focus is on ventures that create meaningful impact while building sustainable business models."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I book you for a speaking engagement?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can request a booking through my calendar link or contact me directly at j@barlow.app. I speak on leadership, innovation, systems thinking, and community building for corporate events, conferences, and workshops."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is your investment focus?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "I invest in early-stage companies with strong founding teams, clear market opportunities, and potential for community impact. Sectors of interest include technology, media, events, and social enterprises."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer mentorship programs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, through the Builders Cohort and Innovation Labs & Ventures, I work with entrepreneurs at various stages. These programs offer hands-on guidance, network access, and resources for building successful ventures."
+                }
             }
         ]
     }
@@ -728,6 +789,29 @@
             </div>
         </section>
 
+        <!-- Logo Marquee Section -->
+        <section class="marquee-section">
+            <p class="marquee-label">Trusted By & Featured In</p>
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <!-- First set -->
+                    <div class="marquee-item"><img src="images/logos/fox2-logo.png" alt="FOX 2 Detroit" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/cbs-logo.png" alt="CBS Detroit" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/axios-logo.png" alt="Axios" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/wdet-logo.png" alt="WDET" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/chronicle-logo.png" alt="Michigan Chronicle" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/wjr-logo.png" alt="WJR" loading="lazy"></div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="marquee-item"><img src="images/logos/fox2-logo.png" alt="FOX 2 Detroit" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/cbs-logo.png" alt="CBS Detroit" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/axios-logo.png" alt="Axios" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/wdet-logo.png" alt="WDET" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/chronicle-logo.png" alt="Michigan Chronicle" loading="lazy"></div>
+                    <div class="marquee-item"><img src="images/logos/wjr-logo.png" alt="WJR" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ Section -->
         <section class="faq-section">
             <div class="section-container">
@@ -950,12 +1034,10 @@
 
     <!-- Cookie Consent Banner -->
     <div class="cookie-consent" id="cookie-consent">
-        <div class="cookie-consent-content">
-            <p>We use cookies to enhance your experience and analyze site traffic. By continuing, you agree to our use of cookies.</p>
-            <div class="cookie-consent-buttons">
-                <button class="btn btn-secondary" id="cookie-decline">Decline</button>
-                <button class="btn btn-primary" id="cookie-accept">Accept</button>
-            </div>
+        <p class="cookie-consent-text">We use cookies to enhance your experience and analyze site traffic. By continuing, you agree to our use of cookies.</p>
+        <div class="cookie-consent-buttons">
+            <button id="cookie-decline">Decline</button>
+            <button id="cookie-accept">Accept</button>
         </div>
     </div>
 

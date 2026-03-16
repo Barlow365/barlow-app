@@ -278,6 +278,11 @@
                 contactForm.style.display = 'none';
                 formSuccess.classList.remove('hidden');
 
+                // Show toast notification
+                if (window.showToast) {
+                    window.showToast('success', 'Message Sent!', 'Thanks for reaching out. I\'ll get back to you soon.');
+                }
+
                 // Track event (for analytics)
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'form_submission', {
@@ -290,7 +295,13 @@
                 console.error('Form submission error:', error);
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
-                alert('There was an error sending your message. Please try again or email j@barlow.app directly.');
+
+                // Show error toast
+                if (window.showToast) {
+                    window.showToast('error', 'Error Sending Message', 'Please try again or email j@barlow.app directly.');
+                } else {
+                    alert('There was an error sending your message. Please try again or email j@barlow.app directly.');
+                }
             }
         });
     }
@@ -335,6 +346,11 @@
                 submitBtn.innerHTML = 'Subscribed!';
                 submitBtn.style.background = '#059669';
 
+                // Show toast notification
+                if (window.showToast) {
+                    window.showToast('success', 'Subscribed!', 'Welcome aboard! You\'ll receive updates on leadership and innovation.');
+                }
+
                 // Reset after 3 seconds
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
@@ -347,6 +363,11 @@
                 submitBtn.innerHTML = 'Try Again';
                 submitBtn.style.background = '#dc2626';
                 submitBtn.disabled = false;
+
+                // Show error toast
+                if (window.showToast) {
+                    window.showToast('error', 'Subscription Failed', 'Please try again later.');
+                }
 
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
@@ -994,6 +1015,286 @@
                 bg.style.transform = `translateY(${scrollY * speed}px)`;
             });
         }, { passive: true });
+    }
+
+    // ========== TOAST NOTIFICATION SYSTEM ==========
+    const toastContainer = document.createElement('div');
+    toastContainer.className = 'toast-container';
+    document.body.appendChild(toastContainer);
+
+    window.showToast = function(type, title, message, duration = 5000) {
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+
+        const icons = {
+            success: '<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+            error: '<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+            info: '<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>'
+        };
+
+        toast.innerHTML = `
+            ${icons[type] || icons.info}
+            <div class="toast-content">
+                <div class="toast-title">${title}</div>
+                <div class="toast-message">${message}</div>
+            </div>
+            <button class="toast-close">&times;</button>
+        `;
+
+        toastContainer.appendChild(toast);
+
+        // Trigger animation
+        requestAnimationFrame(() => {
+            toast.classList.add('visible');
+        });
+
+        // Close handlers
+        const closeToast = () => {
+            toast.classList.remove('visible');
+            setTimeout(() => toast.remove(), 400);
+        };
+
+        toast.querySelector('.toast-close').addEventListener('click', closeToast);
+        setTimeout(closeToast, duration);
+
+        return toast;
+    };
+
+    // ========== BUTTON RIPPLE EFFECT ==========
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
+
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+
+    // ========== ENHANCED IMAGE LIGHTBOX ==========
+    const lightboxImages = document.querySelectorAll('.gallery-item img, .lightbox-trigger, [data-lightbox]');
+
+    if (lightboxImages.length > 0) {
+        // Create lightbox modal
+        const lightboxModal = document.createElement('div');
+        lightboxModal.className = 'lightbox-modal';
+        lightboxModal.innerHTML = `
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-nav lightbox-prev">&larr;</button>
+            <button class="lightbox-nav lightbox-next">&rarr;</button>
+            <img src="" alt="">
+            <div class="lightbox-caption"></div>
+        `;
+        document.body.appendChild(lightboxModal);
+
+        let currentImageIndex = 0;
+        const imagesArray = Array.from(lightboxImages);
+
+        const openLightbox = (index) => {
+            currentImageIndex = index;
+            const img = imagesArray[index];
+            const src = img.dataset.full || img.src;
+            const caption = img.alt || img.dataset.caption || '';
+
+            lightboxModal.querySelector('img').src = src;
+            lightboxModal.querySelector('.lightbox-caption').textContent = caption;
+            lightboxModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        const nextImage = () => {
+            currentImageIndex = (currentImageIndex + 1) % imagesArray.length;
+            openLightbox(currentImageIndex);
+        };
+
+        const prevImage = () => {
+            currentImageIndex = (currentImageIndex - 1 + imagesArray.length) % imagesArray.length;
+            openLightbox(currentImageIndex);
+        };
+
+        imagesArray.forEach((img, index) => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => openLightbox(index));
+        });
+
+        lightboxModal.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        lightboxModal.querySelector('.lightbox-next').addEventListener('click', nextImage);
+        lightboxModal.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightboxModal.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+    }
+
+    // ========== VIDEO MODAL ==========
+    const videoTriggers = document.querySelectorAll('[data-video], .play-video-btn');
+
+    if (videoTriggers.length > 0) {
+        const videoModal = document.createElement('div');
+        videoModal.className = 'video-modal';
+        videoModal.innerHTML = `
+            <div class="video-modal-content">
+                <button class="video-modal-close">&times;</button>
+                <div class="video-wrapper"></div>
+            </div>
+        `;
+        document.body.appendChild(videoModal);
+
+        videoTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const videoUrl = trigger.dataset.video || trigger.href;
+                const wrapper = videoModal.querySelector('.video-wrapper');
+
+                // Check if YouTube
+                if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+                    const videoId = videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&\n?#]+)/)?.[1];
+                    wrapper.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+                } else if (videoUrl.includes('vimeo.com')) {
+                    const videoId = videoUrl.match(/vimeo\.com\/(\d+)/)?.[1];
+                    wrapper.innerHTML = `<iframe src="https://player.vimeo.com/video/${videoId}?autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+                } else {
+                    wrapper.innerHTML = `<video src="${videoUrl}" controls autoplay></video>`;
+                }
+
+                videoModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const closeVideoModal = () => {
+            videoModal.classList.remove('active');
+            videoModal.querySelector('.video-wrapper').innerHTML = '';
+            document.body.style.overflow = '';
+        };
+
+        videoModal.querySelector('.video-modal-close').addEventListener('click', closeVideoModal);
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) closeVideoModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                closeVideoModal();
+            }
+        });
+    }
+
+    // ========== TESTIMONIALS CAROUSEL ==========
+    const testimonialsTrack = document.querySelector('.testimonials-track');
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
+
+    if (testimonialsTrack && testimonialDots.length > 0) {
+        let currentSlide = 0;
+        const cards = testimonialsTrack.querySelectorAll('.testimonial-card');
+        const totalSlides = cards.length;
+
+        const updateCarousel = (index) => {
+            const cardWidth = cards[0].offsetWidth + 30; // card + gap
+            testimonialsTrack.style.transform = `translateX(-${index * cardWidth}px)`;
+
+            testimonialDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        };
+
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel(currentSlide);
+            });
+        });
+
+        // Auto-advance every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel(currentSlide);
+        }, 5000);
+    }
+
+    // ========== EASTER EGG - KONAMI CODE ==========
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === konamiCode[konamiIndex]) {
+            konamiIndex++;
+            if (konamiIndex === konamiCode.length) {
+                activateEasterEgg();
+                konamiIndex = 0;
+            }
+        } else {
+            konamiIndex = 0;
+        }
+    });
+
+    function activateEasterEgg() {
+        const overlay = document.createElement('div');
+        overlay.className = 'easter-egg-overlay';
+        overlay.innerHTML = `
+            <button class="easter-egg-close">&times;</button>
+            <div class="easter-egg-content">
+                <div class="easter-egg-emoji">🚀</div>
+                <h2 class="easter-egg-text">You Found It!</h2>
+                <p class="easter-egg-subtext">Always Fixing the Future - one keystroke at a time</p>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        requestAnimationFrame(() => overlay.classList.add('active'));
+
+        const closeEgg = () => {
+            overlay.classList.remove('active');
+            setTimeout(() => overlay.remove(), 500);
+        };
+
+        overlay.querySelector('.easter-egg-close').addEventListener('click', closeEgg);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeEgg();
+        });
+
+        // Show toast
+        if (window.showToast) {
+            window.showToast('success', 'Easter Egg Found!', 'You discovered the Konami code!');
+        }
+    }
+
+    // ========== LAZY LOADING IMAGE HANDLER ==========
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+        // If already loaded
+        if (img.complete) {
+            img.classList.add('loaded');
+        }
+    });
+
+    // ========== UPDATE CONTACT FORM TO USE TOAST ==========
+    const originalContactForm = document.getElementById('contact-form');
+    if (originalContactForm) {
+        const originalSubmitHandler = originalContactForm.onsubmit;
+        originalContactForm.addEventListener('submit', async function(e) {
+            // The original handler should prevent default and handle submission
+            // We just add toast notifications
+        });
     }
 
     console.log('barlow.app initialized');
