@@ -480,3 +480,50 @@
         align-items: flex-start;
     }
 }
+
+/* ===== DARK MODE OVERRIDES ===== */
+:root[data-theme="dark"] .share-btn.twitter {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="dark"] .share-btn.twitter:hover {
+    background: #334155;
+}
+
+:root[data-theme="dark"] .share-btn.linkedin {
+    background: #0077b5;
+}
+
+:root[data-theme="dark"] .article-nav .btn-secondary {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="dark"] .article-nav .btn-secondary:hover {
+    background: #334155;
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .article-hero-overlay {
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.9));
+}
+
+:root[data-theme="dark"] .article-body {
+    background: #0f172a;
+}
+
+:root[data-theme="dark"] .article-callout {
+    background: #1e293b;
+    border-left-color: var(--pink-light);
+}
+
+:root[data-theme="dark"] .article-cta {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+:root[data-theme="dark"] .article-tags .tag {
+    background: #1e293b;
+    color: #94a3b8;
+}

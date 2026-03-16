@@ -2541,6 +2541,28 @@ button:hover ~ .cursor-dot {
         display: none;
     }
 
+    /* Reduce gaps for mobile */
+    .hero-content {
+        gap: 2rem;
+    }
+
+    .contact-wrapper {
+        gap: 2rem;
+    }
+
+    .speaker-intro {
+        gap: 1.5rem;
+    }
+
+    .advisor-content {
+        gap: 2rem;
+    }
+
+    /* Touch-friendly nav links */
+    .nav-link {
+        padding: 0.75rem 1rem;
+    }
+
     /* Mobile hero - larger centered image */
     .image-frame {
         max-width: 280px;
@@ -2602,16 +2624,91 @@ button:hover ~ .cursor-dot {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .hero-content {
+        gap: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
     }
 
     .btn {
         width: 100%;
         justify-content: center;
+        min-height: 48px;
     }
 
     .mayor-title {
+        font-size: 1.75rem;
+    }
+
+    /* Reduce container padding on small screens */
+    .section-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Newsletter form */
+    .newsletter-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .newsletter-form input {
+        min-height: 48px;
+    }
+
+    .newsletter-form .btn {
+        min-height: 48px;
+    }
+
+    /* Contact section */
+    .contact-wrapper {
+        gap: 1.5rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    /* Cookie consent */
+    .cookie-consent {
+        padding: 0.75rem 1rem;
+    }
+
+    .cookie-consent-content {
+        gap: 1rem;
+    }
+
+    .cookie-consent p {
+        min-width: auto;
+        font-size: 0.8125rem;
+    }
+
+    /* Scroll to top */
+    .scroll-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 44px;
+        height: 44px;
+    }
+
+    /* Entity cards */
+    .entity-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Stats */
+    .stat-number {
         font-size: 2rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        gap: 2rem;
     }
 }
 
