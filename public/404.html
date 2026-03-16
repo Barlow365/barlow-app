@@ -4,120 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found | Jonathan Barlow</title>
-    <meta name="description" content="The page you're looking for doesn't exist. Let's get you back on track.">
-
-    <!-- Favicon -->
+    <meta name="description" content="The page you're looking for doesn't exist.">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
-
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1e40af">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .error-page {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .error-content {
-            max-width: 600px;
-            z-index: 10;
-        }
-
-        .error-code {
-            font-family: var(--font-display);
-            font-size: clamp(8rem, 20vw, 12rem);
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .error-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .error-message {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .error-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .error-links {
-            margin-top: 3rem;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .error-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .error-links a:hover {
-            color: var(--pink);
-        }
-
-        :root[data-theme="dark"] .error-title {
-            color: #f1f5f9;
-        }
-
-        :root[data-theme="dark"] .error-message {
-            color: #94a3b8;
-        }
+        .error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; z-index: 1; }
+        .error-content { max-width: 600px; }
+        .error-code { font-family: 'Syne', sans-serif; font-size: clamp(8rem, 20vw, 14rem); font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 1rem; }
+        .error-title { font-family: 'Syne', sans-serif; font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 700; color: var(--dark); margin-bottom: 1rem; }
+        .error-message { font-family: 'DM Sans', sans-serif; font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.7; }
+        .error-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .error-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); }
+        .error-links p { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; }
+        .error-links ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+        .error-links a { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--pink); text-decoration: none; }
+        .error-links a:hover { color: var(--pink-dark); }
+        :root[data-theme="dark"] .error-title { color: #fff; }
+        :root[data-theme="dark"] .error-message { color: rgba(255,255,255,0.7); }
+        :root[data-theme="dark"] .error-links { border-top-color: rgba(255,255,255,0.1); }
     </style>
 </head>
-<body>
-    <!-- Floating Orbs Background -->
+<body class="page-transition">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
     <div class="orbs-container" aria-hidden="true">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
     </div>
-
+    <header class="nav-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo"><span class="logo-text">JB</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="advisor.html" class="nav-link">Advisor & Investor</a></li>
+                <li><a href="speaker.html" class="nav-link">Author & Speaker</a></li>
+                <li><a href="ventures.html" class="nav-link">Founder & Companies</a></li>
+                <li><a href="press.html" class="nav-link">Press</a></li>
+            </ul>
+            <a href="https://calendar.app.google/ZxWuc1hhmCivsG269" target="_blank" class="nav-cta">Request to Book</a>
+            <button class="theme-toggle" aria-label="Toggle dark mode"><svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="advisor.html">Advisor & Investor</a></li>
+            <li><a href="speaker.html">Author & Speaker</a></li>
+            <li><a href="ventures.html">Founder & Companies</a></li>
+            <li><a href="press.html">Press</a></li>
+        </ul>
+    </div>
     <main class="error-page">
-        <div class="error-content">
+        <div class="error-content" data-reveal>
             <div class="error-code">404</div>
             <h1 class="error-title">Page Not Found</h1>
-            <p class="error-message">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+            <p class="error-message">The page you're looking for seems to have wandered off. No worries - let's get you back to building something great.</p>
             <div class="error-actions">
                 <a href="index.html" class="btn btn-primary">Go Home</a>
                 <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>
             </div>
             <div class="error-links">
-                <a href="advisor.html">Advisor</a>
-                <a href="speaker.html">Speaker</a>
-                <a href="ventures.html">Ventures</a>
-                <a href="press.html">Press</a>
+                <p>Or check out these pages:</p>
+                <ul>
+                    <li><a href="advisor.html">Advisory</a></li>
+                    <li><a href="speaker.html">Speaking</a></li>
+                    <li><a href="ventures.html">Ventures</a></li>
+                    <li><a href="press.html">Press</a></li>
+                </ul>
             </div>
         </div>
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>

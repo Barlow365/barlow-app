@@ -839,7 +839,7 @@
     });
 
     // ========== READING PROGRESS BAR (Blog Pages) ==========
-    const articleContent = document.querySelector('.article-content, .blog-article');
+    const articleContent = document.querySelector('.article-content, .blog-article, .article-body');
 
     if (articleContent) {
         const readingProgress = document.createElement('div');

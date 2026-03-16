@@ -3422,3 +3422,55 @@ img[loading="lazy"]:not([src=""]) {
     font-size: 0.7em;
     opacity: 0.8;
 }
+
+/* ========== PAGE TRANSITIONS ========== */
+.page-transition {
+    animation: pageEnter 0.6s ease-out;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth link transitions */
+a[href$=".html"]:not(.btn):not(.nav-cta) {
+    transition: color 0.2s ease;
+}
+
+/* Section entrance animations */
+section {
+    animation: sectionEnter 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+section:nth-child(1) { animation-delay: 0s; }
+section:nth-child(2) { animation-delay: 0.1s; }
+section:nth-child(3) { animation-delay: 0.2s; }
+section:nth-child(4) { animation-delay: 0.3s; }
+section:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes sectionEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .page-transition,
+    section {
+        animation: none;
+    }
+}
