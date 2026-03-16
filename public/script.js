@@ -499,9 +499,18 @@
                 counterObserver.unobserve(el);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
 
     statNumbers.forEach(el => counterObserver.observe(el));
+
+    // Fallback: if counters don't animate within 3 seconds, show final values
+    setTimeout(() => {
+        statNumbers.forEach(el => {
+            if (el.textContent === '0') {
+                el.textContent = el.dataset.count;
+            }
+        });
+    }, 3000);
 
     // ============================================
     // TYPEWRITER EFFECT (Hero Title Enhancement)
@@ -833,42 +842,50 @@
     }
 
     // ========== ANIMATED TYPING EFFECT ==========
-    const typewriterElement = document.querySelector('.hero-tagline .typing-text');
+    try {
+        const typewriterElement = document.querySelector('.hero-tagline .typing-text');
 
-    if (typewriterElement) {
-        const phrases = ['Life Engineer', 'Serial Innovator', 'Community Builder', 'Thought Leader'];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
+        if (typewriterElement) {
+            const phrases = ['Life Engineer', 'Serial Innovator', 'Community Builder', 'Thought Leader'];
+            let phraseIndex = 0;
+            let charIndex = phrases[0].length; // Start with full first phrase
+            let isDeleting = true; // Start by deleting
+            let typingSpeed = 2000; // Initial pause before starting
 
-        function typeEffect() {
-            const currentPhrase = phrases[phraseIndex];
+            function typeEffect() {
+                try {
+                    const currentPhrase = phrases[phraseIndex];
 
-            if (isDeleting) {
-                typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-                typingSpeed = 50;
-            } else {
-                typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-                typingSpeed = 100;
+                    if (isDeleting) {
+                        charIndex--;
+                        typewriterElement.textContent = currentPhrase.substring(0, charIndex);
+                        typingSpeed = 50;
+                    } else {
+                        charIndex++;
+                        typewriterElement.textContent = currentPhrase.substring(0, charIndex);
+                        typingSpeed = 100;
+                    }
+
+                    if (!isDeleting && charIndex === currentPhrase.length) {
+                        typingSpeed = 2000; // Pause at end
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        typingSpeed = 500; // Pause before new word
+                    }
+
+                    setTimeout(typeEffect, typingSpeed);
+                } catch (e) {
+                    console.error('Typewriter error:', e);
+                }
             }
 
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                typingSpeed = 2000; // Pause at end
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typingSpeed = 500; // Pause before new word
-            }
-
-            setTimeout(typeEffect, typingSpeed);
+            // Start typing after page load
+            setTimeout(typeEffect, 2000);
         }
-
-        // Start typing after page load
-        setTimeout(typeEffect, 1000);
+    } catch (e) {
+        console.error('Typewriter init error:', e);
     }
 
     // ========== ICON HOVER MICRO-ANIMATIONS ==========
