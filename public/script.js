@@ -467,32 +467,48 @@
     });
 
     // ============================================
-    // STATS COUNTER ANIMATION (Simple version)
+    // STATS COUNTER ANIMATION (Enhanced version)
     // ============================================
     function animateCounters() {
         const statNumbers = document.querySelectorAll('.stat-number[data-count]');
 
-        statNumbers.forEach(el => {
+        // Easing function for dramatic slowdown at end
+        function easeOutExpo(t) {
+            return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        }
+
+        statNumbers.forEach((el, index) => {
             const target = parseInt(el.dataset.count) || 0;
-            const duration = 2000;
+            const duration = 2500;
             let start = null;
 
-            function step(timestamp) {
-                if (!start) start = timestamp;
-                const elapsed = timestamp - start;
-                const progress = Math.min(elapsed / duration, 1);
-                const current = Math.floor(progress * target);
+            // Stagger start times
+            setTimeout(() => {
+                function step(timestamp) {
+                    if (!start) start = timestamp;
+                    const elapsed = timestamp - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutExpo(progress);
+                    const current = Math.floor(easedProgress * target);
 
-                el.textContent = current;
+                    el.textContent = current;
 
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                } else {
-                    el.textContent = target;
+                    // Add pulse effect at milestones
+                    if (current === Math.floor(target * 0.5) || current === target) {
+                        el.style.transform = 'scale(1.1)';
+                        setTimeout(() => { el.style.transform = 'scale(1)'; }, 150);
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        el.textContent = target;
+                        el.classList.add('counter-complete');
+                    }
                 }
-            }
 
-            requestAnimationFrame(step);
+                requestAnimationFrame(step);
+            }, index * 200); // Stagger by 200ms each
         });
     }
 
@@ -867,6 +883,116 @@
             ));
 
             readingProgress.style.width = `${progress}%`;
+        }, { passive: true });
+    }
+
+    // ========== FAQ ACCORDION ==========
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(other => {
+                    if (other !== item && other.classList.contains('active')) {
+                        other.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        }
+    });
+
+    // ========== SOCIAL SHARE BUTTONS ==========
+    const shareButtons = document.querySelectorAll('.share-btn');
+
+    shareButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+
+            if (btn.classList.contains('twitter')) {
+                window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank', 'width=550,height=420');
+            } else if (btn.classList.contains('linkedin')) {
+                window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=550,height=420');
+            } else if (btn.classList.contains('facebook')) {
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=550,height=420');
+            } else if (btn.classList.contains('copy')) {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    btn.classList.add('copied');
+                    setTimeout(() => btn.classList.remove('copied'), 2000);
+                });
+            }
+        });
+    });
+
+    // ========== ENHANCED FORM VALIDATION ==========
+    const forms = document.querySelectorAll('form');
+
+    forms.forEach(form => {
+        const inputs = form.querySelectorAll('input, textarea');
+
+        inputs.forEach(input => {
+            // Real-time validation on blur
+            input.addEventListener('blur', () => {
+                validateInput(input);
+            });
+
+            // Clear validation on focus
+            input.addEventListener('focus', () => {
+                input.classList.remove('valid', 'invalid');
+                const msg = input.parentElement.querySelector('.validation-message');
+                if (msg) msg.classList.remove('visible');
+            });
+        });
+
+        function validateInput(input) {
+            const value = input.value.trim();
+            const type = input.type;
+            let isValid = true;
+            let message = '';
+
+            if (input.required && !value) {
+                isValid = false;
+                message = 'This field is required';
+            } else if (type === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    isValid = false;
+                    message = 'Please enter a valid email';
+                }
+            }
+
+            input.classList.remove('valid', 'invalid');
+            input.classList.add(isValid ? 'valid' : 'invalid');
+
+            // Show/hide validation message
+            let msgEl = input.parentElement.querySelector('.validation-message');
+            if (!msgEl && !isValid) {
+                msgEl = document.createElement('span');
+                msgEl.className = 'validation-message error';
+                input.parentElement.appendChild(msgEl);
+            }
+            if (msgEl) {
+                msgEl.textContent = message;
+                msgEl.classList.toggle('visible', !isValid);
+            }
+        }
+    });
+
+    // ========== PARALLAX SCROLL EFFECT ==========
+    const parallaxBgs = document.querySelectorAll('.parallax-bg');
+
+    if (parallaxBgs.length > 0) {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            parallaxBgs.forEach(bg => {
+                const speed = bg.dataset.speed || 0.3;
+                bg.style.transform = `translateY(${scrollY * speed}px)`;
+            });
         }, { passive: true });
     }
 
