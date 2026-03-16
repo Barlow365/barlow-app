@@ -282,17 +282,17 @@
     top: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
 }
 
 .entity-card:has(.logo-light):has(.logo-dark) {
-    padding-top: calc(2rem + 120px + 1.5rem);
+    padding-top: calc(2rem + 150px + 1.5rem);
 }
 
 /* Fallback for browsers without :has() support */
 .entity-card .entity-img.logo-light + .entity-img.logo-dark + h3 {
-    margin-top: 120px;
+    margin-top: 150px;
 }
 
 /* Fallback filter for logos without light/dark versions */
@@ -1529,14 +1529,14 @@ button:hover ~ .cursor-dot {
 }
 
 .investment-card .card-logo {
-    max-height: 140px;
+    max-height: 180px;
     max-width: 100%;
     object-fit: contain;
 }
 
 /* Larger logo variant for cards */
 .investment-card .card-logo.logo-large {
-    max-height: 140px;
+    max-height: 200px;
 }
 
 .card-icon-placeholder {
@@ -3018,6 +3018,39 @@ button:hover ~ .cursor-dot {
     [data-reveal] {
         opacity: 1;
         transform: none;
+    }
+
+    /* Disable marquee animation */
+    .marquee-track {
+        animation: none;
+    }
+
+    .marquee-logos {
+        animation: none;
+    }
+
+    /* Disable parallax effects */
+    .parallax {
+        transform: none !important;
+    }
+
+    /* Disable scroll progress bar animation */
+    .scroll-progress {
+        transition: none !important;
+    }
+
+    /* Static hero elements */
+    .hero-title .title-line {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Disable hover transitions on cards */
+    .venture-card,
+    .strength-card,
+    .investment-card,
+    .entity-card {
+        transform: none !important;
     }
 }
 

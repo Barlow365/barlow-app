@@ -712,6 +712,55 @@
         });
     }
 
+    // ========== NEWSLETTER FORM ==========
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const emailInput = this.querySelector('input[type="email"]');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const successMsg = document.querySelector('.newsletter-success');
+
+            if (!emailInput.value) return;
+
+            // Disable form while submitting
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Subscribing...';
+
+            try {
+                const response = await fetch('/api/newsletter', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: emailInput.value,
+                        source: 'barlow.app homepage'
+                    })
+                });
+
+                if (response.ok) {
+                    // Show success message
+                    newsletterForm.style.display = 'none';
+                    if (successMsg) successMsg.style.display = 'block';
+
+                    // Track in analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'newsletter_signup', {
+                            'event_category': 'engagement',
+                            'event_label': 'Homepage Newsletter'
+                        });
+                    }
+                } else {
+                    throw new Error('Subscription failed');
+                }
+            } catch (error) {
+                console.error('Newsletter error:', error);
+                submitBtn.textContent = 'Try Again';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
     // ========== FORM VALIDATION ENHANCEMENT ==========
     const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
 
