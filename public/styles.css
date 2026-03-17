@@ -1043,6 +1043,10 @@ button:hover ~ .cursor-dot {
     transition: all 0.3s var(--ease-out-expo);
 }
 
+:root[data-theme="dark"] .nav-toggle span {
+    background: #e2e8f0;
+}
+
 /* Mobile Navigation */
 .mobile-nav {
     position: fixed;
@@ -2276,12 +2280,58 @@ button:hover ~ .cursor-dot {
     color: var(--white);
 }
 
+/* Contact Section - Dark Mode */
+:root[data-theme="dark"] .contact-item {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .contact-value {
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .contact-label {
+    color: #64748b;
+}
+
+:root[data-theme="dark"] .social-link {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .social-link svg {
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .download-link {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .download-link svg {
+    color: var(--pink-light);
+}
+
+:root[data-theme="dark"] .downloads h4 {
+    color: #e2e8f0;
+}
+
 /* Contact Form */
 .contact-form-wrapper {
     background: var(--white);
     padding: 2.5rem;
     border-radius: 24px;
     box-shadow: var(--shadow-lg);
+}
+
+:root[data-theme="dark"] .contact-form-wrapper {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme="dark"] .contact-form h3 {
+    color: #e2e8f0;
 }
 
 .contact-form h3 {
@@ -2301,6 +2351,20 @@ button:hover ~ .cursor-dot {
     font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.form-group label .required {
+    color: #dc2626;
+    font-weight: 400;
+}
+
+:root[data-theme="dark"] .form-group label {
+    color: #cbd5e1;
+}
+
+:root[data-theme="dark"] .form-group label .required {
+    color: #ef4444;
 }
 
 .form-group input,
@@ -2313,9 +2377,14 @@ button:hover ~ .cursor-dot {
     border-radius: 12px;
     font-family: var(--font-body);
     font-size: 1rem;
-    color: #334155;
+    color: var(--dark);
     transition: all 0.3s ease;
-    cursor: none;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: rgba(30, 64, 175, 0.2);
 }
 
 .form-group input:focus,
@@ -2325,6 +2394,12 @@ button:hover ~ .cursor-dot {
     border-color: var(--pink);
     background: #ffffff;
     color: #0f172a;
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
 }
 
 .form-group select {
@@ -2332,6 +2407,39 @@ button:hover ~ .cursor-dot {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b5f78' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
+}
+
+/* Form inputs - Dark Mode */
+:root[data-theme="dark"] .form-group input,
+:root[data-theme="dark"] .form-group select,
+:root[data-theme="dark"] .form-group textarea {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .form-group input:hover,
+:root[data-theme="dark"] .form-group select:hover,
+:root[data-theme="dark"] .form-group textarea:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+:root[data-theme="dark"] .form-group input:focus,
+:root[data-theme="dark"] .form-group select:focus,
+:root[data-theme="dark"] .form-group textarea:focus {
+    border-color: var(--pink-light);
+    background: rgba(15, 23, 42, 0.9);
+    color: #f1f5f9;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+:root[data-theme="dark"] .form-group input::placeholder,
+:root[data-theme="dark"] .form-group textarea::placeholder {
+    color: #475569;
+}
+
+:root[data-theme="dark"] .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
 }
 
 .form-group textarea {
