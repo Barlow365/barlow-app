@@ -1,5 +1,5 @@
 // Service Worker for barlow.app
-const CACHE_NAME = 'barlow-app-v1';
+const CACHE_NAME = 'barlow-app-v2';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache immediately on install
@@ -17,6 +17,8 @@ const PRECACHE_ASSETS = [
     '/manifest.json',
     '/favicon.png',
     '/images/hero-jb.webp',
+    '/images/jb-speaking.webp',
+    '/images/jb-mic.webp',
     '/images/og-image.png',
     OFFLINE_URL
 ];

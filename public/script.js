@@ -1427,6 +1427,184 @@
         trackEvent('engagement', 'time_on_page', `${timeSpent}s`);
     });
 
+    // ========== A/B TESTING FRAMEWORK ==========
+    window.BarlowAB = (function() {
+        const STORAGE_KEY = 'barlow_ab_tests';
+        const tests = {};
+
+        // Get or create a consistent visitor ID
+        function getVisitorId() {
+            let id = localStorage.getItem('barlow_visitor_id');
+            if (!id) {
+                id = 'v_' + Math.random().toString(36).substr(2, 9);
+                localStorage.setItem('barlow_visitor_id', id);
+            }
+            return id;
+        }
+
+        // Get stored test assignments
+        function getAssignments() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            } catch (e) {
+                return {};
+            }
+        }
+
+        // Save test assignments
+        function saveAssignments(assignments) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(assignments));
+        }
+
+        // Hash function for consistent assignment
+        function hashString(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return Math.abs(hash);
+        }
+
+        // Register a new A/B test
+        function registerTest(testId, variants, options = {}) {
+            tests[testId] = {
+                variants: variants,
+                weights: options.weights || variants.map(() => 1 / variants.length),
+                active: options.active !== false
+            };
+        }
+
+        // Get variant for a test (consistent per visitor)
+        function getVariant(testId) {
+            const test = tests[testId];
+            if (!test || !test.active) return null;
+
+            const assignments = getAssignments();
+
+            // Check if already assigned
+            if (assignments[testId]) {
+                return assignments[testId];
+            }
+
+            // Assign based on visitor ID hash
+            const visitorId = getVisitorId();
+            const hash = hashString(visitorId + testId);
+            const normalized = (hash % 100) / 100;
+
+            let cumulative = 0;
+            let selectedVariant = test.variants[0];
+
+            for (let i = 0; i < test.variants.length; i++) {
+                cumulative += test.weights[i];
+                if (normalized < cumulative) {
+                    selectedVariant = test.variants[i];
+                    break;
+                }
+            }
+
+            // Store assignment
+            assignments[testId] = selectedVariant;
+            saveAssignments(assignments);
+
+            // Track assignment
+            trackEvent('ab_test', 'assigned', `${testId}:${selectedVariant}`);
+
+            return selectedVariant;
+        }
+
+        // Apply variant to page elements
+        function applyVariant(testId, variantHandlers) {
+            const variant = getVariant(testId);
+            if (variant && variantHandlers[variant]) {
+                variantHandlers[variant]();
+            }
+            return variant;
+        }
+
+        // Track conversion for a test
+        function trackConversion(testId, conversionType = 'default') {
+            const assignments = getAssignments();
+            const variant = assignments[testId];
+            if (variant) {
+                trackEvent('ab_test', 'conversion', `${testId}:${variant}:${conversionType}`);
+            }
+        }
+
+        // Add data attribute to body for CSS-based variants
+        function applyBodyClass(testId) {
+            const variant = getVariant(testId);
+            if (variant) {
+                document.body.setAttribute(`data-ab-${testId}`, variant);
+            }
+            return variant;
+        }
+
+        return {
+            register: registerTest,
+            getVariant: getVariant,
+            apply: applyVariant,
+            convert: trackConversion,
+            applyClass: applyBodyClass,
+            getVisitorId: getVisitorId
+        };
+    })();
+
+    // ========== EXAMPLE A/B TEST SETUP ==========
+    // Register available tests (edit these to create new tests)
+
+    // CTA Button Text Test
+    BarlowAB.register('cta_text', ['control', 'variant_a', 'variant_b'], {
+        weights: [0.34, 0.33, 0.33]
+    });
+
+    // Hero Headline Test
+    BarlowAB.register('hero_headline', ['original', 'systems', 'impact'], {
+        weights: [0.34, 0.33, 0.33]
+    });
+
+    // Apply CTA text variants
+    BarlowAB.apply('cta_text', {
+        control: function() {
+            // Default: "Request to Book"
+        },
+        variant_a: function() {
+            document.querySelectorAll('.nav-cta, .hero-cta .btn-primary').forEach(btn => {
+                if (btn.textContent.includes('Request to Book') || btn.textContent.includes('Book a Consultation')) {
+                    btn.textContent = 'Start a Conversation';
+                }
+            });
+        },
+        variant_b: function() {
+            document.querySelectorAll('.nav-cta, .hero-cta .btn-primary').forEach(btn => {
+                if (btn.textContent.includes('Request to Book') || btn.textContent.includes('Book a Consultation')) {
+                    btn.textContent = 'Let\'s Connect';
+                }
+            });
+        }
+    });
+
+    // Apply body class for CSS-based A/B testing
+    BarlowAB.applyClass('hero_headline');
+
+    // Track conversions on form submit
+    const contactFormAB = document.getElementById('contact-form');
+    if (contactFormAB) {
+        contactFormAB.addEventListener('submit', () => {
+            BarlowAB.convert('cta_text', 'form_submit');
+            BarlowAB.convert('hero_headline', 'form_submit');
+        });
+    }
+
+    // Track conversions on booking link click
+    document.querySelectorAll('a[href*="calendar.app.google"]').forEach(link => {
+        link.addEventListener('click', () => {
+            BarlowAB.convert('cta_text', 'book_click');
+            BarlowAB.convert('hero_headline', 'book_click');
+        });
+    });
+
     console.log('barlow.app initialized');
 
 })();
