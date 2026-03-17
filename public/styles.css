@@ -3897,6 +3897,80 @@ section:nth-child(5) { animation-delay: 0.4s; }
 .validation-message.error { color: #dc2626; }
 .validation-message.success { color: #059669; }
 
+/* ========== PRESS PAGE TABS ========== */
+.press-tabs {
+    display: flex;
+    gap: 0;
+    margin-top: 2rem;
+    border-bottom: 2px solid var(--purple-light, #e2e8f0);
+}
+
+.press-tab {
+    padding: 0.875rem 2rem;
+    border: none;
+    background: none;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.press-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    border-radius: 3px 3px 0 0;
+    transition: background 0.2s;
+}
+
+.press-tab:hover {
+    color: var(--text);
+}
+
+.press-tab.active {
+    color: var(--pink);
+}
+
+.press-tab.active::after {
+    background: var(--pink);
+}
+
+:root[data-theme="dark"] .press-tabs {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="dark"] .press-tab {
+    color: #64748b;
+}
+
+:root[data-theme="dark"] .press-tab:hover {
+    color: #cbd5e1;
+}
+
+:root[data-theme="dark"] .press-tab.active {
+    color: var(--pink-light);
+}
+
+:root[data-theme="dark"] .press-tab.active::after {
+    background: var(--pink-light);
+}
+
+/* Tab content visibility */
+.press-tab-content {
+    display: none;
+}
+
+.press-tab-content.active {
+    display: block;
+}
+
 /* ========== BLOG SEARCH ========== */
 .blog-search {
     margin-bottom: 1.5rem;

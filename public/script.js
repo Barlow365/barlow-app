@@ -1370,6 +1370,23 @@
         }
     });
 
+    // ========== PRESS PAGE TABS ==========
+    var pressTabs = document.querySelectorAll('.press-tab');
+    var pressContents = document.querySelectorAll('.press-tab-content');
+
+    if (pressTabs.length > 0) {
+        pressTabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var target = this.getAttribute('data-tab');
+                pressTabs.forEach(function(t) { t.classList.remove('active'); });
+                pressContents.forEach(function(c) { c.classList.remove('active'); });
+                this.classList.add('active');
+                var targetContent = document.querySelector('[data-tab-content="' + target + '"]');
+                if (targetContent) targetContent.classList.add('active');
+            });
+        });
+    }
+
     // ========== BLOG CATEGORY FILTER ==========
     const blogFilters = document.querySelectorAll('.blog-filter');
     const blogCards = document.querySelectorAll('.blog-card');

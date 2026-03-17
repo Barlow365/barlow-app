@@ -129,25 +129,24 @@
             </div>
         </section>
 
-        <!-- Page Header -->
+        <!-- Page Header with Tabs -->
         <section class="blog-header">
             <div class="section-container">
                 <div class="blog-header-content">
                     <span class="section-label">Media & Writing</span>
                     <h1 class="page-title">Press & The Fix</h1>
                     <p class="page-subtitle">External media coverage and original insights on leadership, technology, and Detroit.</p>
+                    <div class="press-tabs">
+                        <button class="press-tab active" data-tab="press">Press Coverage</button>
+                        <button class="press-tab" data-tab="blog">The Fix by JB</button>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Press Coverage Section -->
-        <section class="press-coverage-section">
+        <section class="press-coverage-section press-tab-content active" data-tab-content="press">
             <div class="section-container">
-                <div class="section-header centered">
-                    <span class="section-label">In The News</span>
-                    <h2 class="section-title">Press Coverage</h2>
-                    <p class="section-subtitle">Featured interviews, news coverage, and media appearances.</p>
-                </div>
                 <div class="press-grid">
                     <a href="https://www.wxyz.com/news/2025-detroit-mayoral-election/full-interview-2025-detroit-mayoral-candidate-jonathan-barlow-speaks-to-7-news-detroit" target="_blank" rel="noopener noreferrer" class="press-card" rel="noopener">
                         <span class="press-outlet">7 News Detroit</span>
@@ -193,23 +192,8 @@
             </div>
         </section>
 
-        <!-- The Fix by JB - Blog Section -->
-        <section class="blog-section">
-            <div class="section-container">
-                <div class="section-header centered">
-                    <span class="section-label">Original Writing</span>
-                    <h2 class="section-title">The Fix by JB</h2>
-                    <p class="section-subtitle">Insights, op-eds, and reflections on leadership, technology, and building ventures.</p>
-                </div>
-                <div class="blog-categories">
-                    <button class="category-btn active" data-category="all">All</button>
-                    <button class="category-btn" data-category="detroit">Detroit</button>
-                    <button class="category-btn" data-category="leadership">Leadership</button>
-                    <button class="category-btn" data-category="technology">Technology</button>
-                    <button class="category-btn" data-category="business">Business</button>
-                </div>
-            </div>
-        </section>
+        <!-- The Fix by JB - Blog Content -->
+        <div class="press-tab-content" data-tab-content="blog">
 
         <!-- Featured Post -->
         <section class="featured-post-section">
@@ -411,6 +395,8 @@
                 </div>
             </div>
         </section>
+
+        </div><!-- end blog tab content -->
 
         <!-- Newsletter CTA -->
         <section class="newsletter-section">
