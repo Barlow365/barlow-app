@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jonathan Barlow | Innovator Inspiring Impact</title>
     <meta name="description" content="Life Engineer, Serial Innovator, and Passionate Advocate. Always Fixing the Future.">
+    <meta name="google-site-verification" content="VERIFICATION_CODE_HERE">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -202,10 +203,10 @@
 
     <!-- Preload Critical Assets -->
     <link rel="preload" href="images/hero-jb.webp" as="image" type="image/webp">
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="styles.min.css" as="style">
+    <link rel="preload" href="script.min.js" as="script">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css">
 </head>
 <body class="page-transition">
     <!-- Skip to Content - Accessibility -->
@@ -332,6 +333,7 @@
                             <h2 class="section-title">Creating Futuristic Solutions</h2>
                         </div>
                         <p class="about-description" data-reveal data-delay="100">With over two decades of experience building ventures, I engineer systems that solve complex problems and create lasting impact. From technology to community development, every project is about building something that endures.</p>
+                        <p class="about-description" data-reveal data-delay="150" style="margin-top:1rem;font-size:0.95rem;color:var(--text-muted);line-height:1.8;">Detroit-born and mission-driven, I've founded 40+ ventures spanning sports & entertainment, tech consulting, media, faith-based publishing, and community development. As a strategic advisor, I work with founders and organizations to build the infrastructure that turns vision into execution. I believe the gap between where communities are and where they could be isn't talent or ambition — it's systems.</p>
                     </div>
                 </div>
                 <div class="strengths-grid">
@@ -807,6 +809,51 @@
             </div>
         </section>
 
+        <!-- Testimonial Submission -->
+        <section style="padding:3rem 0;background:var(--purple-light);">
+            <div class="section-container" style="max-width:640px;">
+                <div style="text-align:center;margin-bottom:2rem;" data-reveal>
+                    <span class="section-label">Share Your Experience</span>
+                    <h2 class="section-title" style="font-size:1.75rem;">Leave a Testimonial</h2>
+                    <p style="color:var(--text-muted);font-size:0.95rem;">Worked with JB? Share your experience to help others.</p>
+                </div>
+                <form id="testimonial-form" data-reveal data-delay="100" style="display:flex;flex-direction:column;gap:1rem;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="test-name">Your Name <span class="required">*</span></label>
+                            <input type="text" id="test-name" name="name" required placeholder="Full name" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="test-role">Title & Company</label>
+                            <input type="text" id="test-role" name="role" placeholder="e.g. CEO, Acme Inc." autocomplete="organization-title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="test-email">Email <span class="required">*</span></label>
+                        <input type="email" id="test-email" name="email" required placeholder="your@email.com" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="test-relationship">How did you work with JB?</label>
+                        <select id="test-relationship" name="relationship">
+                            <option value="">Select relationship</option>
+                            <option value="client">Client / Customer</option>
+                            <option value="partner">Business Partner</option>
+                            <option value="mentee">Mentee / Advisee</option>
+                            <option value="colleague">Colleague</option>
+                            <option value="event">Event Attendee</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="test-message">Your Testimonial <span class="required">*</span></label>
+                        <textarea id="test-message" name="message" rows="4" required placeholder="Share your experience working with Jonathan..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="align-self:center;">Submit Testimonial</button>
+                </form>
+                <p id="testimonial-success" style="display:none;text-align:center;color:var(--accent-advisor);margin-top:1rem;font-weight:600;">Thank you! Your testimonial has been submitted for review.</p>
+            </div>
+        </section>
+
         <!-- Newsletter Section -->
         <section class="newsletter-section">
             <div class="section-container">
@@ -1105,6 +1152,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.min.js"></script>
 </body>
 </html>

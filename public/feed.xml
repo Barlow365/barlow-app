@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>The Fix by JB - Jonathan Barlow</title>
+        <link>https://barlow.app/press</link>
+        <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 17 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
+        <image>
+            <url>https://barlow.app/og-image.png</url>
+            <title>The Fix by JB</title>
+            <link>https://barlow.app/press</link>
+        </image>
+
+        <item>
+            <title>Why Your Network Isn't Working</title>
+            <link>https://barlow.app/posts/why-your-network-isnt-working</link>
+            <guid isPermaLink="true">https://barlow.app/posts/why-your-network-isnt-working</guid>
+            <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+            <category>Business &amp; Strategy</category>
+            <description>You collect connections but don't build systems around them. Your network fails because you treat it like a Rolodex instead of infrastructure.</description>
+        </item>
+
+        <item>
+            <title>Build for the Person Who Stays</title>
+            <link>https://barlow.app/posts/build-for-the-person-who-stays</link>
+            <guid isPermaLink="true">https://barlow.app/posts/build-for-the-person-who-stays</guid>
+            <pubDate>Sat, 15 Mar 2026 00:00:00 GMT</pubDate>
+            <category>Leadership &amp; Systems</category>
+            <description>Most urban projects build for the "ideal user" who doesn't exist. Real impact means building for the person who stayed through every crisis.</description>
+        </item>
+
+        <item>
+            <title>Why Every Crisis is an Innovation Opportunity</title>
+            <link>https://barlow.app/posts/why-every-crisis-is-an-innovation-opportunity</link>
+            <guid isPermaLink="true">https://barlow.app/posts/why-every-crisis-is-an-innovation-opportunity</guid>
+            <pubDate>Tue, 11 Mar 2026 00:00:00 GMT</pubDate>
+            <category>Detroit &amp; Systems Thinking</category>
+            <description>Three years ago, Detroit's water infrastructure failed. While others saw catastrophe, I saw a laboratory for building resilient urban systems.</description>
+        </item>
+
+        <item>
+            <title>Programs vs. Systems: Why Detroit Keeps Starting Over</title>
+            <link>https://barlow.app/posts/programs-vs-systems</link>
+            <guid isPermaLink="true">https://barlow.app/posts/programs-vs-systems</guid>
+            <pubDate>Mon, 10 Mar 2026 00:00:00 GMT</pubDate>
+            <category>Detroit</category>
+            <description>Detroit doesn't have a program problem. It has a systems problem. Every year, new initiatives launch with press releases and ribbon cuttings, yet the same problems persist.</description>
+        </item>
+
+        <item>
+            <title>Most Leadership Advice Is Backwards</title>
+            <link>https://barlow.app/posts/leadership-advice-is-backwards</link>
+            <guid isPermaLink="true">https://barlow.app/posts/leadership-advice-is-backwards</guid>
+            <pubDate>Sat, 08 Mar 2026 00:00:00 GMT</pubDate>
+            <category>Leadership</category>
+            <description>They tell you to think big and start small. I say think in systems and start with structure.</description>
+        </item>
+    </channel>
+</rss>

@@ -394,6 +394,48 @@
     }
 
     // ============================================
+    // TESTIMONIAL FORM SUBMISSION
+    // ============================================
+    var testimonialForm = document.getElementById('testimonial-form');
+    if (testimonialForm) {
+        testimonialForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var btn = this.querySelector('button[type="submit"]');
+            var origText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = 'Submitting...';
+
+            var formData = {
+                email: document.getElementById('test-email').value,
+                firstname: document.getElementById('test-name').value.split(' ')[0],
+                lastname: document.getElementById('test-name').value.split(' ').slice(1).join(' ') || '',
+                message: 'TESTIMONIAL SUBMISSION\n\n' +
+                    'Name: ' + document.getElementById('test-name').value + '\n' +
+                    'Role: ' + (document.getElementById('test-role').value || 'N/A') + '\n' +
+                    'Relationship: ' + (document.getElementById('test-relationship').value || 'N/A') + '\n\n' +
+                    'Testimonial:\n' + document.getElementById('test-message').value,
+                source: 'barlow.app testimonial form'
+            };
+
+            try {
+                var response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                if (!response.ok) throw new Error('Failed');
+                testimonialForm.style.display = 'none';
+                document.getElementById('testimonial-success').style.display = 'block';
+                if (window.showToast) window.showToast('success', 'Thank You!', 'Your testimonial has been submitted.');
+            } catch (err) {
+                btn.disabled = false;
+                btn.innerHTML = origText;
+                if (window.showToast) window.showToast('error', 'Error', 'Please try again or email j@barlow.app.');
+            }
+        });
+    }
+
+    // ============================================
     // VENTURE CONSTELLATION ANIMATION
     // ============================================
     const constellationCenter = document.querySelector('.constellation-center');
@@ -1335,6 +1377,89 @@
             activeBtn.style.color = '#fff';
         }
     }
+
+    // ========== BLOG SEARCH ==========
+    var blogSearchInput = document.getElementById('blog-search');
+    if (blogSearchInput && blogCards.length > 0) {
+        blogSearchInput.addEventListener('input', function() {
+            var query = this.value.toLowerCase().trim();
+            blogCards.forEach(function(card) {
+                var title = (card.querySelector('h3') || {}).textContent || '';
+                var excerpt = (card.querySelector('p') || {}).textContent || '';
+                var category = card.getAttribute('data-category') || '';
+                var match = !query || title.toLowerCase().includes(query) || excerpt.toLowerCase().includes(query) || category.includes(query);
+                card.style.display = match ? '' : 'none';
+            });
+            // Reset category filter to "All" when searching
+            if (query && blogFilters.length > 0) {
+                blogFilters.forEach(function(b) { b.classList.remove('active'); b.style.background = '#fff'; b.style.borderColor = '#e2e8f0'; b.style.color = ''; });
+                var allBtn = document.querySelector('.blog-filter[data-filter="all"]');
+                if (allBtn) { allBtn.classList.add('active'); allBtn.style.background = 'var(--pink, #1e40af)'; allBtn.style.borderColor = 'var(--pink, #1e40af)'; allBtn.style.color = '#fff'; }
+            }
+        });
+    }
+
+    // ========== READING LIST (SAVE FOR LATER) ==========
+    var READING_LIST_KEY = 'barlow_reading_list';
+
+    function getReadingList() {
+        try { return JSON.parse(localStorage.getItem(READING_LIST_KEY) || '[]'); } catch (e) { return []; }
+    }
+
+    function saveReadingList(list) {
+        localStorage.setItem(READING_LIST_KEY, JSON.stringify(list));
+    }
+
+    function isInReadingList(url) {
+        return getReadingList().some(function(item) { return item.url === url; });
+    }
+
+    function toggleReadingList(url, title) {
+        var list = getReadingList();
+        var idx = list.findIndex(function(item) { return item.url === url; });
+        if (idx >= 0) {
+            list.splice(idx, 1);
+        } else {
+            list.push({ url: url, title: title, savedAt: new Date().toISOString() });
+        }
+        saveReadingList(list);
+        return idx < 0; // returns true if added
+    }
+
+    // Add bookmark buttons to blog cards
+    blogCards.forEach(function(card) {
+        var link = card.querySelector('.card-link');
+        if (!link) return;
+        var url = link.getAttribute('href');
+        if (!url || url === '#') return;
+        var title = (card.querySelector('h3') || {}).textContent || '';
+
+        var bookmarkBtn = document.createElement('button');
+        bookmarkBtn.className = 'bookmark-btn';
+        bookmarkBtn.setAttribute('aria-label', 'Save to reading list');
+        bookmarkBtn.style.cssText = 'position:absolute;top:0.75rem;right:0.75rem;width:32px;height:32px;border-radius:50%;border:none;background:rgba(255,255,255,0.9);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.1);';
+
+        var saved = isInReadingList(url);
+        bookmarkBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="' + (saved ? 'currentColor' : 'none') + '" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+        if (saved) bookmarkBtn.style.color = '#1e40af';
+
+        bookmarkBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var added = toggleReadingList(url, title);
+            this.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="' + (added ? 'currentColor' : 'none') + '" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+            this.style.color = added ? '#1e40af' : '';
+            if (window.showToast) {
+                window.showToast(added ? 'success' : 'info', added ? 'Saved!' : 'Removed', added ? 'Added to your reading list' : 'Removed from reading list');
+            }
+        });
+
+        var imageDiv = card.querySelector('.card-image');
+        if (imageDiv) {
+            imageDiv.style.position = 'relative';
+            imageDiv.appendChild(bookmarkBtn);
+        }
+    });
 
     // ========== LOGO IMAGE ERROR FALLBACK ==========
     document.querySelectorAll('.venture-logo img, .card-logo, [data-fallback]').forEach(img => {
