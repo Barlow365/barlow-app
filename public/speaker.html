@@ -35,8 +35,7 @@
 
     <!-- Analytics -->
     <script defer data-domain="barlow.app" src="https://plausible.io/js/script.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YXWM7CDZK2');</script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}function loadGA4(){if(document.querySelector('script[src*="googletagmanager"]'))return;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-YXWM7CDZK2');}if(localStorage.getItem('cookieConsent')==='accepted'){loadGA4();}</script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">

@@ -65,11 +65,12 @@ export default async function handler(req, res) {
         const searchData = await searchResponse.json();
         const existingContact = searchData.results?.[0];
 
+        const cleanSource = source ? String(source).trim().replace(/<[^>]*>/g, '').substring(0, 200) : 'barlow.app newsletter';
         const properties = {
-            email,
+            email: email.trim().toLowerCase(),
             hs_lead_status: 'NEWSLETTER_SUBSCRIBER',
             lifecyclestage: 'subscriber',
-            leadsource: source || 'barlow.app newsletter'
+            leadsource: cleanSource
         };
 
         let contactId;
@@ -125,8 +126,7 @@ export default async function handler(req, res) {
     } catch (error) {
         console.error('HubSpot API error:', error);
         return res.status(500).json({
-            error: 'Failed to subscribe',
-            details: error.message
+            error: 'Failed to subscribe'
         });
     }
 }

@@ -35,8 +35,7 @@
 
     <!-- Analytics -->
     <script defer data-domain="barlow.app" src="https://plausible.io/js/script.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YXWM7CDZK2');</script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}function loadGA4(){if(document.querySelector('script[src*="googletagmanager"]'))return;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-YXWM7CDZK2');}if(localStorage.getItem('cookieConsent')==='accepted'){loadGA4();}</script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -66,7 +65,7 @@
         "telephone": "+1-313-728-2398",
         "founder": [
             {"@type": "Organization", "name": "Innovation Labs Ventures", "url": "http://innovationlabs.ventures"},
-            {"@type": "Organization", "name": "WKND Company", "url": "http://miamiwknd.com"},
+            {"@type": "Organization", "name": "WKND Company", "url": "http://wkndtour.com"},
             {"@type": "Organization", "name": "Press Media Haus", "url": "http://pressmedia.haus"},
             {"@type": "Organization", "name": "QSE Sports", "url": "https://qse-sports.com"}
         ]
@@ -160,7 +159,7 @@
                             </div>
                             <span class="venture-arrow">→</span>
                         </a>
-                        <a href="https://builderscohort.com" target="_blank" rel="noopener noreferrer" class="venture-item">
+                        <a href="https://bc.innovationlabs.ventures" target="_blank" rel="noopener noreferrer" class="venture-item">
                             <img src="images/logos/builders-cohort-logo.webp" alt="Builders Cohort" class="venture-logo-img logo-large logo-invert" loading="lazy">
                             <div class="venture-details">
                                 <h3>Builders Cohort</h3>
@@ -191,7 +190,7 @@
                 <div class="venture-category-full" data-category="events">
                     <h2 class="category-header">Events & Entertainment</h2>
                     <div class="ventures-list">
-                        <a href="https://miamiwknd.com" target="_blank" rel="noopener noreferrer" class="venture-item featured">
+                        <a href="https://wkndtour.com" target="_blank" rel="noopener noreferrer" class="venture-item featured">
                             <div class="venture-logo-text">WKND</div>
                             <div class="venture-details">
                                 <h3>WKND Company</h3>

@@ -35,8 +35,7 @@
 
     <!-- Analytics -->
     <script defer data-domain="barlow.app" src="https://plausible.io/js/script.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YXWM7CDZK2');</script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}function loadGA4(){if(document.querySelector('script[src*="googletagmanager"]'))return;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-YXWM7CDZK2');}if(localStorage.getItem('cookieConsent')==='accepted'){loadGA4();}</script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -240,7 +239,48 @@
         <!-- Blog Grid -->
         <section class="blog-grid-section">
             <div class="section-container">
+                <!-- Blog Category Filter -->
+                <div class="blog-filters" style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem;">
+                    <button class="blog-filter active" data-filter="all" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">All</button>
+                    <button class="blog-filter" data-filter="detroit" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">Detroit</button>
+                    <button class="blog-filter" data-filter="leadership" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">Leadership</button>
+                    <button class="blog-filter" data-filter="business" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">Business</button>
+                    <button class="blog-filter" data-filter="technology" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">Technology</button>
+                </div>
+
                 <div class="blog-grid">
+                    <article class="blog-card" data-category="leadership">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop" alt="Community building" loading="lazy">
+                            <span class="post-category">Leadership</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span class="post-date">March 15, 2026</span>
+                                <span class="read-time">5 min read</span>
+                            </div>
+                            <h3>Build for the Person Who Stays</h3>
+                            <p>Most urban projects build for the "ideal user" who doesn't exist. Real impact means building for the person who stayed through every crisis.</p>
+                            <a href="posts/build-for-the-person-who-stays.html" class="card-link">Read more →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="business">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="Networking and strategy" loading="lazy">
+                            <span class="post-category">Business</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span class="post-date">March 16, 2026</span>
+                                <span class="read-time">5 min read</span>
+                            </div>
+                            <h3>Why Your Network Isn't Working</h3>
+                            <p>You collect connections but don't build systems around them. Your network fails because you treat it like a Rolodex instead of infrastructure.</p>
+                            <a href="posts/why-your-network-isnt-working.html" class="card-link">Read more →</a>
+                        </div>
+                    </article>
+
                     <article class="blog-card" data-category="detroit">
                         <div class="card-image">
                             <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Detroit skyline" loading="lazy">
@@ -368,7 +408,7 @@
                     <h2>Stay Connected</h2>
                     <p>Get insights on leadership, technology, and Detroit delivered to your inbox.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
+                        <input type="email" placeholder="Enter your email" required autocomplete="email">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                     <div class="social-follow">

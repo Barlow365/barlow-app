@@ -242,14 +242,29 @@
             `;
 
             // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
+            var nameVal = document.getElementById('name').value;
+            var subjectEl = document.getElementById('subject');
+            var budgetEl = document.getElementById('budget');
+            var timelineEl = document.getElementById('timeline');
+            var companyEl = document.getElementById('company');
+            var phoneEl = document.getElementById('phone');
+            var messageEl = document.getElementById('message');
+
+            var formData = {
+                name: nameVal,
                 email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
+                subject: subjectEl ? subjectEl.value : '',
+                message: messageEl ? messageEl.value : '',
                 submitted_at: new Date().toISOString(),
                 source: 'barlow.app'
             };
+
+            // Build full message with form details
+            var fullMessage = formData.message || '';
+            if (subjectEl && subjectEl.value) fullMessage = 'Inquiry: ' + subjectEl.options[subjectEl.selectedIndex].text + '\n\n' + fullMessage;
+            if (companyEl && companyEl.value) fullMessage += '\n\nCompany: ' + companyEl.value;
+            if (budgetEl && budgetEl.value) fullMessage += '\nBudget: ' + budgetEl.options[budgetEl.selectedIndex].text;
+            if (timelineEl && timelineEl.value) fullMessage += '\nTimeline: ' + timelineEl.options[timelineEl.selectedIndex].text;
 
             try {
                 // Send to Vercel serverless function → HubSpot
@@ -260,9 +275,10 @@
                     },
                     body: JSON.stringify({
                         email: formData.email,
-                        firstname: formData.name.split(' ')[0],
-                        lastname: formData.name.split(' ').slice(1).join(' ') || '',
-                        message: formData.message,
+                        firstname: nameVal.split(' ')[0],
+                        lastname: nameVal.split(' ').slice(1).join(' ') || '',
+                        message: fullMessage,
+                        phone: phoneEl ? phoneEl.value : '',
                         source: 'barlow.app contact form'
                     })
                 });
@@ -733,7 +749,7 @@
         cookieAccept.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'accepted');
             cookieConsent.classList.remove('visible');
-            // Enable analytics if needed
+            if (typeof loadGA4 === 'function') loadGA4();
         });
     }
 
@@ -741,7 +757,6 @@
         cookieDecline.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'declined');
             cookieConsent.classList.remove('visible');
-            // Disable analytics if needed
         });
     }
 
@@ -1285,6 +1300,52 @@
         if (img.complete) {
             img.classList.add('loaded');
         }
+    });
+
+    // ========== BLOG CATEGORY FILTER ==========
+    const blogFilters = document.querySelectorAll('.blog-filter');
+    const blogCards = document.querySelectorAll('.blog-card');
+
+    if (blogFilters.length > 0 && blogCards.length > 0) {
+        blogFilters.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var filter = this.getAttribute('data-filter');
+
+                blogFilters.forEach(function(b) { b.classList.remove('active'); b.style.background = '#fff'; b.style.borderColor = '#e2e8f0'; b.style.color = ''; });
+                this.classList.add('active');
+                this.style.background = 'var(--pink, #1e40af)';
+                this.style.borderColor = 'var(--pink, #1e40af)';
+                this.style.color = '#fff';
+
+                blogCards.forEach(function(card) {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Set initial active state
+        var activeBtn = document.querySelector('.blog-filter.active');
+        if (activeBtn) {
+            activeBtn.style.background = 'var(--pink, #1e40af)';
+            activeBtn.style.borderColor = 'var(--pink, #1e40af)';
+            activeBtn.style.color = '#fff';
+        }
+    }
+
+    // ========== LOGO IMAGE ERROR FALLBACK ==========
+    document.querySelectorAll('.venture-logo img, .card-logo, [data-fallback]').forEach(img => {
+        img.addEventListener('error', function() {
+            var fallback = this.getAttribute('data-fallback') || this.alt.split(' ').map(function(w) { return w[0]; }).join('').substring(0, 3);
+            if (fallback === 'hide') {
+                this.style.display = 'none';
+            } else {
+                this.parentElement.textContent = fallback;
+            }
+        });
     });
 
     // ========== VENTURE SEARCH/FILTER ==========

@@ -35,8 +35,7 @@
 
     <!-- Analytics -->
     <script defer data-domain="barlow.app" src="https://plausible.io/js/script.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YXWM7CDZK2');</script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}function loadGA4(){if(document.querySelector('script[src*="googletagmanager"]'))return;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-YXWM7CDZK2');}if(localStorage.getItem('cookieConsent')==='accepted'){loadGA4();}</script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -171,7 +170,7 @@
                         <h3>Builders Cohort</h3>
                         <span class="entity-tag">Innovation Hub</span>
                         <p>Spearheading cutting-edge projects and fostering an ecosystem of technological advancement through collaborative innovation.</p>
-                        <a href="https://builderscohort.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Site</a>
+                        <a href="https://bc.innovationlabs.ventures" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Site</a>
                     </div>
                     <div class="entity-card">
                         <img src="images/logos/qse-logo-light.webp" alt="QSE Sports" class="entity-img logo-light" loading="lazy">

@@ -31,6 +31,23 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Email is required' });
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ error: 'Invalid email format' });
+    }
+
+    // Sanitize inputs
+    const sanitize = (str, maxLen = 500) => {
+        if (!str) return '';
+        return String(str).trim().replace(/<[^>]*>/g, '').substring(0, maxLen);
+    };
+    const cleanFirstname = sanitize(firstname, 100);
+    const cleanLastname = sanitize(lastname, 100);
+    const cleanMessage = sanitize(message, 5000);
+    const cleanPhone = sanitize(phone, 20);
+    const cleanSource = sanitize(source, 200);
+
     const HUBSPOT_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN;
 
     if (!HUBSPOT_TOKEN) {
@@ -65,17 +82,17 @@ export default async function handler(req, res) {
 
         // Build properties object
         const properties = {
-            email,
-            firstname: firstname || '',
-            lastname: lastname || '',
-            phone: phone || '',
+            email: email.trim().toLowerCase(),
+            firstname: cleanFirstname,
+            lastname: cleanLastname,
+            phone: cleanPhone,
             hs_lead_status: 'NEW',
             lifecyclestage: 'lead'
         };
 
         // Add source tracking
-        if (source) {
-            properties.leadsource = source;
+        if (cleanSource) {
+            properties.leadsource = cleanSource;
         }
 
         let contactId;
@@ -118,8 +135,8 @@ export default async function handler(req, res) {
         }
 
         // If there's a message, create an engagement note
-        if (message && contactId) {
-            const noteBody = `Website Contact Form Submission:\n\n${message}\n\nSource: ${source || 'barlow.app'}`;
+        if (cleanMessage && contactId) {
+            const noteBody = `Website Contact Form Submission:\n\n${cleanMessage}\n\nSource: ${cleanSource || 'barlow.app'}`;
 
             await fetch(
                 'https://api.hubapi.com/crm/v3/objects/notes',
@@ -159,8 +176,7 @@ export default async function handler(req, res) {
     } catch (error) {
         console.error('HubSpot API error:', error);
         return res.status(500).json({
-            error: 'Failed to process contact',
-            details: error.message
+            error: 'Failed to process contact'
         });
     }
 }

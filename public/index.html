@@ -9,6 +9,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
 
     <!-- Open Graph / Social Sharing -->
@@ -178,16 +180,24 @@
     <!-- Analytics: Plausible (privacy-friendly, no cookies) -->
     <script defer data-domain="barlow.app" src="https://plausible.io/js/script.js"></script>
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2"></script>
+    <!-- Google Analytics 4 (consent-gated) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-YXWM7CDZK2');
+        function loadGA4() {
+            if (document.querySelector('script[src*="googletagmanager"]')) return;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YXWM7CDZK2';
+            document.head.appendChild(s);
+            gtag('js', new Date());
+            gtag('config', 'G-YXWM7CDZK2');
+        }
+        if (localStorage.getItem('cookieConsent') === 'accepted') { loadGA4(); }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <!-- Preload Critical Assets -->
@@ -410,7 +420,7 @@
                             <h4>Builders Cohort</h4>
                             <span class="card-tag">Innovation Hub</span>
                             <p>Spearheading cutting-edge projects and fostering an ecosystem of technological advancement.</p>
-                            <a href="https://builderscohort.com" target="_blank" rel="noopener noreferrer" class="card-link">Learn more →</a>
+                            <a href="https://bc.innovationlabs.ventures" target="_blank" rel="noopener noreferrer" class="card-link">Learn more →</a>
                         </div>
                         <div class="investment-card" data-reveal data-delay="200">
                             <div class="card-header">
@@ -423,7 +433,7 @@
                         </div>
                         <div class="investment-card" data-reveal data-delay="300">
                             <div class="card-header">
-                                <img src="images/logos/xbigtech-logo.webp" alt="X Big Tech" class="card-logo logo-invert" onerror="this.style.display='none'">
+                                <img src="images/logos/xbigtech-logo.webp" alt="X Big Tech" class="card-logo logo-invert" data-fallback="hide">
                             </div>
                             <h4>X Big Tech</h4>
                             <span class="card-tag">Tech Consulting</span>
@@ -453,7 +463,7 @@
                 <div class="speaker-grid">
                     <div class="speaker-card main" data-reveal data-delay="100">
                         <div class="speaker-image">
-                            <img src="images/2023/12/1566261B-1AC8-4261-9485-AF1C4C2EB69F.png" alt="Radical Sunday" onerror="this.parentElement.classList.add('no-image')">
+                            <img src="images/2023/12/1566261B-1AC8-4261-9485-AF1C4C2EB69F.png" alt="Radical Sunday" data-fallback="RS">
                         </div>
                         <div class="speaker-content">
                             <span class="speaker-tag">Faith & Leadership</span>
@@ -529,7 +539,7 @@
                         <div class="venture-cards">
                             <a href="https://1vibe.org" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/onevibe-logo.png" alt="One Vibe" loading="lazy" onerror="this.parentElement.innerHTML='1V'">
+                                    <img src="images/logos/onevibe-logo.png" alt="One Vibe" loading="lazy" data-fallback="1V">
                                 </div>
                                 <div class="venture-info">
                                     <h4>One Vibe</h4>
@@ -538,7 +548,7 @@
                             </a>
                             <a href="https://powertour.org" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/power-logo.webp" alt="Power Tour" loading="lazy" onerror="this.parentElement.innerHTML='PT'">
+                                    <img src="images/logos/power-logo.webp" alt="Power Tour" loading="lazy" data-fallback="PT">
                                 </div>
                                 <div class="venture-info">
                                     <h4>Power Tour</h4>
@@ -547,7 +557,7 @@
                             </a>
                             <a href="https://projectletsbuild.org" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/plb-logo.webp" alt="Project Let's Build" loading="lazy" onerror="this.parentElement.innerHTML='PLB'">
+                                    <img src="images/logos/plb-logo.webp" alt="Project Let's Build" loading="lazy" data-fallback="PLB">
                                 </div>
                                 <div class="venture-info">
                                     <h4>Project Let's Build</h4>
@@ -556,7 +566,7 @@
                             </a>
                             <a href="https://perspectivecollective.org" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/pc-logo.webp" alt="Perspective Collective" loading="lazy" onerror="this.parentElement.innerHTML='PC'">
+                                    <img src="images/logos/pc-logo.webp" alt="Perspective Collective" loading="lazy" data-fallback="PC">
                                 </div>
                                 <div class="venture-info">
                                     <h4>Perspective Collective</h4>
@@ -572,16 +582,16 @@
                         <div class="venture-cards">
                             <a href="https://xbigtech.com" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/xbigtech-logo.webp" alt="X Big Tech" class="logo-invert" loading="lazy" onerror="this.parentElement.innerHTML='XBT'">
+                                    <img src="images/logos/xbigtech-logo.webp" alt="X Big Tech" class="logo-invert" loading="lazy" data-fallback="XBT">
                                 </div>
                                 <div class="venture-info">
                                     <h4>X Big Tech</h4>
                                     <p>Enterprise tech consulting</p>
                                 </div>
                             </a>
-                            <a href="https://builderscohort.com" target="_blank" rel="noopener noreferrer" class="venture-card">
+                            <a href="https://bc.innovationlabs.ventures" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/builders-cohort-logo.webp" alt="Builders Cohort" class="logo-invert" loading="lazy" onerror="this.parentElement.innerHTML='BC'">
+                                    <img src="images/logos/builders-cohort-logo.webp" alt="Builders Cohort" class="logo-invert" loading="lazy" data-fallback="BC">
                                 </div>
                                 <div class="venture-info">
                                     <h4>Builders Cohort</h4>
@@ -590,7 +600,7 @@
                             </a>
                             <a href="https://innovationlabs.ventures" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/ilv-logo.webp" alt="Innovation Labs & Ventures" class="logo-invert" loading="lazy" onerror="this.parentElement.innerHTML='ILV'">
+                                    <img src="images/logos/ilv-logo.webp" alt="Innovation Labs & Ventures" class="logo-invert" loading="lazy" data-fallback="ILV">
                                 </div>
                                 <div class="venture-info">
                                     <h4>Innovation Labs & Ventures</h4>
@@ -599,7 +609,7 @@
                             </a>
                             <a href="https://urpower.org" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/urpower-logo.webp" alt="UR Power" loading="lazy" onerror="this.parentElement.innerHTML='UR'">
+                                    <img src="images/logos/urpower-logo.webp" alt="UR Power" loading="lazy" data-fallback="UR">
                                 </div>
                                 <div class="venture-info">
                                     <h4>UR Power</h4>
@@ -613,7 +623,7 @@
                     <div class="venture-category" data-reveal data-delay="200">
                         <h3 class="category-title">Events & Entertainment</h3>
                         <div class="venture-cards">
-                            <a href="https://miamiwknd.com" target="_blank" rel="noopener noreferrer" class="venture-card featured">
+                            <a href="https://wkndtour.com" target="_blank" rel="noopener noreferrer" class="venture-card featured">
                                 <div class="venture-icon">WKND</div>
                                 <div class="venture-info">
                                     <h4>WKND Company</h4>
@@ -622,7 +632,7 @@
                             </a>
                             <a href="https://pressmedia.haus" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/pmh-logo.webp" alt="Press Media Haus" class="logo-invert" loading="lazy" onerror="this.parentElement.innerHTML='PMH'">
+                                    <img src="images/logos/pmh-logo.webp" alt="Press Media Haus" class="logo-invert" loading="lazy" data-fallback="PMH">
                                 </div>
                                 <div class="venture-info">
                                     <h4>Press Media Haus</h4>
@@ -631,7 +641,7 @@
                             </a>
                             <a href="https://brunchonthegreen.com" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/brunch-logo.webp" alt="Brunch on the Green" loading="lazy" onerror="this.parentElement.innerHTML='BTG'">
+                                    <img src="images/logos/brunch-logo.webp" alt="Brunch on the Green" loading="lazy" data-fallback="BTG">
                                 </div>
                                 <div class="venture-info">
                                     <h4>Brunch on the Green</h4>
@@ -640,7 +650,7 @@
                             </a>
                             <a href="https://mlkweekend.org" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/mlk-logo.webp" alt="MLK Weekend" loading="lazy" onerror="this.parentElement.innerHTML='MLK'">
+                                    <img src="images/logos/mlk-logo.webp" alt="MLK Weekend" loading="lazy" data-fallback="MLK">
                                 </div>
                                 <div class="venture-info">
                                     <h4>MLK Weekend</h4>
@@ -656,8 +666,8 @@
                         <div class="venture-cards">
                             <a href="https://qse-sports.com" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/qse-logo-light.webp" alt="QSE Sports" class="logo-light" loading="lazy" onerror="this.parentElement.innerHTML='QSE'">
-                                    <img src="images/logos/qse-logo-dark.webp" alt="QSE Sports" class="logo-dark" loading="lazy" onerror="this.parentElement.innerHTML='QSE'">
+                                    <img src="images/logos/qse-logo-light.webp" alt="QSE Sports" class="logo-light" loading="lazy" data-fallback="QSE">
+                                    <img src="images/logos/qse-logo-dark.webp" alt="QSE Sports" class="logo-dark" loading="lazy" data-fallback="QSE">
                                 </div>
                                 <div class="venture-info">
                                     <h4>QSE Sports</h4>
@@ -666,7 +676,7 @@
                             </a>
                             <a href="https://sushiritas.com" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/sushiritas-logo.png" alt="SushiRitas" loading="lazy" class="logo-light" onerror="this.parentElement.innerHTML='SR'">
+                                    <img src="images/logos/sushiritas-logo.png" alt="SushiRitas" loading="lazy" class="logo-light" data-fallback="SR">
                                     <img src="images/logos/sushiritas-logo-dark.webp" alt="SushiRitas" loading="lazy" class="logo-dark">
                                 </div>
                                 <div class="venture-info">
@@ -676,7 +686,7 @@
                             </a>
                             <a href="https://1st-oftheday.com" target="_blank" rel="noopener noreferrer" class="venture-card">
                                 <div class="venture-logo">
-                                    <img src="images/logos/fotd-logo.png" alt="1st of the Day" loading="lazy" onerror="this.parentElement.innerHTML='1st'">
+                                    <img src="images/logos/fotd-logo.png" alt="1st of the Day" loading="lazy" data-fallback="1st">
                                 </div>
                                 <div class="venture-info">
                                     <h4>1st of the Day</h4>
@@ -805,7 +815,7 @@
                     <h2>Stay Connected</h2>
                     <p>Get insights on leadership, innovation, and systems thinking delivered to your inbox.</p>
                     <form class="newsletter-form" id="newsletter-form">
-                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                     <p class="newsletter-success" style="display: none; color: var(--accent-advisor); margin-top: 1rem;">Thanks for subscribing!</p>
@@ -951,21 +961,21 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Full Name <span class="required">*</span></label>
-                                    <input type="text" id="name" name="name" required placeholder="Your name">
+                                    <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email Address <span class="required">*</span></label>
-                                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                                    <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="company">Company/Organization</label>
-                                    <input type="text" id="company" name="company" placeholder="Your company">
+                                    <input type="text" id="company" name="company" placeholder="Your company" autocomplete="organization">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel">
                                 </div>
                             </div>
                             <div class="form-row">
