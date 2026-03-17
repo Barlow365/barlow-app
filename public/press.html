@@ -241,22 +241,22 @@
         <section class="blog-grid-section">
             <div class="section-container">
                 <!-- Blog Search -->
-                <div class="blog-search" style="margin-bottom:1.5rem;position:relative;">
-                    <input type="text" id="blog-search" placeholder="Search articles..." autocomplete="off" style="width:100%;padding:0.875rem 1.25rem 0.875rem 3rem;border-radius:50px;border:2px solid #e2e8f0;font-family:'DM Sans',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;background:#fff;">
-                    <svg style="position:absolute;left:1.1rem;top:50%;transform:translateY(-50%);width:18px;height:18px;opacity:0.4;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <div class="blog-search">
+                    <input type="text" id="blog-search" placeholder="Search articles..." autocomplete="off">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
                 </div>
 
                 <!-- Blog Category Filter -->
-                <div class="blog-filters" style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem;align-items:center;">
-                    <a href="/feed.xml" title="RSS Feed" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1rem;border-radius:50px;border:2px solid #f97316;color:#f97316;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;text-decoration:none;transition:all 0.2s;" target="_blank" rel="noopener noreferrer">
+                <div class="blog-filters">
+                    <a href="/feed.xml" title="RSS Feed" class="rss-link" target="_blank" rel="noopener noreferrer">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
                         RSS
                     </a>
-                    <button class="blog-filter active" data-filter="all" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">All</button>
-                    <button class="blog-filter" data-filter="detroit" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">Detroit</button>
-                    <button class="blog-filter" data-filter="leadership" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">Leadership</button>
-                    <button class="blog-filter" data-filter="business" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">Business</button>
-                    <button class="blog-filter" data-filter="technology" style="padding:0.5rem 1.25rem;border-radius:50px;border:2px solid #e2e8f0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;">Technology</button>
+                    <button class="blog-filter active" data-filter="all">All</button>
+                    <button class="blog-filter" data-filter="detroit">Detroit</button>
+                    <button class="blog-filter" data-filter="leadership">Leadership</button>
+                    <button class="blog-filter" data-filter="business">Business</button>
+                    <button class="blog-filter" data-filter="technology">Technology</button>
                 </div>
 
                 <div class="blog-grid">

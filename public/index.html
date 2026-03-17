@@ -810,14 +810,14 @@
         </section>
 
         <!-- Testimonial Submission -->
-        <section style="padding:3rem 0;background:var(--purple-light);">
-            <div class="section-container" style="max-width:640px;">
-                <div style="text-align:center;margin-bottom:2rem;" data-reveal>
+        <section class="testimonial-section">
+            <div class="section-container">
+                <div class="section-header" data-reveal>
                     <span class="section-label">Share Your Experience</span>
-                    <h2 class="section-title" style="font-size:1.75rem;">Leave a Testimonial</h2>
-                    <p style="color:var(--text-muted);font-size:0.95rem;">Worked with JB? Share your experience to help others.</p>
+                    <h2 class="section-title">Leave a Testimonial</h2>
+                    <p class="section-subtitle">Worked with JB? Share your experience to help others.</p>
                 </div>
-                <form id="testimonial-form" data-reveal data-delay="100" style="display:flex;flex-direction:column;gap:1rem;">
+                <form id="testimonial-form" class="testimonial-form" data-reveal data-delay="100">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="test-name">Your Name <span class="required">*</span></label>
@@ -848,9 +848,9 @@
                         <label for="test-message">Your Testimonial <span class="required">*</span></label>
                         <textarea id="test-message" name="message" rows="4" required placeholder="Share your experience working with Jonathan..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="align-self:center;">Submit Testimonial</button>
+                    <button type="submit" class="btn btn-primary">Submit Testimonial</button>
                 </form>
-                <p id="testimonial-success" style="display:none;text-align:center;color:var(--accent-advisor);margin-top:1rem;font-weight:600;">Thank you! Your testimonial has been submitted for review.</p>
+                <p id="testimonial-success" class="form-success-message">Thank you! Your testimonial has been submitted for review.</p>
             </div>
         </section>
 

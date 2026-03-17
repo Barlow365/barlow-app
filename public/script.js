@@ -378,7 +378,7 @@
                 // Success
                 emailInput.value = '';
                 submitBtn.innerHTML = 'Subscribed!';
-                submitBtn.style.background = '#059669';
+                submitBtn.classList.add('btn-success');
 
                 // Track newsletter signup
                 if (typeof gtag !== 'undefined') {
@@ -393,14 +393,14 @@
                 // Reset after 3 seconds
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
-                    submitBtn.style.background = '';
+                    submitBtn.classList.remove('btn-success');
                     submitBtn.disabled = false;
                 }, 3000);
 
             } catch (error) {
                 console.error('Newsletter error:', error);
                 submitBtn.innerHTML = 'Try Again';
-                submitBtn.style.background = '#dc2626';
+                submitBtn.classList.add('btn-error');
                 submitBtn.disabled = false;
 
                 // Show error toast
@@ -448,7 +448,7 @@
                 });
                 if (!response.ok) throw new Error('Failed');
                 testimonialForm.style.display = 'none';
-                document.getElementById('testimonial-success').style.display = 'block';
+                document.getElementById('testimonial-success').classList.add('visible');
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'testimonial_submit', { 'event_category': 'engagement', 'event_label': document.getElementById('test-relationship').value || 'unknown' });
                 }
@@ -1378,30 +1378,13 @@
         blogFilters.forEach(function(btn) {
             btn.addEventListener('click', function() {
                 var filter = this.getAttribute('data-filter');
-
-                blogFilters.forEach(function(b) { b.classList.remove('active'); b.style.background = '#fff'; b.style.borderColor = '#e2e8f0'; b.style.color = ''; });
+                blogFilters.forEach(function(b) { b.classList.remove('active'); });
                 this.classList.add('active');
-                this.style.background = 'var(--pink, #1e40af)';
-                this.style.borderColor = 'var(--pink, #1e40af)';
-                this.style.color = '#fff';
-
                 blogCards.forEach(function(card) {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ? '' : 'none';
                 });
             });
         });
-
-        // Set initial active state
-        var activeBtn = document.querySelector('.blog-filter.active');
-        if (activeBtn) {
-            activeBtn.style.background = 'var(--pink, #1e40af)';
-            activeBtn.style.borderColor = 'var(--pink, #1e40af)';
-            activeBtn.style.color = '#fff';
-        }
     }
 
     // ========== BLOG SEARCH ==========
@@ -1418,9 +1401,9 @@
             });
             // Reset category filter to "All" when searching
             if (query && blogFilters.length > 0) {
-                blogFilters.forEach(function(b) { b.classList.remove('active'); b.style.background = '#fff'; b.style.borderColor = '#e2e8f0'; b.style.color = ''; });
+                blogFilters.forEach(function(b) { b.classList.remove('active'); });
                 var allBtn = document.querySelector('.blog-filter[data-filter="all"]');
-                if (allBtn) { allBtn.classList.add('active'); allBtn.style.background = 'var(--pink, #1e40af)'; allBtn.style.borderColor = 'var(--pink, #1e40af)'; allBtn.style.color = '#fff'; }
+                if (allBtn) allBtn.classList.add('active');
             }
         });
     }

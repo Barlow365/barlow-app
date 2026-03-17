@@ -3897,6 +3897,200 @@ section:nth-child(5) { animation-delay: 0.4s; }
 .validation-message.error { color: #dc2626; }
 .validation-message.success { color: #059669; }
 
+/* ========== BLOG SEARCH ========== */
+.blog-search {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.blog-search input {
+    width: 100%;
+    padding: 0.875rem 1.25rem 0.875rem 3rem;
+    border-radius: 50px;
+    border: 2px solid var(--purple-light, #e2e8f0);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.blog-search input:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.blog-search input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+.blog-search .search-icon {
+    position: absolute;
+    left: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    opacity: 0.4;
+    color: var(--text);
+    pointer-events: none;
+}
+
+:root[data-theme="dark"] .blog-search input {
+    background: var(--dark-soft);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .blog-search input:focus {
+    border-color: var(--pink-light);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+:root[data-theme="dark"] .blog-search .search-icon {
+    color: #94a3b8;
+}
+
+/* ========== BLOG FILTERS ========== */
+.blog-filters {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.blog-filter {
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    border: 2px solid var(--purple-light, #e2e8f0);
+    background: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s var(--ease-out-expo);
+}
+
+.blog-filter:hover {
+    border-color: var(--pink-light);
+    color: var(--pink);
+    transform: translateY(-1px);
+}
+
+.blog-filter:focus-visible {
+    outline: 2px solid var(--pink);
+    outline-offset: 2px;
+}
+
+.blog-filter.active {
+    background: var(--pink) !important;
+    border-color: var(--pink) !important;
+    color: var(--white) !important;
+}
+
+.blog-filter.active:hover {
+    background: var(--pink-dark) !important;
+    border-color: var(--pink-dark) !important;
+    transform: translateY(-1px);
+}
+
+:root[data-theme="dark"] .blog-filter {
+    background: var(--dark-soft);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+}
+
+:root[data-theme="dark"] .blog-filter:hover {
+    border-color: var(--pink-light);
+    color: var(--pink-light);
+}
+
+.rss-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 2px solid var(--accent-speaker);
+    color: var(--accent-speaker);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.rss-link:hover {
+    background: var(--accent-speaker);
+    color: var(--white);
+}
+
+/* ========== TESTIMONIAL FORM SECTION ========== */
+.testimonial-section {
+    padding: 3rem 0;
+    background: var(--purple-light);
+}
+
+:root[data-theme="dark"] .testimonial-section {
+    background: var(--dark-soft);
+}
+
+.testimonial-section .section-container {
+    max-width: 640px;
+}
+
+.testimonial-section .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.testimonial-section .section-title {
+    font-size: 1.75rem;
+}
+
+.testimonial-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.testimonial-form .btn {
+    align-self: center;
+}
+
+.form-success-message {
+    display: none;
+    text-align: center;
+    color: var(--accent-advisor);
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.form-success-message.visible {
+    display: block;
+    animation: fadeInUp 0.4s var(--ease-out-expo);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button state classes */
+.btn-success {
+    background: var(--accent-advisor) !important;
+    border-color: var(--accent-advisor) !important;
+}
+
+.btn-error {
+    background: #dc2626 !important;
+    border-color: #dc2626 !important;
+}
+
 /* ========== PAGE TRANSITIONS ========== */
 body {
     opacity: 1;
