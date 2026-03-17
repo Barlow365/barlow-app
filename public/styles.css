@@ -350,15 +350,15 @@
     filter: brightness(1.1) contrast(1.05);
 }
 
-/* Invert dark logos to white in dark mode */
+/* Invert dark logos for dark mode - preserves color, flips white bg to black */
 :root[data-theme="dark"] .logo-invert,
 :root[data-theme="dark"] img.logo-invert {
-    filter: brightness(0) invert(1);
+    filter: invert(1) hue-rotate(180deg);
 }
 
-/* For logos that are natively white - darken in light mode */
+/* For logos that are natively white - invert to dark in light mode */
 .logo-white-native {
-    filter: brightness(0);
+    filter: invert(1) hue-rotate(180deg);
 }
 :root[data-theme="dark"] .logo-white-native {
     filter: none;
@@ -4133,9 +4133,18 @@ img[loading="lazy"].loaded {
 
 /* ========== DARK MODE ENHANCEMENTS ========== */
 
-/* Hero - clean dark background, no gradient text tricks */
+/* Fix sections that use var(--white) as background */
+:root[data-theme="dark"] .about-section,
+:root[data-theme="dark"] .advisor-section,
+:root[data-theme="dark"] .speaker-section,
+:root[data-theme="dark"] .ventures-section,
+:root[data-theme="dark"] .media-section {
+    background: #0f172a;
+}
+
+/* Hero - clean dark background */
 :root[data-theme="dark"] .hero-section {
-    background: var(--dark);
+    background: #0f172a;
 }
 
 :root[data-theme="dark"] .hero-title {
@@ -4145,6 +4154,19 @@ img[loading="lazy"].loaded {
 :root[data-theme="dark"] .hero-subtitle,
 :root[data-theme="dark"] .hero-tagline {
     color: #94a3b8;
+}
+
+/* Category headings in venture sections */
+:root[data-theme="dark"] .category-title,
+:root[data-theme="dark"] .venture-category h3 {
+    color: #e2e8f0;
+}
+
+/* Orbit/constellation node labels */
+:root[data-theme="dark"] .orbit-node {
+    color: #cbd5e1;
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(15, 23, 42, 0.8);
 }
 
 :root[data-theme="dark"] .floating-stats .stat-card {
