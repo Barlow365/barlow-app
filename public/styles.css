@@ -356,6 +356,14 @@
     filter: brightness(0) invert(1);
 }
 
+/* For logos that are natively white - darken in light mode */
+.logo-white-native {
+    filter: brightness(0);
+}
+:root[data-theme="dark"] .logo-white-native {
+    filter: none;
+}
+
 :root[data-theme="dark"] .venture-logo,
 :root[data-theme="dark"] .entity-logo {
     background: #334155;
