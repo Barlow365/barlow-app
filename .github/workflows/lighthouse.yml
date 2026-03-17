@@ -1,0 +1,28 @@
+name: Lighthouse CI
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Audit with Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://barlow.app/
+            https://barlow.app/advisor
+            https://barlow.app/speaker
+            https://barlow.app/ventures
+            https://barlow.app/press
+          budgetPath: .github/lighthouse-budget.json
+          uploadArtifacts: true
+
+      - name: Post results
+        if: always()
+        run: echo "Lighthouse audit complete. Check artifacts for detailed reports."

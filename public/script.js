@@ -10,6 +10,24 @@
     document.documentElement.classList.add('js-enabled');
 
     // ============================================
+    // PAGE TRANSITIONS
+    // ============================================
+    document.querySelectorAll('a:not([target="_blank"]):not([href^="#"]):not([href^="javascript"]):not([href^="mailto"])').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var href = this.getAttribute('href');
+            if (!href || href === '#' || href.startsWith('javascript')) return;
+            e.preventDefault();
+            document.body.classList.add('page-leaving');
+            setTimeout(function() { window.location.href = href; }, 200);
+        });
+    });
+
+    // Fade in on page load
+    window.addEventListener('pageshow', function() {
+        document.body.classList.remove('page-leaving');
+    });
+
+    // ============================================
     // CUSTOM CURSOR
     // ============================================
     const cursorDot = document.querySelector('.cursor-dot');
@@ -362,6 +380,11 @@
                 submitBtn.innerHTML = 'Subscribed!';
                 submitBtn.style.background = '#059669';
 
+                // Track newsletter signup
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'newsletter_signup', { 'event_category': 'engagement', 'event_label': 'barlow.app newsletter' });
+                }
+
                 // Show toast notification
                 if (window.showToast) {
                     window.showToast('success', 'Subscribed!', 'Welcome aboard! You\'ll receive updates on leadership and innovation.');
@@ -426,6 +449,9 @@
                 if (!response.ok) throw new Error('Failed');
                 testimonialForm.style.display = 'none';
                 document.getElementById('testimonial-success').style.display = 'block';
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'testimonial_submit', { 'event_category': 'engagement', 'event_label': document.getElementById('test-relationship').value || 'unknown' });
+                }
                 if (window.showToast) window.showToast('success', 'Thank You!', 'Your testimonial has been submitted.');
             } catch (err) {
                 btn.disabled = false;
