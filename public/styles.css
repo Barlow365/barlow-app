@@ -4603,13 +4603,8 @@ img[loading="lazy"].loaded {
 }
 
 /* Orbit/constellation node labels */
-:root[data-theme="dark"] .orbit-node {
-    color: #0f172a;
-    border-color: rgba(255, 255, 255, 0.15);
+:root[data-theme="dark"] .node-label {
     background: #ffffff;
-}
-
-:root[data-theme="dark"] .orbit-node .node-label {
     color: #0f172a;
 }
 
