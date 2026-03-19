@@ -237,6 +237,13 @@
     text-decoration: none;
 }
 
+.media-logo img {
+    height: 35px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+}
+
 .media-logo span {
     font-family: var(--font-display);
     font-size: 1rem;
