@@ -146,6 +146,10 @@
 }
 
 :root[data-theme="dark"] .nav-logo .logo-text {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #ffffff;
+    background-clip: unset;
     color: #ffffff;
 }
 
@@ -1845,6 +1849,12 @@ button:hover ~ .cursor-dot {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--purple-bg);
+    color: var(--dark);
+}
+
+:root[data-theme="dark"] .category-title {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 .venture-cards {
@@ -2531,6 +2541,14 @@ button:hover ~ .cursor-dot {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+:root[data-theme="dark"] .footer-logo {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #ffffff;
+    background-clip: unset;
+    color: #ffffff;
 }
 
 .footer-tagline {
