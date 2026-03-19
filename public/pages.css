@@ -770,7 +770,46 @@
 }
 
 :root[data-theme="dark"] .cta-content h2 {
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .cta-content p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+:root[data-theme="dark"] .cta-content .btn-primary {
+    background: #ffffff;
+    color: #0f172a;
+}
+
+:root[data-theme="dark"] .cta-buttons .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] .cta-buttons .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
+/* Media logos dark mode */
+:root[data-theme="dark"] .media-logo {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+}
+
+:root[data-theme="dark"] .media-logo span {
     color: #f8fafc;
+}
+
+:root[data-theme="dark"] .media-logo img {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+:root[data-theme="dark"] .media-logo:hover {
+    background: #334155;
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 :root[data-theme="dark"] .venture-item {
