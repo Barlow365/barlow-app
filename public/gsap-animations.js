@@ -17,21 +17,20 @@
 
 
     // ═══════════════════════════════════════════
-    // KILL EXISTING REVEAL SYSTEM — GSAP takes over
+    // MARK ALL REVEALS AS COMPLETE — so CSS shows everything
+    // GSAP then animates FROM hidden states on top
     // ═══════════════════════════════════════════
 
-    // Remove data-reveal from elements GSAP will handle
-    // This prevents the existing IntersectionObserver from
-    // animating them with CSS transitions
+    // Force all data-reveal elements to their final visible state
+    // so nothing is hidden by the old CSS system
     document.querySelectorAll('[data-reveal]').forEach(function(el) {
-        el.removeAttribute('data-reveal');
-        el.classList.remove('revealed');
+        el.classList.add('revealed');
     });
 
-    // Override the CSS reveal transition
-    var killStyle = document.createElement('style');
-    killStyle.textContent = '[data-reveal],.revealed{opacity:1!important;transform:none!important;transition:none!important;}';
-    document.head.appendChild(killStyle);
+    // Ensure revealed elements are visible (GSAP will re-hide what it needs)
+    var revealStyle = document.createElement('style');
+    revealStyle.textContent = '.revealed{opacity:1!important;transform:none!important;}';
+    document.head.appendChild(revealStyle);
 
 
     // ═══════════════════════════════════════════
