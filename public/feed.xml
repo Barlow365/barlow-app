@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 17 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 Apr 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-        <item>
+            <item>
+      <title>The Real Measure of a City Isn't GDP — It's Whether People Stay</title>
+      <link>https://barlow.app/posts/the-real-measure-of-a-city-isnt-gdp-its-whether-people-stay</link>
+      <description>Detroit's population decline masks a deeper truth about urban success. We measure the wrong metrics while the real indicator sits in plain sight.</description>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-real-measure-of-a-city-isnt-gdp-its-whether-people-stay</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
             <title>Trust Is Shifting From Institutions to Operators</title>
             <link>https://barlow.app/posts/trust-shifting-to-operators</link>
             <guid isPermaLink="true">https://barlow.app/posts/trust-shifting-to-operators</guid>
