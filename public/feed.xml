@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 06 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Apr 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                <item>
+                    <item>
+      <title>America Isn't Broke — It's Disconnected</title>
+      <link>https://barlow.app/posts/america-isnt-broke-its-disconnected</link>
+      <description>GDP hits records while 60% live paycheck to paycheck. The problem isn't money supply—it's that our systems can't connect dollars to outcomes.</description>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/america-isnt-broke-its-disconnected</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Detroit Operators Outperform Silicon Valley Startups</title>
       <link>https://barlow.app/posts/why-detroit-operators-outperform-silicon-valley-startups</link>
       <description>Detroit businesses show higher survival rates than Valley startups. The difference isn't luck—it's fundamentally different operating principles.</description>
