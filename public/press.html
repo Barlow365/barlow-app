@@ -411,7 +411,8 @@
             fetch('/articles.json')
                 .then(function(r) { return r.json(); })
                 .then(function(data) {
-                    allArticles = data;
+                    var today = new Date().toISOString().split('T')[0];
+                    allArticles = data.filter(function(a) { return !a.date || a.date <= today; });
                     render();
 
                     document.querySelectorAll('.blog-filter').forEach(function(btn) {
