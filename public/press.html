@@ -235,22 +235,22 @@
         <!-- The Fix by JB - Blog Content -->
         <div class="press-tab-content" data-tab-content="blog">
 
-        <!-- Featured Post -->
-        <section class="featured-post-section">
+        <!-- Featured Post (loaded dynamically) -->
+        <section class="featured-post-section" id="featured-post-section">
             <div class="section-container">
-                <article class="featured-post">
+                <article class="featured-post" id="featured-post">
                     <div class="featured-image">
-                        <img src="images/2023/12/photo-1501147830916-ce44a6359892.webp" alt="Detroit cityscape at dusk">
-                        <span class="post-category">Detroit</span>
+                        <img id="featured-img" src="" alt="Featured article">
+                        <span class="post-category" id="featured-cat"></span>
                     </div>
                     <div class="featured-content">
                         <div class="post-meta">
-                            <span class="post-date">March 11, 2026</span>
-                            <span class="read-time">4 min read</span>
+                            <span class="post-date" id="featured-date"></span>
+                            <span class="read-time" id="featured-read"></span>
                         </div>
-                        <h2 class="featured-title">Why Every Crisis is an Innovation Opportunity</h2>
-                        <p class="featured-excerpt">Three years ago, I watched Detroit's water infrastructure fail during a brutal February freeze. While others saw catastrophe, I saw something else entirely: the perfect laboratory for building resilient urban systems. That crisis forced us to reimagine not just how water flows through our city, but how information, resources, and community response could flow together.</p>
-                        <a href="posts/why-every-crisis-is-an-innovation-opportunity.html" class="btn btn-primary">
+                        <h2 class="featured-title" id="featured-title"></h2>
+                        <p class="featured-excerpt" id="featured-desc"></p>
+                        <a id="featured-link" href="#" class="btn btn-primary">
                             Read Article
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -261,7 +261,7 @@
             </div>
         </section>
 
-        <!-- Blog Grid -->
+        <!-- Blog Grid (loaded dynamically from articles.json) -->
         <section class="blog-grid-section">
             <div class="section-container">
                 <!-- Blog Search -->
@@ -281,142 +281,12 @@
                     <button class="blog-filter" data-filter="leadership">Leadership</button>
                     <button class="blog-filter" data-filter="business">Business</button>
                     <button class="blog-filter" data-filter="technology">Technology</button>
+                    <button class="blog-filter" data-filter="community">Community</button>
                 </div>
 
-                <div class="blog-grid">
-                    <article class="blog-card" data-category="leadership">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Workforce systems" loading="lazy">
-                            <span class="post-category">Leadership</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">March 23, 2026</span>
-                                <span class="read-time">5 min read</span>
-                            </div>
-                            <h3>The Workforce System Isn't Failing — It's Misaligned</h3>
-                            <p>$3.6 billion spent annually on workforce development. 87% of employers still can't find talent. The system isn't broken — it was never aligned.</p>
-                            <a href="posts/workforce-system-misaligned.html" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="business">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop" alt="Small business" loading="lazy">
-                            <span class="post-category">Business</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">March 21, 2026</span>
-                                <span class="read-time">5 min read</span>
-                            </div>
-                            <h3>We Fund Startups. We Don't Build Businesses.</h3>
-                            <p>5.5 million new business applications last year. Half will close within five years. We celebrate the launch but nobody builds the boring middle.</p>
-                            <a href="posts/we-fund-startups-not-businesses.html" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="business">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop" alt="Economic disconnection" loading="lazy">
-                            <span class="post-category">Business</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">March 19, 2026</span>
-                                <span class="read-time">5 min read</span>
-                            </div>
-                            <h3>America Isn't Broke — It's Disconnected</h3>
-                            <p>GDP is up. Markets are up. But 60% of Americans live paycheck to paycheck. The problem isn't money — it's architecture.</p>
-                            <a href="posts/america-isnt-broke.html" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="leadership">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop" alt="Community building" loading="lazy">
-                            <span class="post-category">Leadership</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">March 15, 2026</span>
-                                <span class="read-time">5 min read</span>
-                            </div>
-                            <h3>Build for the Person Who Stays</h3>
-                            <p>Most urban projects build for the "ideal user" who doesn't exist. Real impact means building for the person who stayed through every crisis.</p>
-                            <a href="posts/build-for-the-person-who-stays.html" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="business">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="Networking and strategy" loading="lazy">
-                            <span class="post-category">Business</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">March 16, 2026</span>
-                                <span class="read-time">5 min read</span>
-                            </div>
-                            <h3>Why Your Network Isn't Working</h3>
-                            <p>You collect connections but don't build systems around them. Your network fails because you treat it like a Rolodex instead of infrastructure.</p>
-                            <a href="posts/why-your-network-isnt-working.html" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="detroit">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Detroit skyline" loading="lazy">
-                            <span class="post-category">Detroit</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">March 10, 2026</span>
-                                <span class="read-time">5 min read</span>
-                            </div>
-                            <h3>Programs vs. Systems: Why Detroit Keeps Starting Over</h3>
-                            <p>The press releases sound the same as they did five years ago. Meanwhile, the same problems persist because we keep building programs instead of systems.</p>
-                            <a href="posts/programs-vs-systems.html" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="leadership">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop" alt="Leadership and teamwork" loading="lazy">
-                            <span class="post-category">Leadership</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">March 8, 2026</span>
-                                <span class="read-time">4 min read</span>
-                            </div>
-                            <h3>Most Leadership Advice Is Backwards</h3>
-                            <p>They tell you to think big and start small. I say think in systems and start with structure.</p>
-                            <a href="posts/leadership-advice-is-backwards.html" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="technology">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="Technology and innovation" loading="lazy">
-                            <span class="post-category">Technology</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">March 5, 2026</span>
-                                <span class="read-time">6 min read</span>
-                            </div>
-                            <h3>Why I Judge Vendors by Change Management</h3>
-                            <p>If they ignore frontline workers in their implementation plan, they don't understand how real transformation happens.</p>
-                            <a href="#" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="business">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Business and enterprise" loading="lazy">
-                            <span class="post-category">Business</span>
-                        </div>
+                <div class="blog-grid" id="blog-grid">
+                    <!-- Articles loaded dynamically from articles.json -->
+                </div>
                         <div class="card-content">
                             <div class="post-meta">
                                 <span class="post-date">March 3, 2026</span>
@@ -428,63 +298,143 @@
                         </div>
                     </article>
 
-                    <article class="blog-card" data-category="detroit">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=800&h=600&fit=crop" alt="Urban development" loading="lazy">
-                            <span class="post-category">Detroit</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">February 28, 2026</span>
-                                <span class="read-time">7 min read</span>
-                            </div>
-                            <h3>Regional Ecosystems and the Value They Create</h3>
-                            <p>Most of the value in regional ecosystems comes from connection density, not individual company strength.</p>
-                            <a href="#" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="leadership">
-                        <div class="card-image">
-                            <img src="images/2023/12/1566261B-1AC8-4261-9485-AF1C4C2EB69F.png" alt="Radical Sunday">
-                            <span class="post-category">Leadership</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">February 25, 2026</span>
-                                <span class="read-time">8 min read</span>
-                            </div>
-                            <h3>Radical Sunday: Faith Meets Execution</h3>
-                            <p>The first book in the series explores how spiritual principles translate into practical leadership frameworks.</p>
-                            <a href="#" class="card-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" data-category="business">
-                        <div class="card-image">
-                            <img src="images/2023/02/sean-pollock-PhYq704ffdA-unsplash.webp" alt="Enterprise building">
-                            <span class="post-category">Business</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="post-meta">
-                                <span class="post-date">February 20, 2026</span>
-                                <span class="read-time">5 min read</span>
-                            </div>
-                            <h3>Enterprise Deals and Staged Commitments</h3>
-                            <p>The strongest partners are the ones who accept staged commitments. If they want everything upfront, they don't understand risk.</p>
-                            <a href="#" class="card-link">Read more →</a>
-                        </div>
-                    </article>
                 </div>
 
                 <!-- Load More -->
                 <div class="load-more-wrapper">
-                    <button class="btn btn-secondary" id="load-more">Load More Articles</button>
+                    <button class="btn btn-secondary" id="load-more" style="display:none">Load More Articles</button>
                 </div>
             </div>
         </section>
 
         </div><!-- end blog tab content -->
+
+        <!-- Dynamic Article Loader -->
+        <script>
+        (function() {
+            var ARTICLES_PER_PAGE = 9;
+            var allArticles = [];
+            var shown = 0;
+            var currentFilter = 'all';
+            var searchQuery = '';
+
+            function formatDate(dateStr) {
+                if (!dateStr) return '';
+                var d = new Date(dateStr + 'T00:00:00');
+                var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+            }
+
+            function normalizeCategory(cat) {
+                cat = (cat || '').toLowerCase();
+                if (cat.indexOf('leadership') !== -1 || cat.indexOf('systems') !== -1) return 'leadership';
+                if (cat.indexOf('business') !== -1 || cat.indexOf('strategy') !== -1) return 'business';
+                if (cat.indexOf('detroit') !== -1) return 'detroit';
+                if (cat.indexOf('tech') !== -1) return 'technology';
+                if (cat.indexOf('community') !== -1) return 'community';
+                return cat;
+            }
+
+            function filteredArticles() {
+                return allArticles.filter(function(a) {
+                    var catMatch = currentFilter === 'all' || normalizeCategory(a.category) === currentFilter;
+                    var searchMatch = !searchQuery || a.title.toLowerCase().indexOf(searchQuery) !== -1 || a.description.toLowerCase().indexOf(searchQuery) !== -1;
+                    return catMatch && searchMatch;
+                });
+            }
+
+            function renderFeatured(article) {
+                var sec = document.getElementById('featured-post-section');
+                if (!article) { sec.style.display = 'none'; return; }
+                sec.style.display = '';
+                document.getElementById('featured-img').src = article.image || 'images/2023/12/photo-1501147830916-ce44a6359892.webp';
+                document.getElementById('featured-cat').textContent = article.categoryDisplay || article.category;
+                document.getElementById('featured-date').textContent = formatDate(article.date);
+                document.getElementById('featured-read').textContent = (article.readTime || 5) + ' min read';
+                document.getElementById('featured-title').textContent = article.title;
+                document.getElementById('featured-desc').textContent = article.description;
+                document.getElementById('featured-link').href = 'posts/' + article.slug + '.html';
+            }
+
+            function renderCards(articles, append) {
+                var grid = document.getElementById('blog-grid');
+                if (!append) grid.innerHTML = '';
+                articles.forEach(function(a) {
+                    var catNorm = normalizeCategory(a.category);
+                    var card = document.createElement('article');
+                    card.className = 'blog-card';
+                    card.setAttribute('data-category', catNorm);
+                    card.innerHTML =
+                        '<div class="card-image">' +
+                            '<img src="' + (a.image || 'images/2023/12/photo-1501147830916-ce44a6359892.webp') + '" alt="' + a.title + '" loading="lazy">' +
+                            '<span class="post-category">' + (a.categoryDisplay || a.category) + '</span>' +
+                        '</div>' +
+                        '<div class="card-content">' +
+                            '<div class="post-meta">' +
+                                '<span class="post-date">' + formatDate(a.date) + '</span>' +
+                                '<span class="read-time">' + (a.readTime || 5) + ' min read</span>' +
+                            '</div>' +
+                            '<h3>' + a.title + '</h3>' +
+                            '<p>' + (a.description || '').substring(0, 160) + '</p>' +
+                            '<a href="posts/' + a.slug + '.html" class="card-link">Read more &rarr;</a>' +
+                        '</div>';
+                    grid.appendChild(card);
+                });
+            }
+
+            function render() {
+                var filtered = filteredArticles();
+                if (filtered.length > 0 && currentFilter === 'all' && !searchQuery) {
+                    renderFeatured(filtered[0]);
+                    var rest = filtered.slice(1);
+                    shown = Math.min(ARTICLES_PER_PAGE, rest.length);
+                    renderCards(rest.slice(0, shown), false);
+                    document.getElementById('load-more').style.display = shown < rest.length ? '' : 'none';
+                } else {
+                    renderFeatured(null);
+                    shown = Math.min(ARTICLES_PER_PAGE, filtered.length);
+                    renderCards(filtered.slice(0, shown), false);
+                    document.getElementById('load-more').style.display = shown < filtered.length ? '' : 'none';
+                }
+            }
+
+            function loadMore() {
+                var filtered = filteredArticles();
+                var offset = currentFilter === 'all' && !searchQuery ? 1 : 0;
+                var rest = filtered.slice(offset);
+                var next = rest.slice(shown, shown + ARTICLES_PER_PAGE);
+                renderCards(next, true);
+                shown += next.length;
+                document.getElementById('load-more').style.display = shown < rest.length ? '' : 'none';
+            }
+
+            fetch('/articles.json')
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    allArticles = data;
+                    render();
+
+                    document.querySelectorAll('.blog-filter').forEach(function(btn) {
+                        btn.addEventListener('click', function() {
+                            document.querySelectorAll('.blog-filter').forEach(function(b) { b.classList.remove('active'); });
+                            btn.classList.add('active');
+                            currentFilter = btn.getAttribute('data-filter');
+                            render();
+                        });
+                    });
+
+                    var searchInput = document.getElementById('blog-search');
+                    if (searchInput) {
+                        searchInput.addEventListener('input', function() {
+                            searchQuery = searchInput.value.toLowerCase().trim();
+                            render();
+                        });
+                    }
+
+                    document.getElementById('load-more').addEventListener('click', loadMore);
+                });
+        })();
+        </script>
 
         <!-- Newsletter CTA -->
         <section class="newsletter-section">
