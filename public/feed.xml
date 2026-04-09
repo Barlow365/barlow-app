@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 07 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Apr 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                    <item>
+                        <item>
+      <title>Why Cost of Living Relief Isn't Reaching Families</title>
+      <link>https://barlow.app/posts/why-cost-of-living-relief-isnt-reaching-families</link>
+      <description>Inflation is cooling but families still struggle. The problem isn't lack of programs—it's delivery infrastructure that creates friction instead of flow.</description>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-cost-of-living-relief-isnt-reaching-families</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>America Isn't Broke — It's Disconnected</title>
       <link>https://barlow.app/posts/america-isnt-broke-its-disconnected</link>
       <description>GDP hits records while 60% live paycheck to paycheck. The problem isn't money supply—it's that our systems can't connect dollars to outcomes.</description>
