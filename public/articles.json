@@ -40,36 +40,6 @@
     "image": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1600&h=900&fit=crop"
   },
   {
-    "slug": "the-workforce-system-isnt-failing-its-misaligned",
-    "title": "The Workforce System Isn't Failing \u2014 It's Misaligned",
-    "description": "Despite $3.6B in annual WIOA spending, employers can't fill roles. The workforce system works \u2014 just not for the outcomes we need.",
-    "date": "2026-04-09",
-    "category": "leadership & systems",
-    "categoryDisplay": "Leadership & Systems",
-    "readTime": 4,
-    "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&h=900&fit=crop"
-  },
-  {
-    "slug": "we-fund-startups-we-dont-build-businesses",
-    "title": "We Fund Startups. We Don't Build Businesses",
-    "description": "Detroit, Atlanta, and Philadelphia celebrate launches but ignore the operational infrastructure that keeps businesses alive past year three.",
-    "date": "2026-04-09",
-    "category": "business & strategy",
-    "categoryDisplay": "Business & Strategy",
-    "readTime": 4,
-    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop"
-  },
-  {
-    "slug": "why-cost-of-living-relief-isnt-reaching-families",
-    "title": "Why Cost of Living Relief Isn't Reaching Families",
-    "description": "Inflation is cooling but families still struggle. The problem isn't lack of programs\u2014it's delivery infrastructure that creates friction instead of flow.",
-    "date": "2026-04-09",
-    "category": "leadership & systems",
-    "categoryDisplay": "Leadership & Systems",
-    "readTime": 4,
-    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop"
-  },
-  {
     "slug": "opportunity-isnt-organized",
     "title": "Opportunity Isn't Missing \u2014 It's Not Organized",
     "description": "Every city has grants, programs, accelerators, training, and capital. The resources exist. What doesn't exist is a map. The fix isn't more programs \u2014 it's better architecture.",
@@ -78,16 +48,6 @@
     "categoryDisplay": "Business & Strategy",
     "readTime": 7,
     "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&h=900&fit=crop"
-  },
-  {
-    "slug": "america-isnt-broke-its-disconnected",
-    "title": "America Isn't Broke \u2014 It's Disconnected",
-    "description": "GDP hits records while 60% live paycheck to paycheck. The problem isn't money supply\u2014it's that our systems can't connect dollars to outcomes.",
-    "date": "2026-04-07",
-    "category": "leadership & systems",
-    "categoryDisplay": "Leadership & Systems",
-    "readTime": 5,
-    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop"
   },
   {
     "slug": "why-detroit-operators-outperform-silicon-valley-startups",
