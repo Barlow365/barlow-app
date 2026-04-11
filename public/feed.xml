@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 09 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Apr 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                <item>
+                                    <item>
+      <title>Why Small Cities Are Outpacing Big Ones in Economic Recovery</title>
+      <link>https://barlow.app/posts/why-small-cities-are-outpacing-big-ones-in-economic-recovery</link>
+      <description>Small cities like Boise and Grand Rapids show faster job growth and lower costs than major metros. Detroit's neighborhoods reveal the same pattern at micro scale.</description>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-small-cities-are-outpacing-big-ones-in-economic-recovery</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Workforce System Isn't Failing — It's Misaligned</title>
       <link>https://barlow.app/posts/the-workforce-system-isnt-failing-its-misaligned</link>
       <description>Despite $3.6B in annual WIOA spending, employers can't fill roles. The workforce system works — just not for the outcomes we need.</description>
