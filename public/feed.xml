@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 14 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Apr 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                        <item>
+                                            <item>
+      <title>What Happens When Community Development Meets Private Capital</title>
+      <link>https://barlow.app/posts/what-happens-when-community-development-meets-private-capital</link>
+      <description>Examining the tension between profit-driven investment and community needs through Detroit, Atlanta, and Portland's development patterns.</description>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/what-happens-when-community-development-meets-private-capital</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Infrastructure Nobody Talks About: Digital Access in 2026</title>
       <link>https://barlow.app/posts/the-infrastructure-nobody-talks-about-digital-access-in-2026</link>
       <description>Detroit's digital divide reveals a critical infrastructure gap affecting 21% of households nationwide. Here's what builders need to know about connectivity as foundation.</description>
