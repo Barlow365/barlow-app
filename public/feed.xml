@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 18 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 21 Apr 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                <item>
+                                                    <item>
+      <title>The Operator Gap: Why Execution Talent Is the Scarcest Resource</title>
+      <link>https://barlow.app/posts/the-operator-gap-why-execution-talent-is-the-scarcest-resource</link>
+      <description>Most businesses fail not from bad ideas, but from poor execution. The scarcest talent isn't visionaries—it's operators who can build and scale systems.</description>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-operator-gap-why-execution-talent-is-the-scarcest-resource</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Stop Building Apps. Start Building Systems.</title>
       <link>https://barlow.app/posts/stop-building-apps-start-building-systems</link>
       <description>Why the app-first mentality is failing cities like Detroit. Real builders focus on interconnected systems that solve problems at scale.</description>
