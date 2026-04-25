@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 23 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 25 Apr 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                        <item>
+                                                            <item>
+      <title>The Three Things Every City Gets Wrong About Economic Development</title>
+      <link>https://barlow.app/posts/the-three-things-every-city-gets-wrong-about-economic-development</link>
+      <description>Most cities chase incentives and flashy projects while missing the fundamentals. A systems analysis of what actually drives urban economic growth.</description>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-three-things-every-city-gets-wrong-about-economic-development</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Government Contracts Favor Companies That Don't Deliver</title>
       <link>https://barlow.app/posts/why-government-contracts-favor-companies-that-dont-deliver</link>
       <description>Government procurement systems reward proposal writers over builders. Here's why contracts go to companies that promise everything and deliver nothing.</description>
