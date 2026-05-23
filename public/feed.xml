@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 05 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 23 May 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                            <item>
+                                                                                <item>
+      <title>Why Most DEI Programs Produce Reports Instead of Results</title>
+      <link>https://barlow.app/posts/why-most-dei-programs-produce-reports-instead-of-results</link>
+      <description>A systems analysis of why diversity initiatives fail: measurement gaps, structural misalignment, and what cities like Detroit teach us about real change.</description>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-most-dei-programs-produce-reports-instead-of-results</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>How Detroit's Comeback Story Gets Told Wrong Every Time</title>
       <link>https://barlow.app/posts/how-detroits-comeback-story-gets-told-wrong-every-time</link>
       <description>The media narrative misses Detroit's real recovery mechanics. Here's what actually drives urban renewal when you look at the systems, not the stories.</description>
