@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 23 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 26 May 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                <item>
+                                                                                    <item>
+      <title>The Builder's Dilemma: Scale vs. Quality in Community Work</title>
+      <link>https://barlow.app/posts/the-builders-dilemma-scale-vs-quality-in-community-work</link>
+      <description>Community builders face an impossible choice: serve more people with less impact, or fewer people with deeper results. The data reveals which approach wins.</description>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-builders-dilemma-scale-vs-quality-in-community-work</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Most DEI Programs Produce Reports Instead of Results</title>
       <link>https://barlow.app/posts/why-most-dei-programs-produce-reports-instead-of-results</link>
       <description>A systems analysis of why diversity initiatives fail: measurement gaps, structural misalignment, and what cities like Detroit teach us about real change.</description>
