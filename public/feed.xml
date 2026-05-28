@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 26 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 28 May 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                    <item>
+                                                                                        <item>
+      <title>What Real Public-Private Partnerships Look Like</title>
+      <link>https://barlow.app/posts/what-real-public-private-partnerships-look-like</link>
+      <description>Most public-private partnerships fail because we misunderstand their purpose. Here's what successful P3s actually accomplish in Detroit, Denver, and beyond.</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/what-real-public-private-partnerships-look-like</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Builder's Dilemma: Scale vs. Quality in Community Work</title>
       <link>https://barlow.app/posts/the-builders-dilemma-scale-vs-quality-in-community-work</link>
       <description>Community builders face an impossible choice: serve more people with less impact, or fewer people with deeper results. The data reveals which approach wins.</description>
