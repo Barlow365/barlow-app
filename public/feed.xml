@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 28 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 30 May 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                        <item>
+                                                                                            <item>
+      <title>Why the Best Operators Never Apply for Grants</title>
+      <link>https://barlow.app/posts/why-the-best-operators-never-apply-for-grants</link>
+      <description>The most effective business operators avoid grants entirely. Here's why dependency on external funding kills operational discipline and long-term growth.</description>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-the-best-operators-never-apply-for-grants</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>What Real Public-Private Partnerships Look Like</title>
       <link>https://barlow.app/posts/what-real-public-private-partnerships-look-like</link>
       <description>Most public-private partnerships fail because we misunderstand their purpose. Here's what successful P3s actually accomplish in Detroit, Denver, and beyond.</description>
