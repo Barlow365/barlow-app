@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 30 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Jun 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                            <item>
+                                                                                                <item>
+      <title>The Missing Layer Between Policy and People</title>
+      <link>https://barlow.app/posts/the-missing-layer-between-policy-and-people</link>
+      <description>Municipal policies fail because we've eliminated the human infrastructure that translates intent into action. Here's what cities must rebuild.</description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-missing-layer-between-policy-and-people</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why the Best Operators Never Apply for Grants</title>
       <link>https://barlow.app/posts/why-the-best-operators-never-apply-for-grants</link>
       <description>The most effective business operators avoid grants entirely. Here's why dependency on external funding kills operational discipline and long-term growth.</description>
