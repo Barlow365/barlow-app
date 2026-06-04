@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 02 Jun 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Jun 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                <item>
+                                                                                                    <item>
+      <title>Why Every City Needs an Operating System, Not Just a Strategic Plan</title>
+      <link>https://barlow.app/posts/why-every-city-needs-an-operating-system-not-just-a-strategic-plan</link>
+      <description>Cities waste billions on strategic plans that sit on shelves. Detroit and others are building real-time operating systems that actually execute change.</description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-every-city-needs-an-operating-system-not-just-a-strategic-plan</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Missing Layer Between Policy and People</title>
       <link>https://barlow.app/posts/the-missing-layer-between-policy-and-people</link>
       <description>Municipal policies fail because we've eliminated the human infrastructure that translates intent into action. Here's what cities must rebuild.</description>
