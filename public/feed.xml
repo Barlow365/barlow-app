@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 04 Jun 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                    <item>
+                                                                                                        <item>
+      <title>What Happens When You Build Tech for Communities Instead of Consumers</title>
+      <link>https://barlow.app/posts/what-happens-when-you-build-tech-for-communities-instead-of-consumers</link>
+      <description>Tech built for communities creates lasting infrastructure, not just user engagement. Analysis of Detroit, Austin, and Barcelona's community-first approaches.</description>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/what-happens-when-you-build-tech-for-communities-instead-of-consumers</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Every City Needs an Operating System, Not Just a Strategic Plan</title>
       <link>https://barlow.app/posts/why-every-city-needs-an-operating-system-not-just-a-strategic-plan</link>
       <description>Cities waste billions on strategic plans that sit on shelves. Detroit and others are building real-time operating systems that actually execute change.</description>
