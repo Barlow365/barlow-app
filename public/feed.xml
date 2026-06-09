@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 09 Jun 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                        <item>
+                                                                                                            <item>
+      <title>The Real Cost of Free Programs</title>
+      <link>https://barlow.app/posts/the-real-cost-of-free-programs</link>
+      <description>Why 'free' government and nonprofit programs create hidden costs that burden cities like Detroit. A systems analysis of dependency cycles and resource allocation.</description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-real-cost-of-free-programs</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>What Happens When You Build Tech for Communities Instead of Consumers</title>
       <link>https://barlow.app/posts/what-happens-when-you-build-tech-for-communities-instead-of-consumers</link>
       <description>Tech built for communities creates lasting infrastructure, not just user engagement. Analysis of Detroit, Austin, and Barcelona's community-first approaches.</description>
