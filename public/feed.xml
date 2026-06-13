@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 11 Jun 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Jun 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                <item>
+                                                                                                                    <item>
+      <title>How to Build a Regional Economy That Actually Works</title>
+      <link>https://barlow.app/posts/how-to-build-a-regional-economy-that-actually-works</link>
+      <description>Regional economies fail when cities compete instead of coordinate. Here's the blueprint for building economic systems that actually strengthen entire regions.</description>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/how-to-build-a-regional-economy-that-actually-works</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Experience Should Be a Credential</title>
       <link>https://barlow.app/posts/why-experience-should-be-a-credential</link>
       <description>Only 16% of skilled trade workers have college degrees, yet they build everything we depend on. We're measuring competence with the wrong tools.</description>
