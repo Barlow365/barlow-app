@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 09 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Jul 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                        <item>
+                                                                                                                            <item>
+      <title>Why Most Innovation Labs Don't Innovate</title>
+      <link>https://barlow.app/posts/why-most-innovation-labs-dont-innovate</link>
+      <description>Innovation labs cost millions and produce little. Here's a systems diagnosis of why corporate and civic labs fail — and what actually moves the needle.</description>
+      <pubDate>Sat, 11 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-most-innovation-labs-dont-innovate</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Franchise Model for Social Impact: What Nonprofits Can Learn from McDonald's</title>
       <link>https://barlow.app/posts/the-franchise-model-for-social-impact-what-nonprofits-can-learn-from-mcdonalds</link>
       <description>The franchise model solves replication problems that kill most social impact work. Here's how mission-driven operators can borrow the playbook.</description>
