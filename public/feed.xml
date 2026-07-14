@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 11 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 14 Jul 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                            <item>
+                                                                                                                                <item>
+      <title>What Veterans Can Teach Us About Building Under Pressure</title>
+      <link>https://barlow.app/posts/what-veterans-can-teach-us-about-building-under-pressure</link>
+      <description>Veterans carry systems-thinking and pressure-tested leadership that most organizations desperately need. Here's what builders can learn from them.</description>
+      <pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/what-veterans-can-teach-us-about-building-under-pressure</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Most Innovation Labs Don't Innovate</title>
       <link>https://barlow.app/posts/why-most-innovation-labs-dont-innovate</link>
       <description>Innovation labs cost millions and produce little. Here's a systems diagnosis of why corporate and civic labs fail — and what actually moves the needle.</description>
