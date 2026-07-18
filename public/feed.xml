@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 16 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Jul 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                    <item>
+                                                                                                                                        <item>
+      <title>Why Neighborhoods Need CFOs, Not Just Activists</title>
+      <link>https://barlow.app/posts/why-neighborhoods-need-cfos-not-just-activists</link>
+      <description>Passion builds movements. Financial architecture builds neighborhoods. Here's why community development needs operators, not just advocates.</description>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-neighborhoods-need-cfos-not-just-activists</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Talent Pipeline Nobody Built</title>
       <link>https://barlow.app/posts/the-talent-pipeline-nobody-built</link>
       <description>Detroit and cities like it keep importing skilled workers while ignoring the people already here. That's not a talent shortage. That's a system failure.</description>
