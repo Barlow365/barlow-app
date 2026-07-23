@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 21 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Jul 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                            <item>
+                                                                                                                                                <item>
+      <title>What Amazon HQ2 Taught Every City About Desperation</title>
+      <link>https://barlow.app/posts/what-amazon-hq2-taught-every-city-about-desperation</link>
+      <description>Amazon's HQ2 search exposed how cities compete against themselves. Here's what the bidding war actually revealed about economic development strategy.</description>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/what-amazon-hq2-taught-every-city-about-desperation</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Invisible Tax on Being Small</title>
       <link>https://barlow.app/posts/the-invisible-tax-on-being-small</link>
       <description>Small businesses pay more per dollar to survive than large ones. It's not a market failure — it's a system design. Here's what that costs us.</description>
