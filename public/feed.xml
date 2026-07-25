@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 23 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 25 Jul 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                <item>
+                                                                                                                                                    <item>
+      <title>Why the Gig Economy Is a Systems Failure Dressed as Flexibility</title>
+      <link>https://barlow.app/posts/why-the-gig-economy-is-a-systems-failure-dressed-as-flexibility</link>
+      <description>The gig economy isn't innovation — it's a broken labor system shifting risk onto workers. Here's what the data actually shows, and what we need to fix.</description>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-the-gig-economy-is-a-systems-failure-dressed-as-flexibility</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>What Amazon HQ2 Taught Every City About Desperation</title>
       <link>https://barlow.app/posts/what-amazon-hq2-taught-every-city-about-desperation</link>
       <description>Amazon's HQ2 search exposed how cities compete against themselves. Here's what the bidding war actually revealed about economic development strategy.</description>
