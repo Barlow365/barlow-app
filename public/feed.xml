@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 28 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Jul 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                        <item>
+                                                                                                                                                            <item>
+      <title>The Permit Is Not the Problem</title>
+      <link>https://barlow.app/posts/the-permit-is-not-the-problem</link>
+      <description>Builders blame permits, but the real drag on housing is what surrounds them. A systems look at why approvals alone won't fix the shortage.</description>
+      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-permit-is-not-the-problem</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Case for Boring Infrastructure</title>
       <link>https://barlow.app/posts/the-case-for-boring-infrastructure</link>
       <description>Flashy projects get the press. Reliable pipes, roads, and grids build cities. Here's why boring infrastructure is the actual work that matters.</description>
