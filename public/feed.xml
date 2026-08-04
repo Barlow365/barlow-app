@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 01 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 04 Aug 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                                <item>
+                                                                                                                                                                    <item>
+      <title>The Data Dashboard Nobody Checks</title>
+      <link>https://barlow.app/posts/the-data-dashboard-nobody-checks</link>
+      <description>Cities spend millions building performance dashboards that no one uses to make decisions. Here's why the data isn't the problem — the system is.</description>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-data-dashboard-nobody-checks</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Soft Launch Is a Lie</title>
       <link>https://barlow.app/posts/the-soft-launch-is-a-lie</link>
       <description>Builders use 'soft launches' to delay accountability. Here's why that instinct kills momentum and what to do instead.</description>

@@ -1,5 +1,15 @@
 [
   {
+    "slug": "the-data-dashboard-nobody-checks",
+    "title": "The Data Dashboard Nobody Checks",
+    "description": "Cities spend millions building performance dashboards that no one uses to make decisions. Here's why the data isn't the problem \u2014 the system is.",
+    "date": "2026-08-04",
+    "category": "leadership & systems",
+    "categoryDisplay": "Leadership & Systems",
+    "readTime": 6,
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop"
+  },
+  {
     "slug": "the-soft-launch-is-a-lie",
     "title": "The Soft Launch Is a Lie",
     "description": "Builders use 'soft launches' to delay accountability. Here's why that instinct kills momentum and what to do instead.",
