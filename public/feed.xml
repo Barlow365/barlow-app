@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 17 Sep 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 19 Sep 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                                        <item>
+                                                                                                                                                                            <item>
+      <title>The Org Chart Is Not the Organization</title>
+      <link>https://barlow.app/posts/the-org-chart-is-not-the-organization</link>
+      <description>Org charts show reporting lines, not how work actually moves. Here's why that gap destroys execution — and what builders do differently.</description>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-org-chart-is-not-the-organization</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Second Job Nobody Accounts For: Managing the Systems Around Your Work</title>
       <link>https://barlow.app/posts/the-second-job-nobody-accounts-for-managing-the-systems-around-your-work</link>
       <description>Most workers carry a hidden second job managing healthcare, benefits, and logistics. Here's what that actually costs — and who's building around it.</description>
