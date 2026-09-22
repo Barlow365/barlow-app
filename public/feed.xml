@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 19 Sep 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 22 Sep 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                                            <item>
+                                                                                                                                                                                <item>
+      <title>The Lease You Sign Before You're Ready</title>
+      <link>https://barlow.app/posts/the-lease-you-sign-before-youre-ready</link>
+      <description>Most small businesses fail before they should — not from bad ideas, but from bad lease timing. Here's how to read the system before you sign.</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-lease-you-sign-before-youre-ready</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Org Chart Is Not the Organization</title>
       <link>https://barlow.app/posts/the-org-chart-is-not-the-organization</link>
       <description>Org charts show reporting lines, not how work actually moves. Here's why that gap destroys execution — and what builders do differently.</description>
