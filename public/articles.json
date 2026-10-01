@@ -1,5 +1,15 @@
 [
   {
+    "slug": "the-incubator-that-never-graduates-anyone",
+    "title": "The Incubator That Never Graduates Anyone",
+    "description": "Most startup incubators measure cohorts, not companies. Here's why the model is broken and what cities like Detroit are paying for instead of fixing it.",
+    "date": "2026-10-01",
+    "category": "leadership & systems",
+    "categoryDisplay": "Leadership & Systems",
+    "readTime": 7,
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop"
+  },
+  {
     "slug": "the-org-that-runs-on-relationships-instead-of-processes",
     "title": "The Org That Runs on Relationships Instead of Processes",
     "description": "When relationships replace systems, organizations become fragile. A builder's diagnosis of why relationship-dependent orgs fail \u2014 and what to build instead.",
