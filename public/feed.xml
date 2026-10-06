@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 03 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 06 Oct 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                                                                    <item>
+                                                                                                                                                                                                        <item>
+      <title>The Pitch Deck Is Not a Business Plan</title>
+      <link>https://barlow.app/posts/the-pitch-deck-is-not-a-business-plan</link>
+      <description>Most startups confuse a pitch deck with a business plan. One sells a vision. The other runs a company. Here's why that gap is costing founders everything.</description>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/the-pitch-deck-is-not-a-business-plan</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Aviation Programs Produce Enthusiasts Instead of Pilots</title>
       <link>https://barlow.app/posts/why-aviation-programs-produce-enthusiasts-instead-of-pilots</link>
       <description>Aviation programs are graduating students who love planes but can't fill cockpits. Here's the structural failure behind the pilot shortage no one is fixing.</description>
