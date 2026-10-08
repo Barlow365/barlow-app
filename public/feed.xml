@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 06 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 08 Oct 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                                                                        <item>
+                                                                                                                                                                                                            <item>
+      <title>When the Tech Works and the Organization Doesn't</title>
+      <link>https://barlow.app/posts/when-the-tech-works-and-the-organization-doesnt</link>
+      <description>New software rarely fails on its own. Learn why organizational dysfunction — not bad code — is the real reason most tech implementations collapse.</description>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/when-the-tech-works-and-the-organization-doesnt</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>The Pitch Deck Is Not a Business Plan</title>
       <link>https://barlow.app/posts/the-pitch-deck-is-not-a-business-plan</link>
       <description>Most startups confuse a pitch deck with a business plan. One sells a vision. The other runs a company. Here's why that gap is costing founders everything.</description>

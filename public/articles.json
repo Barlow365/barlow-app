@@ -1,5 +1,15 @@
 [
   {
+    "slug": "when-the-tech-works-and-the-organization-doesnt",
+    "title": "When the Tech Works and the Organization Doesn't",
+    "description": "New software rarely fails on its own. Learn why organizational dysfunction \u2014 not bad code \u2014 is the real reason most tech implementations collapse.",
+    "date": "2026-10-08",
+    "category": "leadership & systems",
+    "categoryDisplay": "Leadership & Systems",
+    "readTime": 7,
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop"
+  },
+  {
     "slug": "the-pitch-deck-is-not-a-business-plan",
     "title": "The Pitch Deck Is Not a Business Plan",
     "description": "Most startups confuse a pitch deck with a business plan. One sells a vision. The other runs a company. Here's why that gap is costing founders everything.",
