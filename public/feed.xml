@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 10 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Oct 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                                                                                <item>
+                                                                                                                                                                                                                    <item>
+      <title>Why Invite-Only Is a Product Strategy, Not an Exclusion Strategy</title>
+      <link>https://barlow.app/posts/why-invite-only-is-a-product-strategy-not-an-exclusion-strategy</link>
+      <description>Invite-only isn't about keeping people out. It's about building systems that scale without breaking. Here's how builders think about controlled access.</description>
+      <pubDate>Tue, 13 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-invite-only-is-a-product-strategy-not-an-exclusion-strategy</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Pre-Revenue Businesses Die From Overhead, Not Ideas</title>
       <link>https://barlow.app/posts/why-pre-revenue-businesses-die-from-overhead-not-ideas</link>
       <description>Most early-stage startups don't fail because the idea was wrong. They fail because fixed costs outran cash before the model had time to breathe.</description>
