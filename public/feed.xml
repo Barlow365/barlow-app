@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 13 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 15 Oct 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                                                                                    <item>
+                                                                                                                                                                                                                        <item>
+      <title>Why Co-Founders Fight About Culture Instead of Systems</title>
+      <link>https://barlow.app/posts/why-co-founders-fight-about-culture-instead-of-systems</link>
+      <description>Co-founder conflict isn't about personality clashes. It's about missing operational systems. Here's what the data says and what to build instead.</description>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-co-founders-fight-about-culture-instead-of-systems</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Invite-Only Is a Product Strategy, Not an Exclusion Strategy</title>
       <link>https://barlow.app/posts/why-invite-only-is-a-product-strategy-not-an-exclusion-strategy</link>
       <description>Invite-only isn't about keeping people out. It's about building systems that scale without breaking. Here's how builders think about controlled access.</description>
