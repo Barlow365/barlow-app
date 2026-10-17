@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 15 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 17 Oct 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                                                                                        <item>
+                                                                                                                                                                                                                            <item>
+      <title>Why Cities Keep Confusing Activity With Progress</title>
+      <link>https://barlow.app/posts/why-cities-keep-confusing-activity-with-progress</link>
+      <description>Ribbon cuttings and construction cranes signal effort, not results. Here's why cities mistake motion for movement — and what actually changes outcomes.</description>
+      <pubDate>Sat, 17 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-cities-keep-confusing-activity-with-progress</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Co-Founders Fight About Culture Instead of Systems</title>
       <link>https://barlow.app/posts/why-co-founders-fight-about-culture-instead-of-systems</link>
       <description>Co-founder conflict isn't about personality clashes. It's about missing operational systems. Here's what the data says and what to build instead.</description>
