@@ -5,7 +5,7 @@
         <link>https://barlow.app/press</link>
         <description>Insights on leadership, systems thinking, technology, and Detroit from Jonathan Barlow.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 20 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 22 Oct 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://barlow.app/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://barlow.app/og-image.png</url>
@@ -13,7 +13,15 @@
             <link>https://barlow.app/press</link>
         </image>
 
-                                                                                                                                                                                                                                <item>
+                                                                                                                                                                                                                                    <item>
+      <title>Why Pilots Don't Come From Passion Programs</title>
+      <link>https://barlow.app/posts/why-pilots-dont-come-from-passion-programs</link>
+      <description>Aviation workforce pipelines are broken. The problem isn't inspiration — it's infrastructure. Here's what Detroit and other cities are getting wrong.</description>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://barlow.app/posts/why-pilots-dont-come-from-passion-programs</guid>
+      <category>The Fix by JB</category>
+    </item>
+    <item>
       <title>Why Cities Hire Consultants Instead of Operators</title>
       <link>https://barlow.app/posts/why-cities-hire-consultants-instead-of-operators</link>
       <description>Cities spend billions on consultants who diagnose problems but never run systems. Here's why that pattern persists and what it actually costs us.</description>
